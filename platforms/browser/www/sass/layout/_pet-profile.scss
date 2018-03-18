@@ -1,0 +1,86 @@
+
+// SASS PET PROFILE PAGE FILE
+
+body.pet-profile-page main { //always inform the class of the current page body first
+
+  // PET INFO SECTION
+
+  #pet-main-info {
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-template-rows: auto;
+    padding: 5px 15px;
+    align-items: center;
+    height: 65px;
+    background-color: $color-white;
+  }
+
+  #pet-main-info #icon-pet-photo {
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/garfield.png');
+    border-radius: 100px;
+    border: 1px solid $color-light-aquamarine;
+    background-size: cover;
+    display: block;
+    background-position: center; //make img be centered
+  }
+
+  #pet-main-info #pet-intro {
+    margin-left: 10px;
+  }
+
+  #pet-main-info #pet-intro h3, #pet-main-info #pet-intro p {
+    margin: 0;
+    line-height: 20px;
+  }
+
+//-------------------------------------
+  //SECTIONS
+
+  //Profile Header
+
+  #main-header{
+    display: inline-flex;
+    grid-template-columns: 40px auto;
+    grid-template-rows: auto;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-section{
+    padding: 15px 20px 0px 20px;
+    font-size: 20px;
+    color: $color-dark-gray;
+  }
+
+
+
+//------------------------------------
+ //General Info Content
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1vw;
+    padding: 5px;
+
+  }
+
+  .grid > section {
+    font-size: 4vw;
+    padding: .7em;
+    background: $color-teal;
+    text-align: center;
+  }
+
+  div#grid p{
+    color: $color-white;
+  }
+
+  .header-icon {
+    display: inline;
+  }
+
+}
+//------------------------------------

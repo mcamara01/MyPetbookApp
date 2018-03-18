@@ -1,0 +1,182 @@
+
+// SASS SETTINGS PAGE FILE
+
+// ALL SETTINGS PAGES ============================================
+body.settings-page main { //always inform the class of the current page body first
+  
+  div#card {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 5px 15px 15px 15px;
+    background-color: $color-white !important;
+    border-radius: 2px;
+  }
+}
+
+// ON SETTINGS > PREFERENCES PAGE ===============================
+body.settings-preferences-page {
+    section {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    // TOGGLE SETUP ================================
+    /* The switch - the box around the slider */
+    .switch {
+     position: relative;
+     display: inline-block;
+     width: 56px;
+     height: 30px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+      display:none;
+    }
+
+    /* The slider - circle */
+    .slider {
+     position: absolute;
+     z-index: 0;
+     cursor: pointer;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: $color-medium-gray;
+     -webkit-transition: .4s;
+     transition: .4s;
+    }
+
+    .slider:before {
+     position: absolute;
+     z-index: 0;
+     content: "";
+     height: 22px;
+     width: 22px;
+     left: 4px;
+     bottom: 4px;
+     background-color: $color-white;
+     -webkit-transition: .4s;
+     transition: .4s;
+    }
+
+    input:checked + .slider {
+     background-color: $color-aquamarine;
+    }
+
+    input:focus + .slider {
+     box-shadow: 0 0 1px $color-light-aquamarine;
+    }
+
+    input:checked + .slider:before {
+     -webkit-transform: translateX(26px);
+     -ms-transform: translateX(26px);
+     transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+     border-radius: 30px;
+    }
+
+    .slider.round:before {
+     border-radius: 50%;
+    }
+}
+
+
+// ON SETTINGS > USER PROFILE PAGE ===============================
+body.settings-user-profile-page main{
+
+  div#card {
+    padding: 5px 20px 20px 20px;
+  }
+  section#user-main-info {
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-template-rows: auto;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+  }
+
+  section#user-main-info #icon-user-photo {
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/fernanda.jpg');
+    border-radius: 100px;
+    border: 1px solid $color-light-aquamarine;
+    background-size: cover;
+    display: block;
+    background-position: center; //make img be centered
+  }
+
+  section#user-main-info #user-name {
+    margin-left: 10px;
+  }
+
+  section#user-main-info #user-intro h3 {
+    margin: 0;
+    line-height: 20px;
+  }
+
+  // detailed info
+  section#user-details-info {
+    margin-top: 20px;
+  }
+
+  section#user-details-info div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  section#user-details-info span {
+    flex: 0 0 40px;
+  }
+
+  section#user-details-info input {
+    background-color: transparent;
+    border: none;
+    flex: 1 0 80%;
+  }
+
+  section#edit-user-info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  // ICONS
+  .icon {
+    font-family: 'icomoon';
+    speak: none;
+    font-size: 15px; /* icons size */
+    color: $color-aquamarine;
+    margin-top: 5px;
+  }
+
+  .icon-email:before {
+    content: "\e902";
+  }
+
+  .icon-password:before {
+    content: "\e903";
+    font-size: 10px;
+  }
+
+  .icon-phone:before {
+    content: "\e904";
+    font-size: 20px;
+  }
+}
+
+// ON SETTINGS > TERMS PAGE ===============================
+body.settings-terms-page main{}

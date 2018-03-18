@@ -1,0 +1,938 @@
+/*---------------------------------------------------------------
+Variables
+---------------------------------------------------------------*/
+/* GREEN */
+/* BLACK / WHITE / GRAY */
+/* ALERT / SUCCESS */
+/* GRADIENT BG for launch, login, sign up*/
+/* BG for INFO PETS - vaccinations, alergies, vet, etc*/
+/* BUTTONS */
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900");
+/*---------------------------------------------------------------
+Typography
+---------------------------------------------------------------*/
+h1 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555555;
+}
+
+/*---------------------------------------------------------------
+Buttons & Links
+---------------------------------------------------------------*/
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: block;
+}
+
+button {
+  width: 110px;
+  height: 35px;
+  background-color: #009688;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  box-shadow: 0px 2px 2px 2px rgba(79, 79, 79, 0.26);
+}
+
+.button-text {
+  font-size: 14pt;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.menu-active-border {
+  border-bottom: 3px solid #1DE9B6;
+}
+
+.menu-active-border a {
+  color: #FFFFFF !important;
+}
+
+.menu-button-text {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.menu-active span {
+  color: #1DE9B6 !important;
+}
+
+.popup-content {
+  background-color: #FFFFFF;
+  margin: auto;
+  padding: 20px;
+  width: 250px;
+}
+
+.popup-content p {
+  color: #9b9b9b;
+  font-size: 13px;
+  padding-bottom: 15px;
+}
+
+.popup {
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #313541;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* The cancel Button */
+.cancel {
+  color: #9b9b9b;
+  width: 40%;
+  font-size: 12px;
+  font-weight: normal;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.submit {
+  color: #009688;
+  width: 40%;
+  font-size: 12px;
+  font-weight: normal;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.options-align {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cancel:hover, .submit:hover,
+.cancel:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img.imgClick {
+  cursor: pointer;
+}
+
+#menu-elipse a {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 50px;
+  height: 0px;
+  color: #555555;
+  cursor: pointer;
+}
+
+nav#elipse-options-nav {
+  background-color: #FAFAFA;
+  width: 120px;
+  height: 150px;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  margin: 10% 5% 10% 5%;
+}
+
+nav#elipse-options-nav a {
+  color: #313541;
+}
+
+nav#elipse-options-nav a.delete-option {
+  color: #C91914;
+}
+
+nav#elipse-options-nav li {
+  line-height: 40px;
+  padding-left: 10px;
+}
+
+/*---------------------------------------------------------------
+Behaviors (visibility, display, box shadow)
+---------------------------------------------------------------*/
+.box-shadow-bottom-dark {
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.26);
+}
+
+.box-shadow-bottom-light {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.26);
+}
+
+.box-shadow-all-dark {
+  box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.26), 0 0 12px 0 rgba(0, 0, 0, 0.26);
+}
+
+.box-shadow-all-light {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.26), 0 0 2px 0 rgba(0, 0, 0, 0.26);
+}
+
+.display-none {
+  display: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/*---------------------------------------------------------------
+Layout structure
+---------------------------------------------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+  margin: 0;
+  padding: 0;
+  color: #313541;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../icons/fonts/icomoon.eot");
+  src: url("../icons/fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../icons/fonts/icomoon.woff") format("woff"), url("../icons/fonts/icomoon.ttf") format("truetype"), url("../icons/fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 100% 50px;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  height: 50px;
+}
+header nav#header-menu {
+  background-color: #009688;
+  padding: 5px 0px;
+  color: #FFFFFF;
+  height: 50px;
+}
+header nav#header-menu ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 40px;
+  /* not displaying */
+}
+header nav#header-menu ul li, header nav#header-menu ul li a {
+  height: 100%;
+  line-height: 40px;
+  flex: 0 0 40px;
+}
+header nav#header-menu ul li#menu-back a {
+  padding: 12px;
+}
+header nav#header-menu ul li#menu-title {
+  flex: 1 1 100%;
+}
+header nav#header-menu ul h1 {
+  margin: 0;
+  text-align: left;
+  padding-left: 17px;
+}
+header nav#header-menu ul li#menu-hamb {
+  padding: 10px 17px;
+  cursor: pointer;
+}
+header nav#top-options-nav {
+  background-color: #FAFAFA;
+  width: 120px;
+  height: 80px;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+header nav#top-options-nav li {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+}
+header nav#top-options-nav a {
+  color: #313541;
+}
+
+main {
+  margin-top: 50px;
+  display: block;
+  overflow: auto;
+  height: calc(100vh - (50px + 55px));
+}
+main #wrapper {
+  display: block;
+  padding-bottom: 60px;
+}
+
+body.settings-page header {
+  height: 90px;
+}
+body.settings-page header nav#settings-menu {
+  background-color: #009688;
+  height: 40px;
+}
+body.settings-page header nav#settings-menu ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 40px;
+}
+body.settings-page header nav#settings-menu ul li, body.settings-page header nav#settings-menu ul li a {
+  height: 100%;
+  line-height: 40px;
+  flex: 0 0 33%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .8px;
+  color: #E0F2F1;
+}
+body.settings-page main {
+  margin-top: 90px;
+  height: calc(100vh - (90px + 55px));
+}
+
+footer {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  bottom: 0;
+  height: 55px;
+}
+footer #add-new-button-div {
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+}
+footer nav {
+  background-color: #009688;
+  padding: 5px 15px;
+  color: #FFFFFF;
+}
+footer nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+footer nav ul li {
+  flex: 1 1 33%;
+  text-align: center;
+  height: 40px;
+}
+footer nav ul a {
+  display: flex;
+  flex-flow: column nowrap;
+}
+footer nav ul .icon {
+  font-family: 'icomoon';
+  speak: none;
+  font-size: 20px;
+  /* icons size */
+  color: #FFFFFF;
+  margin-top: 5px;
+}
+footer nav ul .icon-pet:before {
+  content: "\e901";
+}
+footer nav ul .icon-calendar:before {
+  content: "\e900";
+}
+footer nav ul .icon-settings:before {
+  content: "\e907";
+}
+footer nav ul li span.menu-button-text {
+  margin-top: 8px;
+  line-height: 10px;
+}
+
+body.index-page main div#no-pet-main-info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+  height: 80vh;
+}
+body.index-page main div#no-pet-main-info h3 {
+  margin-top: 30px;
+}
+
+body.my-pets-page main #pet-main-info {
+  display: grid;
+  grid-template-columns: 40px auto;
+  grid-template-rows: auto;
+  padding: 5px 15px;
+  align-items: center;
+  height: 65px;
+}
+body.my-pets-page main #pet-main-info #icon-pet-photo {
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/garfield.png");
+  border-radius: 100px;
+  border: 1px solid #64FFDA;
+  background-size: cover;
+  display: block;
+  background-position: center;
+}
+body.my-pets-page main #pet-main-info #pet-intro {
+  margin-left: 10px;
+}
+body.my-pets-page main #pet-main-info #pet-intro h3, body.my-pets-page main #pet-main-info #pet-intro p {
+  margin: 0;
+  line-height: 20px;
+}
+body.my-pets-page main #pet-content {
+  padding: 30px 0 10px 0;
+}
+body.my-pets-page main #pet-content #main-pet-photo {
+  min-width: 250px;
+  max-width: 80%;
+  min-height: 40vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("../img/garfield.png");
+  border-radius: 10px;
+  background-size: cover;
+  display: block;
+  background-position: center;
+}
+body.my-pets-page main #pet-content nav ul {
+  width: 60%;
+  margin: 20px auto 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+body.my-pets-page main #pet-content nav ul li {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  padding-left: 5px;
+}
+body.my-pets-page main #pet-slider {
+  text-align: center;
+}
+
+body.settings-page main {
+  background-color: #E0F2F1;
+}
+body.settings-page main div#card {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 5px 15px 15px 15px;
+  background-color: #FFFFFF !important;
+  border-radius: 2px;
+}
+
+body.settings-preferences-page {
+  /* The switch - the box around the slider */
+  /* Hide default HTML checkbox */
+  /* The slider - circle */
+  /* Rounded sliders */
+}
+body.settings-preferences-page section {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+body.settings-preferences-page .switch {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 30px;
+}
+body.settings-preferences-page .switch input {
+  display: none;
+}
+body.settings-preferences-page .slider {
+  position: absolute;
+  z-index: 0;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(79, 79, 79, 0.26);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+body.settings-preferences-page .slider:before {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #FFFFFF;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+body.settings-preferences-page input:checked + .slider {
+  background-color: #1DE9B6;
+}
+body.settings-preferences-page input:focus + .slider {
+  box-shadow: 0 0 1px #64FFDA;
+}
+body.settings-preferences-page input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+body.settings-preferences-page .slider.round {
+  border-radius: 30px;
+}
+body.settings-preferences-page .slider.round:before {
+  border-radius: 50%;
+}
+
+body.settings-user-profile-page main div#card {
+  padding: 5px 20px 20px 20px;
+}
+body.settings-user-profile-page main section#user-main-info {
+  display: grid;
+  grid-template-columns: 40px auto;
+  grid-template-rows: auto;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+}
+body.settings-user-profile-page main section#user-main-info #icon-user-photo {
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/fernanda.jpg");
+  border-radius: 100px;
+  border: 1px solid #64FFDA;
+  background-size: cover;
+  display: block;
+  background-position: center;
+}
+body.settings-user-profile-page main section#user-main-info #user-name {
+  margin-left: 10px;
+}
+body.settings-user-profile-page main section#user-main-info #user-intro h3 {
+  margin: 0;
+  line-height: 20px;
+}
+body.settings-user-profile-page main section#user-details-info {
+  margin-top: 20px;
+}
+body.settings-user-profile-page main section#user-details-info div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+body.settings-user-profile-page main section#user-details-info span {
+  flex: 0 0 40px;
+}
+body.settings-user-profile-page main section#user-details-info input {
+  background-color: transparent;
+  border: none;
+  flex: 1 0 80%;
+}
+body.settings-user-profile-page main section#edit-user-info {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+body.settings-user-profile-page main .icon {
+  font-family: 'icomoon';
+  speak: none;
+  font-size: 15px;
+  /* icons size */
+  color: #1DE9B6;
+  margin-top: 5px;
+}
+body.settings-user-profile-page main .icon-email:before {
+  content: "\e902";
+}
+body.settings-user-profile-page main .icon-password:before {
+  content: "\e903";
+  font-size: 10px;
+}
+body.settings-user-profile-page main .icon-phone:before {
+  content: "\e904";
+  font-size: 20px;
+}
+
+body.general-info-page main {
+  background-color: #e0f2f1;
+}
+body.general-info-page main #pet-main-info {
+  display: grid;
+  grid-template-columns: 40px auto;
+  grid-template-rows: auto;
+  padding: 5px 15px;
+  align-items: center;
+  height: 65px;
+  background-color: white;
+}
+body.general-info-page main #pet-main-info #icon-pet-photo {
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/garfield.png");
+  border-radius: 100px;
+  border: 1px solid #64FFDA;
+  background-size: cover;
+  display: block;
+  background-position: center;
+}
+body.general-info-page main #pet-main-info #pet-intro {
+  margin-left: 10px;
+}
+body.general-info-page main #pet-main-info #pet-intro h3, body.general-info-page main #pet-main-info #pet-intro p {
+  margin: 0;
+  line-height: 20px;
+}
+body.general-info-page main #main-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0fr;
+  grid-template-rows: auto;
+  align-items: center;
+  padding: 5px 0px 0px 15px;
+}
+body.general-info-page main .header-section {
+  padding: 15px 20px 0px 20px;
+  font-size: 18px;
+  color: #555555;
+}
+body.general-info-page main .header-icon {
+  filter: invert(60%);
+}
+body.general-info-page main .field-info {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: normal;
+  text-align: left;
+}
+body.general-info-page main .field-response {
+  font-size: 12px;
+  letter-spacing: normal;
+  text-align: left;
+}
+body.general-info-page main div#card {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 5px 15px 15px 15px;
+  background-color: #FFFFFF !important;
+  border-radius: 2px;
+}
+body.general-info-page main #menu-elipse a {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 50px;
+  height: 0px;
+  color: #555555;
+  cursor: pointer;
+}
+body.general-info-page main nav#elipse-options-nav {
+  background-color: #FAFAFA;
+  width: 120px;
+  height: 150px;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  margin: 10% 5% 10% 5%;
+}
+body.general-info-page main nav#elipse-options-nav a {
+  color: #313541;
+}
+body.general-info-page main nav#elipse-options-nav a.delete-option {
+  color: #C91914;
+}
+body.general-info-page main nav#elipse-options-nav li {
+  line-height: 40px;
+  padding-left: 10px;
+}
+
+body.general-info-page footer #add-new-button-div {
+  visibility: hidden;
+}
+
+body.vaccination-page main {
+  background-color: #E0F2F1;
+}
+body.vaccination-page main #pet-main-info {
+  display: grid;
+  grid-template-columns: 40px auto;
+  grid-template-rows: auto;
+  padding: 5px 15px;
+  align-items: center;
+  height: 65px;
+  background-color: #FFFFFF;
+}
+body.vaccination-page main #pet-main-info #icon-pet-photo {
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/garfield.png");
+  border-radius: 100px;
+  border: 1px solid #64FFDA;
+  background-size: cover;
+  display: block;
+  background-position: center;
+}
+body.vaccination-page main #pet-main-info #pet-intro {
+  margin-left: 10px;
+}
+body.vaccination-page main #pet-main-info #pet-intro h3, body.vaccination-page main #pet-main-info #pet-intro p {
+  margin: 0;
+  line-height: 20px;
+}
+body.vaccination-page main #main-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0fr;
+  grid-template-rows: auto;
+  align-items: center;
+  padding: 5px 0px 0px 15px;
+}
+body.vaccination-page main .header-section {
+  padding: 15px 20px 0px 20px;
+  font-size: 20px;
+  color: #555555;
+}
+body.vaccination-page main .header-icon {
+  filter: invert(60%);
+}
+body.vaccination-page main .rectangle {
+  background-color: #E0F2F1;
+}
+body.vaccination-page main .field-info {
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: normal;
+  text-align: left;
+}
+body.vaccination-page main .field-name {
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+body.vaccination-page main .field-title {
+  font-size: 14px;
+}
+body.vaccination-page main .button-bg {
+  width: 88px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: #009688;
+  position: absolute;
+  right: 0;
+  margin: 3% 10% 3% 10%;
+}
+body.vaccination-page main div#card {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 5px 15px 15px 15px;
+  background-color: #FFFFFF !important;
+  border-radius: 2px;
+}
+
+body.allergie-page main {
+  background-color: #e0f2f1;
+}
+body.allergie-page main #pet-main-info {
+  display: grid;
+  grid-template-columns: 40px auto;
+  grid-template-rows: auto;
+  padding: 5px 15px;
+  align-items: center;
+  height: 65px;
+  background-color: white;
+}
+body.allergie-page main #pet-main-info #icon-pet-photo {
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/garfield.png");
+  border-radius: 100px;
+  border: 1px solid #64FFDA;
+  background-size: cover;
+  display: block;
+  background-position: center;
+}
+body.allergie-page main #pet-main-info #pet-intro {
+  margin-left: 10px;
+}
+body.allergie-page main #pet-main-info #pet-intro h3, body.allergie-page main #pet-main-info #pet-intro p {
+  margin: 0;
+  line-height: 20px;
+}
+body.allergie-page main #main-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0fr;
+  grid-template-rows: auto;
+  align-items: center;
+  padding: 5px 0px 0px 15px;
+}
+body.allergie-page main .header-section {
+  padding: 15px 20px 0px 20px;
+  font-size: 20px;
+  color: #555555;
+}
+body.allergie-page main .header-icon {
+  filter: invert(60%);
+}
+body.allergie-page main .field-info {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: normal;
+  text-align: left;
+}
+body.allergie-page main .field-response {
+  font-size: 12px;
+  letter-spacing: normal;
+  text-align: left;
+}
+body.allergie-page main div#card {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 5px 15px 15px 15px;
+  background-color: #FFFFFF !important;
+  border-radius: 2px;
+}
+body.allergie-page main #menu-elipse a {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 50px;
+  height: 0px;
+  color: #555555;
+  cursor: pointer;
+}
+body.allergie-page main nav#elipse-options-nav {
+  background-color: #FAFAFA;
+  width: 120px;
+  height: 150px;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  margin: 10% 5% 10% 5%;
+}
+body.allergie-page main nav#elipse-options-nav a {
+  color: #313541;
+}
+body.allergie-page main nav#elipse-options-nav a.delete-option {
+  color: #C91914;
+}
+body.allergie-page main nav#elipse-options-nav li {
+  line-height: 40px;
+  padding-left: 10px;
+}
+
+body.pet-profile-page main #pet-main-info {
+  display: grid;
+  grid-template-columns: 40px auto;
+  grid-template-rows: auto;
+  padding: 5px 15px;
+  align-items: center;
+  height: 65px;
+  background-color: #FFFFFF;
+}
+body.pet-profile-page main #pet-main-info #icon-pet-photo {
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/garfield.png");
+  border-radius: 100px;
+  border: 1px solid #64FFDA;
+  background-size: cover;
+  display: block;
+  background-position: center;
+}
+body.pet-profile-page main #pet-main-info #pet-intro {
+  margin-left: 10px;
+}
+body.pet-profile-page main #pet-main-info #pet-intro h3, body.pet-profile-page main #pet-main-info #pet-intro p {
+  margin: 0;
+  line-height: 20px;
+}
+body.pet-profile-page main #main-header {
+  display: inline-flex;
+  grid-template-columns: 40px auto;
+  grid-template-rows: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+body.pet-profile-page main .header-section {
+  padding: 15px 20px 0px 20px;
+  font-size: 20px;
+  color: #555555;
+}
+body.pet-profile-page main .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1vw;
+  padding: 5px;
+}
+body.pet-profile-page main .grid > section {
+  font-size: 4vw;
+  padding: .7em;
+  background: #009688;
+  text-align: center;
+}
+body.pet-profile-page main div#grid p {
+  color: #FFFFFF;
+}
+body.pet-profile-page main .header-icon {
+  display: inline;
+}
+
+/*# sourceMappingURL=style.css.map */

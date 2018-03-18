@@ -1,0 +1,71 @@
+
+// SASS MY PETS PAGE FILE
+
+body.my-pets-page main { //always inform the class of the current page body first
+  #pet-main-info {
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-template-rows: auto;
+    padding: 5px 15px;
+    align-items: center;
+    height: 65px;
+  }
+
+  #pet-main-info #icon-pet-photo {
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/garfield.png');
+    border-radius: 100px;
+    border: 1px solid $color-light-aquamarine;
+    background-size: cover;
+    display: block;
+    background-position: center; //make img be centered
+  }
+
+  #pet-main-info #pet-intro {
+    margin-left: 10px;
+  }
+
+  #pet-main-info #pet-intro h3, #pet-main-info #pet-intro p {
+    margin: 0;
+    line-height: 20px;
+  }
+
+  #pet-content {
+    padding: 30px 0 10px 0;
+  }
+
+  #pet-content #main-pet-photo {
+    min-width: 250px;
+    max-width: 80%;
+    min-height: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('../img/garfield.png');
+    border-radius: 10px;
+    background-size: cover;
+    display: block;
+    background-position: center; //make img be centered
+  }
+
+  #pet-content nav ul {
+    width: 60%;
+    margin: 20px auto 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  #pet-content nav ul li {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    padding-left: 5px;
+  }
+
+  // slider for more than one pet
+  #pet-slider {
+    text-align: center;
+  }
+
+}

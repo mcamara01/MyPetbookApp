@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <!-- BROWSER ICON LINK -->
+    <link rel="icon" href="icons/icon.png" type="image/png">
+
+    <!-- LINK TO STYLESHEET -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- END LINK TO STYLESHEET -->
+
+    <!-- JS SCRIPT LINKS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+     <!-- END JS SCRIPT LINKS -->
+
+    <title>Settings | MyPetbook</title>
+</head>
+
+<body class="settings-page settings-terms-page">
+    <!-- CONTENT STARTS HERE -->
+    <header class="box-shadow-bottom-dark">
+      <nav id="header-menu">
+        <ul>
+          <li id="menu-back" class="display-none"><a href="index.html"><img src="icons/icon_goback.png" alt="back"></a></li>
+          <li id="menu-title"><h1>Settings</h1></li>
+          <li id="menu-hamb"><img src="icons/icon_top.png" alt="top options"></li>
+        </ul>
+      </nav>
+
+      <nav id="top-options-nav" class="box-shadow-bottom-dark display-none">
+        <ul>
+          <li><a href="mailto:mypetbook@gmail.com?Subject=MyPetbook%20Feedback" id="feedback">Send Feedback</a></li>
+          <li><a href="#" id="signout">Sign Out</a></li>
+        </ul>
+      </nav>
+
+      <!-- MENU ONLY FOR SETTINGS PAGES -->
+      <nav id="settings-menu">
+        <ul>
+          <li id="menu-preferences"><a href="settings-preferences.html">Preferences</a></li>
+          <li id="menu-user-profile"><a href="settings-user-profile.html">User Profile</a></li>
+          <li id="menu-terms" class="menu-active-border"><a href="settings-terms.html">Terms</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <main>
+      <div id="wrapper">
+        <!-- CHANGE CONTENT OF EACH PAGE ONLY BELOW THIS POINT -->
+
+        <div id="card" class="box-shadow-all-light">
+          <h2>Terms and Conditions</h2>
+
+          <section>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet magna sit amet libero varius, nec hendrerit lectus tincidunt. Ut tempor et felis eget ullamcorper. Pellentesque dictum, enim ut cursus pharetra, diam enim feugiat leo, et ultrices purus risus a quam. Fusce euismod, nibh eget porttitor sollicitudin, elit nibh mollis dolor, non consectetur diam metus at dui. Integer vitae leo tortor. Pellentesque ullamcorper, nibh nec fermentum egestas, massa augue feugiat ipsum, sit amet finibus tellus justo sit amet nisi. Etiam faucibus, eros ut luctus dictum, odio sem rhoncus nulla, sagittis placerat quam purus vel magna. Phasellus pharetra sapien dui, nec ultricies libero faucibus sed. Integer euismod augue sit amet pulvinar tincidunt. Donec odio lorem, ultrices vitae cursus ut, suscipit hendrerit libero. Cras mollis ipsum at sem tempus, sed elementum dolor euismod. In a ex ac nisi varius lacinia a in erat.
+
+              Maecenas eu fermentum urna. Maecenas elit turpis, rhoncus nec ornare ac, vehicula at erat. Nulla facilisi. Maecenas accumsan felis mi, ac bibendum mi pulvinar quis. Ut vel enim leo. Phasellus condimentum faucibus ex vitae tincidunt. Ut dapibus, nulla id mattis efficitur, ipsum ipsum lacinia massa, nec malesuada justo sapien et sem. Proin congue nisl nec tellus faucibus, nec sodales orci bibendum. In elementum in leo eget vestibulum. Pellentesque suscipit lobortis ante, eu porttitor leo consectetur in.
+
+              Fusce tellus diam, fermentum in est quis, condimentum vulputate orci. Fusce at tincidunt odio. Pellentesque sit amet libero id justo condimentum vehicula. Fusce rhoncus risus ac leo consectetur lacinia. Suspendisse id nibh et dui accumsan efficitur. Vivamus consectetur dolor arcu, ac laoreet tellus consequat sit amet. Nullam ac iaculis tortor, in tincidunt ex. Fusce ut justo nibh. Proin non erat nibh. Cras tempor, diam quis pharetra tempus, nunc felis viverra libero, quis pellentesque felis lacus ac eros. Vestibulum iaculis tincidunt orci, et tempor nulla placerat in. Nunc tristique dolor vehicula consectetur vulputate. Cras euismod efficitur aliquam. Etiam at interdum risus.
+            FINAAALL
+            </p>
+          </section>
+
+        </div>
+
+        <!-- END OF CONTENT CHANGE -->
+      </div>
+    </main>
+
+    <footer>
+      <div id="add-new-button-div"><a href="add-pet.html" class="add-new-button"><img src="icons/icon_plus_button.png" alt="add pet"></a></div>
+
+      <nav class="menu" id="menu-footer">
+        <ul>
+          <li>
+            <a href="my-pets.html">
+              <span class="icon icon-pet"></span>
+              <span class="menu-button-text">My Pets</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <span class="icon icon-calendar"></span>
+              <span class="menu-button-text">Calendar</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings-preferences.html" class="menu-active">
+              <span class="icon icon-settings"></span>
+              <span class="menu-button-text">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+
+
+    <!-- CONTENT ENDS HERE -->
+
+    <!-- <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+
+// COLORS variables
+
+/* GREEN */
+$color-green-gray: #E0F2F1;
+$color-light-green: #A7FFEB; //color 1
+$color-light-aquamarine: #64FFDA; //color 2
+$color-aquamarine: #1DE9B6;
+$color-teal: #009688; //color 4
+$color-dark-green: #004D40; //old teal
+
+/* BLACK / WHITE / GRAY */
+$color-black: #313541;
+$color-dark-gray: #555555;
+$color-medium-gray: rgba(79, 79, 79, 0.26);
+$color-light-black: rgba(0, 0, 0, 0.26);
+$color-gray-brown: #4A4A4A;
+$color-white: #FFFFFF;
+$color-light-gray: #FAFAFA;
+
+/* ALERT / SUCCESS */
+$color-alert-yellow: #E2B90B;
+$color-alert-red: #C91914;
+$color-alert-rust: #A33E29;
+$color-success-green-1: #1DE9B6;
+$color-success-green-2: #00E2CD;
+
+/* GRADIENT BG for launch, login, sign up*/
+$bg-gradient-top: $color-teal;
+$bg-gradient-bottom: $color-light-aquamarine;
+
+/* BG for INFO PETS - vaccinations, alergies, vet, etc*/
+$bg-info-pet: $color-green-gray;
+$heading-info-pet: $color-gray-brown;
+
+/* BUTTONS */
+$bg-confirm-button: $color-teal;
+$text-confirm-button: $color-white;
+$bg-cancel-button: $color-medium-gray;
+$text-cancel-button: $color-light-black;

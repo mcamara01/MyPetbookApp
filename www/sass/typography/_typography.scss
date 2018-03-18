@@ -1,0 +1,38 @@
+
+// TYPOGRAPHY STYLE
+
+// for h1 like page title
+h1 {
+  font-size: 20px;
+  font-weight: 400; //regular
+}
+
+// for h2 like preferences on settings
+h2 {
+  font-size: 16px;
+  font-weight: 500; //medium
+}
+
+// for h3 like pet name on my pets
+h3 {
+  font-size: 14px;
+  font-weight: 500; //medium
+}
+
+// for h3 like email on settings preferences
+h4 {
+  font-size: 14px;
+  font-weight: 400; //regular
+}
+
+p {
+  font-size: 12px;
+  font-weight: 400; //regular
+}
+
+// for subtitle text, eg. pet age on my pets
+.subtitle {
+  font-size: 14px;
+  font-weight: 500; //medium
+  color: $color-dark-gray;
+}

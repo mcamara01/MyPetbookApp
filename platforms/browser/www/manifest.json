@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "MyPetbook",
+  "short_name": "MyPetbook",
+  "version": "com.phonegap.helloworld",
+  "description": "All your pet information in one place.",
+  "author": "MyPetbook Team",
+  "icons": [],
+  "start_url": "index.html"
+}

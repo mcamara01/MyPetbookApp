@@ -1,0 +1,19 @@
+
+// IMPORT ALL LAYOUT FILES INTO THIS ONE
+
+// Pages base structure
+@import "basics";
+@import "menu-footer-base";
+
+// Other pages specific layout
+@import "index";
+@import "my-pets";
+@import "settings";
+@import "general-info";
+@import "vaccination";
+@import "allergies";
+@import "pet-profile";
+
+// NEXT PAGES EXAMPLES
+// @import "general-info";
+// @import "vaccination";
