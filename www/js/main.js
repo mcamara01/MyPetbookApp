@@ -159,11 +159,26 @@ function onDeviceReady() {
       $('#edit-vaccine-expiration').val(saveVaccineDataObj.expiration);
     });
 
+
+    // show a specific menu elipse for each card
+
     $(`#${vaccineId} #menu-elipse`).click(function() {
       $(`#${vaccineId} #elipse-options-nav`).slideToggle("slow");
-      console.log("Dracarys")
     });
-  }); 
+
+    // delete a specific vaccination from vaccine Id
+
+    $(`#${vaccineId} #delete-vaccine`).click(function(event){
+      firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).remove();
+    });
+
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).on('child_removed', function(data){
+      $(`#${vaccineId}`).remove();
+    });
+
+    // firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).on('child_changed', function(data) {});
+
+  }); //end function on child_added
 
   // Edit Vaccine Button from Edit Vaccine Screen
   $('#edit-vaccine-btn').click(function(){
@@ -208,7 +223,6 @@ function onDeviceReady() {
   $('#imgPop').click(function(){
     $(".cards").addClass("display-none");
     $('#new-card').removeClass("display-none");
-    console.log("Muchaha");
 
   });
 
