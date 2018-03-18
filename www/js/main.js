@@ -38,6 +38,7 @@ function onDeviceReady() {
 
   $('#menu-elipse').click(function() {
       $('#elipse-options-nav').slideToggle("slow");
+      console.log("Dracarys")
   });
   
   // VACCINATION PAGE JS
@@ -64,6 +65,9 @@ function onDeviceReady() {
     return vaccineData;
   }
   
+
+
+
   // function storeData(vaccineData){
      
   //   localStorage.setItem("vaccineName", vaccineData.name);
@@ -87,7 +91,7 @@ function onDeviceReady() {
     // var petKey = firebase.database().ref().child('users/pet').push().key;
 
     // code to create a pet id on database
-    var vaccinationKey = firebase.database().ref().child('users/pet/vaccination').push().key;
+    var vaccineId = firebase.database().ref().child('users/pet/vaccination').push().key;
 
     // const petData = {
     //     name: "Tutous",
@@ -95,11 +99,10 @@ function onDeviceReady() {
     //   }
 
     // using the keys previously created to assign vaccination
-    const userKey = "-L7qtGJv81gwWN-2R1NS";
-    const petKey = "-L7qujE6zObeeliWQj5p";
+ 
 
     // path to set the data on Firebase
-    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccinationKey).set(saveVaccineData);
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).set(saveVaccineData);
 
     // users.push(saveVaccineData);
 
@@ -109,10 +112,58 @@ function onDeviceReady() {
 
   const users = firebase.database().ref('/users');
 
+  const userKey = "-L7qtGJv81gwWN-2R1NS";
+  const petKey = "-L7qujE6zObeeliWQj5p";
 
-  // vaccination.on('child_added', function(saveVaccineData){
-  //   const 
-  // }); 
+
+  firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/").on('child_added', function(data){
+    
+    const vaccineId = data.key;
+    const saveVaccineDataObj = data.val();
+
+    $('#load-card').prepend(`<div id="${vaccineId}"><div id="card" class="box-shadow-all-light">
+      <section id="vaccine-card" >
+        <section>
+          <span id="menu-elipse"><a href="#">...</a></span>
+          <!-- options elipse nav -->
+          <nav id="elipse-options-nav" class="box-shadow-bottom-dark display-none">
+            <ul>
+              <li><a href="#" id="edit-vaccine">Edit</a></li>
+              <li><a href="#" id="vaccine-calendar">Add Alert</a></li>
+              <br>
+              <br>
+              <li><a href="#" id="delete-vaccine" class="delete-option">Delete</a></li>
+            </ul>
+          </nav>
+        </section>
+
+        <section>
+          <h4 id="vaccine-name" class=" field-info field-name">${saveVaccineDataObj.name}</h4>
+          <h4 class="field-info">Date Taken</h4>
+          <p id="vaccine-date">${saveVaccineDataObj.date}</p>
+          <h4 class="field-info">Expiration Date</h4>
+          <p id="vaccine-expiration">${saveVaccineDataObj.expiration}</p>
+        </section>
+      </section>
+    </div></div>`)
+
+      // Edit Vaccine Data Stored
+
+    $(`#${vaccineId} #edit-vaccine`).click(function(){
+      $("#edit-card").removeClass("display-none");
+      $("#load-card").addClass("display-none");
+
+      $('#edit-vaccine-id').val(vaccineId);
+      $('#edit-vaccine-name').val(saveVaccineDataObj.name);
+      $('#edit-vaccine-date').val(saveVaccineDataObj.date);  
+      $('#edit-vaccine-expiration').val(saveVaccineDataObj.expiration);
+    });
+
+    $(`#${vaccineId} #menu-elipse`).click(function() {
+      $(`#${vaccineId} #elipse-options-nav`).slideToggle("slow");
+      console.log("Dracarys")
+    });
+  }); 
 
   // Edit Vaccine Button from Edit Vaccine Screen
   $('#edit-vaccine-btn').click(function(){
@@ -121,8 +172,10 @@ function onDeviceReady() {
       date: $('#edit-vaccine-date').val(),
       expiration: $('#edit-vaccine-expiration').val()
     }
-    storeData(editVaccineData);
+    var vaccineId = $('#edit-vaccine-id').val();
 
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).set(editVaccineData);
+    
     window.location.replace("./vaccination.html");
   });
 
@@ -135,16 +188,7 @@ function onDeviceReady() {
 
   });
 
-  // Edit Vaccine Data Stored
-
-  $("#edit-vaccine").click(function(){
-    $("#edit-card").removeClass("display-none");
-    $("#load-card").addClass("display-none");
-    var editVaccineData = getData();
-    $('#edit-vaccine-name').val(editVaccineData.name);
-    $('#edit-vaccine-date').val(editVaccineData.date);  
-    $('#edit-vaccine-expiration').val(editVaccineData.expiration);
-  });
+  
 
   // Delete Vaccine Data Stored
 
