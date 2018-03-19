@@ -691,7 +691,7 @@ body.general-info-page main #menu-elipse a {
 body.general-info-page main nav#elipse-options-nav {
   background-color: #FAFAFA;
   width: 120px;
-  height: 150px;
+  height: 50px;
   position: absolute;
   right: 0;
   z-index: 2;
