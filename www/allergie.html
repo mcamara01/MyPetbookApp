@@ -181,6 +181,7 @@
             
             <section id="delete-allergie-card">
               <section>
+                <input type="hidden" id="delete-allergie-id">
                 <h4 class="field-info field-title">Delete</h4>
                 <h4 id="field-info">Allergic to</h4>
                 <input id="delete-allergie-name" class="field-info" type="text" placeholder="enter allergie name">
@@ -188,14 +189,14 @@
             </section>
               <!-- Save Button -->
               <section>
-                <button id="delete-info" class="button-bg">SAVE</button>
+                <button id="delete-info" class="button-bg">DELETE</button>
 
                 <!-- The popup -->
                 <div id="deleteAllergie" class="popup display-none">
                   <!-- popup content -->
                   <div class="popup-content box-shadow-all-light">
-                    <h2>Edit</h2>
-                    <p>Are you sure you want to submit this information?
+                    <h2>Delete</h2>
+                    <p>Are you sure you want to delete this information?
                     <div class="options-align">
                       <button id="delete-cancel-entry" class="cancel">CANCEL</button>
                       <button id="delete-allergie-btn" class="submit">DELETE</button>
