@@ -668,9 +668,8 @@ body.general-info-page main .button-bg {
   height: 36px;
   border-radius: 2px;
   background-color: #009688;
-  position: absolute;
-  right: 0;
-  margin: 3% 10% 3% 10%;
+  position: relative;
+  margin: 2% 0% 2% 65%;
 }
 body.general-info-page main div#card {
   width: 90%;
