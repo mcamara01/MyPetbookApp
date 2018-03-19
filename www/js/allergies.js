@@ -24,10 +24,6 @@ function onDeviceReady() {
 	// code to create an allergie id on database
 	var allergieId = firebase.database().ref().child('users/pet/allergies').push().key;
 
-	// const allergieData = {
- //   allergicto: "Perfum",
- // 	}
-
   // path to set the user key data to Firebase
   firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergieId).set(saveAllergieData);
 
@@ -123,20 +119,10 @@ function onDeviceReady() {
     window.location.replace("./allergie.html");
   });
 
-  // Edit Allergie Button Submition Action from Edit Allergie Screen
+  // Delete Allergie Button Submition Action from Edit Allergie Screen
   $('#delete-allergie-btn').click(function(){
     window.location.replace("./allergie.html");
   });
-
-  // Delete Allergie Data Stored
-
-  // $("#delete-allergie").click(function(){
-  //   $("#delete-card").removeClass("display-none");
-  //   $("#load-card").addClass("display-none");
-  //   var deleteAllergieData = getData();
-  //   $('#delete-allergie-name').val(deleteAllergieData.allergicto);
-    
-  // });
 
   // Add Allergie from Add Button on Bottom Screen
 

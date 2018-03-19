@@ -84,6 +84,12 @@ function onDeviceReady() {
       </section>
     </div></div>`)
 
+    // Display the menu elipse for each card/vaccineId
+
+    $(`#${vaccineId} #menu-elipse`).click(function() {
+      $(`#${vaccineId} #elipse-options-nav`).slideToggle("slow");
+    });
+
     // Edit a specific Vaccine Data Stored 
 
     $(`#${vaccineId} #edit-vaccine`).click(function(){
@@ -96,10 +102,16 @@ function onDeviceReady() {
       $('#edit-vaccine-expiration').val(saveVaccineDataObj.expiration);
     });
 
-    // Display the menu elipse for each card/vaccineId
+    // Delete card for a specific vaccination entry
 
-    $(`#${vaccineId} #menu-elipse`).click(function() {
-      $(`#${vaccineId} #elipse-options-nav`).slideToggle("slow");
+    $(`#${vaccineId} #delete-vaccine`).click(function(){
+      $("#delete-card").removeClass("display-none");
+      $("#load-card").addClass("display-none");
+
+      $('#delete-vaccine-id').val(vaccineId);
+      $('#delete-vaccine-name').val(saveVaccineDataObj.name);
+      $('#delete-vaccine-date').val(saveVaccineDataObj.date);  
+      $('#delete-vaccine-expiration').val(saveVaccineDataObj.expiration);
     });
 
     // Delete a specific vaccination entry
@@ -111,8 +123,6 @@ function onDeviceReady() {
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).on('child_removed', function(data){
       $(`#${vaccineId}`).remove();
     });
-
-    // firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).on('child_changed', function(data) {});
 
   }); //End of function "on child_added"
 
@@ -131,16 +141,9 @@ function onDeviceReady() {
     window.location.replace("./vaccination.html");
   });
 
-  // Delete Vaccine Data Stored
-
-  $("#delete-vaccine").click(function(){
-    $("#delete-card").removeClass("display-none");
-    $("#load-card").addClass("display-none");
-    var deleteVaccineData = getData();
-    $('#delete-vaccine-name').val(deleteVaccineData.name);
-    $('#delete-vaccine-date').val(deleteVaccineData.date);  
-    $('#delete-vaccine-expiration').val(deleteVaccineData.expiration);
-
+  // Delete Vaccine Button Submition Action from Edit Allergie Screen
+  $('#delete-vaccine-btn').click(function(){
+    window.location.replace("./vaccination.html");
   });
 
 
