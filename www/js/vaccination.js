@@ -4,20 +4,15 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 $(document).ready(onDeviceReady);
 
+var initializeVaccination = false;
 
 function onDeviceReady() {
 
-//----------------------
-// Initialize Firebase
-	var config = {
-    apiKey: "AIzaSyDyRm3-_rS5aGpattuN-cT3VfxhtYirTfk",
-    authDomain: "mypetbookapp-4d393.firebaseapp.com",
-    databaseURL: "https://mypetbookapp-4d393.firebaseio.com",
-    projectId: "mypetbookapp-4d393",
-    storageBucket: "mypetbookapp-4d393.appspot.com",
-    messagingSenderId: "353025423183"
-  };
-  firebase.initializeApp(config);
+  if (initializeVaccination) {
+    return 
+  } else {
+    initializeVaccination = true;
+  }
 
   // Save Vaccine Data Button from New Vaccine Screen
 

@@ -4,20 +4,15 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 $(document).ready(onDeviceReady);
 
+var initializeGenInfo = false;
 
 function onDeviceReady() {
 
-//----------------------
-// Initialize Firebase
-	var config = {
-	    apiKey: "AIzaSyDyRm3-_rS5aGpattuN-cT3VfxhtYirTfk",
-	    authDomain: "mypetbookapp-4d393.firebaseapp.com",
-	    databaseURL: "https://mypetbookapp-4d393.firebaseio.com",
-	    projectId: "mypetbookapp-4d393",
-	    storageBucket: "mypetbookapp-4d393.appspot.com",
-	    messagingSenderId: "353025423183"
-	};
-	firebase.initializeApp(config);
+	if (initializeGenInfo) {
+    return 
+  } else {
+    initializeGenInfo = true;
+  }
 
 	// using the keys previously created to load general info
 	const userKey = "-L7qtGJv81gwWN-2R1NS";
