@@ -48,7 +48,12 @@
     <!-- JS SCRIPT LINKS -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/main.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/general-info.js"></script>
+    <script src="cordova.js"></script>
+
+    <!-- SCRIPT FIREBASE -->
+    <script src="js/firebase.js"></script>
+
      <!-- END JS SCRIPT LINKS -->
 
     <title> General Info | MyPetbook</title>
@@ -93,56 +98,119 @@
           <img class="header-icon" src="icons/icon_general.png" alt="general info icon">
         </section>
 
+        <!-- Load General Info Card -->
+        <div id="load-card" class="cards">
 
-        <div id="card" class="box-shadow-all-light">
+          <div id="card" class="box-shadow-all-light">
 
+            <div id="general-info-card">
+              <section>
+                <span id="menu-elipse"><a href="#">...</a></span>
 
-          <section>
-            <span id="menu-elipse"><a href="#">...</a></span>
+                <!-- options elipse nav -->
+                <nav id="elipse-options-nav" class="box-shadow-bottom-dark display-none">
+                  <ul>
+                    <li><a href="#" id="edit-general-info">Edit</a></li>
+                    <li><a href="#" id="general-info-calendar">Add Alert</a></li>
+                    <br>
+                    <br>
+                    <li><a href="#" id="delete-general-info" class="delete-option">Delete</a></li>
+                  </ul>
+                </nav>
+              </section>
 
-            <!-- options elipse nav -->
-            <nav id="elipse-options-nav" class="box-shadow-bottom-dark display-none">
-              <ul>
-                <li><a href="#" id="edit-general-info">Edit</a></li>
-                <li><a href="#" id="vaccine-calendar">Add Alert</a></li>
-                <br>
-                <br>
-                <li><a href="#" id="delete-general-info" class="delete-option">Delete</a></li>
-              </ul>
-            </nav>
-          </section>
+              <section>
+                <h4 class="field-info">Name</h4>
+                <p id="pet-name" class="field-response"></p>
+              </section>
 
-          <section>
-            <h4 class="field-info">Name</h4>
-            <input id="pet-name" class="field-response" type="text" placeholder="enter pet name">
-<!--             <p id="pet-name" class="field-response">Chester</p>
- -->      </section>
+             <section>
+                <h4 class="field-info">Age</h4>
+                <p id="pet-age" class="field-response">3 years</p>
+              </section>
 
-         <section>
-            <h4 class="field-info">Age</h4>
-            <p id="pet-age" class="field-response">3 years</p>
-          </section>
+              <section>
+                <h4 class="field-info">Gender</h4>
+                <p id="pet-gender" class="field-response">Male</p>
+              </section>
 
-          <section>
-            <h4 class="field-info">Gender</h4>
-            <p id="pet-gender" class="field-response">Male</p>
-          </section>
+              <section>
+                <h4 class="field-info">Color</h4>
+                <p id="pet-colour" class="field-response">Golden</p>
+              </section>
 
-          <section>
-            <h4 class="field-info">Color</h4>
-            <p id="pet-color" class="field-response">Golden</p>
-          </section>
+              <section>
+                <h4 class="field-info">Weight</h4>
+                <p id="pet-weight" class="field-response">5.2kg</p>
+              </section>
 
-          <section>
-            <h4 class="field-info">Weight</h4>
-            <p id="pet-weight" class="field-response">5.2kg</p>
-          </section>
-
+            </div>
 
           </div>
-
-        <!-- END OF CONTENT CHANGE -->
+        
         </div>
+
+
+
+        <!-- Display of Edit General Info Card -->
+
+        <div id="edit-card" class="cards display-none">
+
+          <div id="card" class="box-shadow-all-light">
+
+            <div id="edit-general-info-card">
+              
+              <section>
+                <h4 class="field-info">Name</h4>
+                <input id="edit-pet-name" class="field-response" type="text" placeholder="enter pet name">
+              </section>
+
+             <section>
+                <h4 class="field-info">Age</h4>
+                <input type="text" id="edit-pet-age" class="field-response"> 
+              </section>
+
+              <section>
+                <h4 class="field-info">Gender</h4>
+                <input type="text" id="edit-pet-gender" class="field-response">
+              </section>
+
+              <section>
+                <h4 class="field-info">Color</h4>
+                <input type="text" id="edit-pet-colour" class="field-response">
+              </section>
+
+              <section>
+                <h4 class="field-info">Weight</h4>
+                <input type="text" id="edit-pet-weight" class="field-response">
+              </section>
+
+
+              <!-- Save Button -->
+              <section>
+              <button id="edit-info" class="button-bg">SAVE</button>
+
+              <!-- The popup -->
+              <div id="editGeneralInfo" class="popup display-none">
+                <!-- popup content -->
+                <div class="popup-content box-shadow-all-light">
+                  <h2>Add</h2>
+                  <p>Are you sure you want to add this information?
+                  <div class="options-align">
+                    <button id="cancel-entry" class="cancel">CANCEL</button>
+                    <button id="edit-generalInfo-btn" class="submit">ADD</button>
+                  </div>
+                </div>
+              </div>
+
+            </section>
+
+            </div>
+
+          </div>
+        
+        </div>
+        <!-- END OF CONTENT CHANGE -->
       </div>
     </main>
 
@@ -150,18 +218,6 @@
        <div id="add-new-button-div">
 
           <img id="imgPop" src="icons/icon_plus_button.png" alt="add" class="imgClick">
-        <!-- The popup -->
-          <div id="mypopup" class="popup">
-            <!-- popup content -->
-            <div class="popup-content box-shadow-all-light">
-              <h2>Add</h2>
-              <p>Are you sure you want to add this information?
-              <br />
-              <br />
-              <button class="cancel">CANCEL</button>
-              <button id="save-function" class="submit">ADD</button>
-            </div>
-          </div>
 
         </div>
 

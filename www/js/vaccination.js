@@ -1,10 +1,8 @@
 // VACCINATION PAGE JS
-  //---------------------------------------------------------------------- 
+//---------------------------------------------------------------------- 
 
 document.addEventListener("deviceready", onDeviceReady, false);
 $(document).ready(onDeviceReady);
-
-var initialize = false;
 
 
 function onDeviceReady() {
@@ -12,13 +10,13 @@ function onDeviceReady() {
 //----------------------
 // Initialize Firebase
 	var config = {
-		apiKey: "AIzaSyAaIffXjHEAB-FkkhTUyT4DUHekh2QU1xk",
-		authDomain: "vaccination-5df90.firebaseapp.com",
-		databaseURL: "https://vaccination-5df90.firebaseio.com",
-		projectId: "vaccination-5df90",
-		storageBucket: "vaccination-5df90.appspot.com",
-		messagingSenderId: "1059452936800"
-		};
+    apiKey: "AIzaSyDyRm3-_rS5aGpattuN-cT3VfxhtYirTfk",
+    authDomain: "mypetbookapp-4d393.firebaseapp.com",
+    databaseURL: "https://mypetbookapp-4d393.firebaseio.com",
+    projectId: "mypetbookapp-4d393",
+    storageBucket: "mypetbookapp-4d393.appspot.com",
+    messagingSenderId: "353025423183"
+  };
   firebase.initializeApp(config);
 
   // Save Vaccine Data Button from New Vaccine Screen
@@ -33,10 +31,11 @@ function onDeviceReady() {
   // code to create a user id on database
     // var newUserKey = firebase.database().ref().child('users').push().key;
 
+
     // code to create a pet id on database
     // var petKey = firebase.database().ref().child('users/pet').push().key;
 
-    // code to create a pet id on database
+    // code to create a vaccine id on database
     var vaccineId = firebase.database().ref().child('users/pet/vaccination').push().key;
 
     // const petData = {
@@ -102,7 +101,7 @@ function onDeviceReady() {
       $('#edit-vaccine-expiration').val(saveVaccineDataObj.expiration);
     });
 
-     // Display the menu elipse for each card/vaccineId
+    // Display the menu elipse for each card/vaccineId
 
     $(`#${vaccineId} #menu-elipse`).click(function() {
       $(`#${vaccineId} #elipse-options-nav`).slideToggle("slow");
@@ -136,17 +135,6 @@ function onDeviceReady() {
     
     window.location.replace("./vaccination.html");
   });
-
-  // Delete Vaccine Button Submition Action from Delete Screen
-  $('#delete-vaccine-btn').click(function(vaccineData){
-    localStorage.removeItem("vaccineName", vaccineData.name);
-    localStorage.removeItem("vaccineDate", vaccineData.date);
-    localStorage.removeItem("vaccineExpiration", vaccineData.expiration);
-    window.location.replace("./vaccination.html");
-
-  });
-
-  
 
   // Delete Vaccine Data Stored
 

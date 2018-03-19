@@ -663,6 +663,15 @@ body.general-info-page main .field-response {
   letter-spacing: normal;
   text-align: left;
 }
+body.general-info-page main .button-bg {
+  width: 88px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: #009688;
+  position: absolute;
+  right: 0;
+  margin: 3% 10% 3% 10%;
+}
 body.general-info-page main div#card {
   width: 90%;
   margin-left: auto;
@@ -748,9 +757,6 @@ body.vaccination-page main .header-section {
 body.vaccination-page main .header-icon {
   filter: invert(60%);
 }
-body.vaccination-page main .rectangle {
-  background-color: #E0F2F1;
-}
 body.vaccination-page main .field-info {
   font-weight: 500;
   font-size: 12px;
@@ -833,10 +839,21 @@ body.allergie-page main .field-info {
   letter-spacing: normal;
   text-align: left;
 }
-body.allergie-page main .field-response {
-  font-size: 12px;
-  letter-spacing: normal;
-  text-align: left;
+body.allergie-page main .field-name {
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+body.allergie-page main .field-title {
+  font-size: 14px;
+}
+body.allergie-page main .button-bg {
+  width: 88px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: #009688;
+  position: absolute;
+  right: 0;
+  margin: 3% 10% 3% 10%;
 }
 body.allergie-page main div#card {
   width: 90%;
@@ -846,33 +863,6 @@ body.allergie-page main div#card {
   padding: 5px 15px 15px 15px;
   background-color: #FFFFFF !important;
   border-radius: 2px;
-}
-body.allergie-page main #menu-elipse a {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 50px;
-  height: 0px;
-  color: #555555;
-  cursor: pointer;
-}
-body.allergie-page main nav#elipse-options-nav {
-  background-color: #FAFAFA;
-  width: 120px;
-  height: 150px;
-  position: absolute;
-  right: 0;
-  z-index: 2;
-  margin: 10% 5% 10% 5%;
-}
-body.allergie-page main nav#elipse-options-nav a {
-  color: #313541;
-}
-body.allergie-page main nav#elipse-options-nav a.delete-option {
-  color: #C91914;
-}
-body.allergie-page main nav#elipse-options-nav li {
-  line-height: 40px;
-  padding-left: 10px;
 }
 
 body.pet-profile-page main #pet-main-info {

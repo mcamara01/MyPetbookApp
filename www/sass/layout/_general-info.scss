@@ -76,6 +76,17 @@ background-color: #e0f2f1;
     text-align: left;
   }
 
+  .button-bg {
+    width: 88px;
+    height: 36px;
+    border-radius: 2px;
+    background-color: $color-teal;
+    position: absolute;
+    right: 0;
+    margin: 3% 10% 3% 10%;
+
+  }
+
   div#card {
     width: 90%;
     margin-left: auto;

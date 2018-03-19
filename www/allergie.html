@@ -48,10 +48,15 @@
     <!-- JS SCRIPT LINKS -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/main.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/allergies.js"></script>
+    <script src="cordova.js"></script>
+
+    <!-- SCRIPT FIREBASE -->
+    <script src="js/firebase.js"></script>
+    
      <!-- END JS SCRIPT LINKS -->
 
-    <title> Allergie | MyPetbook</title>
+    <title> Allergies | MyPetbook</title>
 </head>
 
 <body class="allergie-page">
@@ -89,82 +94,116 @@
           </div>
         </div>
 
+        <!-- Main Content -->
         <!-- Allergie Header -->
 
         <section id="main-header">
           <h2 class="header-section">Allergies</h2>
-
           <img class="header-icon" src="icons/icon_allergies.png" alt="general info icon">
         </section>
 
+        <!-- Allergies Card Enter -->
+        
+        <!-- Allergie card Loaded-->
+        <div id="load-card" class="cards">
+          <!-- content created from allergies.js file -->
+        </div>
+        
+        <!-- Display of New allergie card -->
+        <div id="new-card" class="cards display-none" >
+          <div id="card" class="box-shadow-all-light">
+            
+            <section id="new-allergie-card">
+              
+              <section>
+                <h2>New Allergy</h2>
+                <h4 id="field-info">Allergic to</h4>
+                <input id="new-allergie-name" type="text" class="field-info " placeholder="enter allergie">
+              </section>
+            </section>
+            <!-- Save Button -->
+            <section>
+              <button id="save-info" class="button-bg">SAVE</button>
 
-        <div id="card" class="box-shadow-all-light">
+              <!-- The popup -->
+              <div id="addAllergie" class="popup display-none">
+                <!-- popup content -->
+                <div class="popup-content box-shadow-all-light">
+                  <h2>Add</h2>
+                  <p>Are you sure you want to add this information?
+                  <div class="options-align">
+                    <button id="cancel-entry" class="cancel">CANCEL</button>
+                    <button id="save-allergie-btn" class="submit">ADD</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        
+      
+       <!-- Display of Edit allergie card -->
+        <div id="edit-card" class="cards display-none" >
+          <div id="card" class="box-shadow-all-light">
+            
+            <section id="edit-allergie-card">
+              <section>
+                <input type="hidden" id="edit-allergie-id">
+                <h4 class="field-info field-title">Edit</h4>
+                <h4 id="field-info">Allergic to</h4>
+                <input id="edit-allergie-name" class="field-info" type="text" placeholder="enter allergie name">
+              </section>
+            </section>
+              <!-- Save Button -->
+              <section>
+                <button id="edit-info" class="button-bg">SAVE</button>
 
-          <section>
-            <span id="menu-elipse"><a href="#">...</a></span>
-
-            <!-- options elipse nav -->
-            <nav id="elipse-options-nav" class="box-shadow-bottom display-none">
-              <ul>
-                <li><a href="#" id="edit-vaccine">Edit</a></li>
-                <li><a href="#" id="vaccine-calendar">Add Alert</a></li>
-                <br>
-                <br>
-                <li><a href="#" id="delete-vaccine" class="delete-option">Delete</a></li>
-              </ul>
-            </nav>
-
-          <section>
-            <h4 id="field-info">Allergic to</h4>
-            <input type="text" placeholder="enter allergie">
-          </section>
-
+                <!-- The popup -->
+                <div id="editAllergie" class="popup display-none">
+                  <!-- popup content -->
+                  <div class="popup-content box-shadow-all-light">
+                    <h2>Edit</h2>
+                    <p>Are you sure you want to submit this information?
+                    <div class="options-align">
+                      <button id="edit-cancel-entry" class="cancel">CANCEL</button>
+                      <button id="edit-allergie-btn" class="submit">SUBMIT</button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+          </div>
         </div>
 
-       <div id="card" class="box-shadow-all-light">
 
-          <section>
-            <span id="menu-elipse"><a href="#">...</a></span>
+        <!-- Display of DELETE allergie card -->
+        <div id="delete-card" class="cards display-none" >
+          <div id="card" class="box-shadow-all-light">
+            
+            <section id="delete-allergie-card">
+              <section>
+                <h4 class="field-info field-title">Delete</h4>
+                <h4 id="field-info">Allergic to</h4>
+                <input id="delete-allergie-name" class="field-info" type="text" placeholder="enter allergie name">
+              </section>
+            </section>
+              <!-- Save Button -->
+              <section>
+                <button id="delete-info" class="button-bg">SAVE</button>
 
-            <!-- options elipse nav -->
-            <nav id="elipse-options-nav" class="box-shadow-all-light display-none">
-              <ul>
-                <li><a href="#" id="edit-vaccine">Edit</a></li>
-                <li><a href="#" id="vaccine-calendar">Add Alert</a></li>
-                <br>
-                <br>
-                <li><a href="#" id="delete-vaccine" class="delete-option">Delete</a></li>
-              </ul>
-            </nav>
-
-          <section>
-            <h4 id="field-info">Allergic to</h4>
-            <input type="text" placeholder="enter allergie">
-          </section>
-
-        </div>
-
-        <div id="card" class="box-shadow-all-light">
-
-          <section>
-            <span id="menu-elipse"><a href="#">...</a></span>
-
-            <!-- options elipse nav -->
-            <nav id="elipse-options-nav" class="box-shadow-bottom-dark display-none">
-              <ul>
-                <li><a href="#" id="edit-vaccine">Edit</a></li>
-                <li><a href="#" id="vaccine-calendar">Add Alert</a></li>
-                <br>
-                <br>
-                <li><a href="#" id="delete-vaccine" class="delete-option">Delete</a></li>
-              </ul>
-            </nav>
-
-          <section>
-            <h4 id="field-info">Allergic to</h4>
-            <input type="text" placeholder="enter allergie">
-          </section>
-
+                <!-- The popup -->
+                <div id="deleteAllergie" class="popup display-none">
+                  <!-- popup content -->
+                  <div class="popup-content box-shadow-all-light">
+                    <h2>Edit</h2>
+                    <p>Are you sure you want to submit this information?
+                    <div class="options-align">
+                      <button id="delete-cancel-entry" class="cancel">CANCEL</button>
+                      <button id="delete-allergie-btn" class="submit">DELETE</button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+          </div>
         </div>
 
         <!-- END OF CONTENT CHANGE -->
@@ -172,7 +211,9 @@
     </main>
 
     <footer>
-      <div id="add-new-button-div"><a href="index.html" class="add-new-button"><img src="icons/icon_plus_button.png" alt="add"></a></div>
+      <div id="add-new-button-div">
+        <img id="imgPop" src="icons/icon_plus_button.png" alt="add" class="imgClick">
+      </div>
 
       <nav class="menu" id="menu-footer">
         <ul>

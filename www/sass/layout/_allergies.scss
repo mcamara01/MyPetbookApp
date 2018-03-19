@@ -70,10 +70,26 @@ background-color: #e0f2f1;
     text-align: left;
   }
 
-  .field-response{
-    font-size: 12px;
-    letter-spacing: normal;
-    text-align: left;
+  .field-name{
+    padding-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .field-title{
+    font-size: 14px;
+
+  }
+
+
+ .button-bg {
+    width: 88px;
+    height: 36px;
+    border-radius: 2px;
+    background-color: $color-teal;
+    position: absolute;
+    right: 0;
+    margin: 3% 10% 3% 10%;
+
   }
 
   div#card {
@@ -84,40 +100,6 @@ background-color: #e0f2f1;
     padding: 5px 15px 15px 15px;
     background-color: $color-white !important;
     border-radius: 2px;
-  }
-
-  //Elipse Menu on card
-
-   #menu-elipse a{
-    display: flex;
-    justify-content: flex-end;
-    font-size: 50px;
-    height: 0px;
-    color: $color-dark-gray;
-    cursor: pointer;
-  }
-
-  nav#elipse-options-nav {
-    background-color: $color-light-gray;
-    width: 120px;
-    height: 150px;
-    position: absolute;
-    right: 0;
-    z-index: 2;
-    margin: 10% 5% 10% 5%;
-  }
-
-  nav#elipse-options-nav a{
-    color: $color-black;
-  }
-
-  nav#elipse-options-nav a.delete-option{
-    color: $color-alert-red;
-  }
-
-  nav#elipse-options-nav li {
-    line-height: 40px;
-    padding-left: 10px;
   }
 
 }
