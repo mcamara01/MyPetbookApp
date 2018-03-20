@@ -1,4 +1,4 @@
-// VACCINATION PAGE JS
+// MEDICATION PAGE JS
 //---------------------------------------------------------------------- 
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -24,20 +24,9 @@ function onDeviceReady() {
       duration: $('#new-medication-duration').is(':checked')
     }
 
-  // code to create a user id on database
-    // var newUserKey = firebase.database().ref().child('users').push().key;
-
-
-    // code to create a pet id on database
-    // var petKey = firebase.database().ref().child('users/pet').push().key;
-
-    // code to create a vaccine id on database
+    // code to create a medication id on database
     var medicationId = firebase.database().ref().child('users/pet/medications').push().key;
 
-    // const petData = {
-    //     name: "Tutous",
-    //     // vaccination: saveVaccineData
-    //   }
 
     // path to set the data on Firebase
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/medications/" + medicationId).set(saveMedicationData);
@@ -189,7 +178,7 @@ function onDeviceReady() {
   });
 
 
-  // POPUPS FOR SAVE BUTTON ON NEW, EDIT AND DELETE VACCINATION SCREEN
+  // POPUPS FOR SAVE BUTTON ON NEW, EDIT AND DELETE MEDICATION SCREEN
 
   // Save Info popup
 

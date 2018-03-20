@@ -27,13 +27,13 @@ function onDeviceReady() {
   // path to set the user key data to Firebase
   firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/infections/" + infectionId).set(saveInfectionData);
 
-	// return to main allergies page
+	// return to main infection page
   window.location.replace("./infections.html");
 });
 
 	const users = firebase.database().ref('/users');
 
-	// using the keys previously created to assign allergies
+	// using the keys previously created to assign infections
 	const userKey = "-L7qtGJv81gwWN-2R1NS";
 	const petKey = "-L7qujE6zObeeliWQj5p";
 

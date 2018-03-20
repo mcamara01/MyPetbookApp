@@ -48,7 +48,7 @@
     <!-- JS SCRIPT LINKS -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/infection.js"></script>
+    <script src="js/exams.js"></script>
     <script src="cordova.js"></script>
 
     <!-- SCRIPT FIREBASE -->
@@ -56,16 +56,16 @@
     
      <!-- END JS SCRIPT LINKS -->
 
-    <title> Infections | MyPetbook</title>
+    <title> Exams | MyPetbook</title>
 </head>
 
-<body class="infection-page">
+<body class="exams-page">
     <!-- CONTENT STARTS HERE -->
     <header class="box-shadow-bottom-dark">
       <nav id="header-menu">
         <ul>
           <li id="menu-back" class="display-none"><a href="index.html"><img src="icons/icon_goback.png" alt="back"></a></li>
-          <li id="menu-title"><h1>Infections</h1></li>
+          <li id="menu-title"><h1>Exams</h1></li>
           <li id="menu-hamb"><img src="icons/icon_top.png" alt="top options"></li>
         </ul>
       </nav>
@@ -84,7 +84,7 @@
       <div id="wrapper">
         <!-- CHANGE CONTENT OF EACH PAGE ONLY BELOW THIS POINT -->
 
-        <!-- Pet Infection Header -->
+        <!-- Pet Exam Header -->
 
         <div id="pet-main-info" class="box-shadow-bottom-light">
           <div id="icon-pet-photo"></div>
@@ -95,45 +95,48 @@
         </div>
 
         <!-- Main Content -->
-        <!-- Infection Header -->
+        <!-- Exams Header -->
 
         <section id="main-header">
-          <h2 class="header-section">Infections</h2>
-          <img class="header-icon" src="icons/icon_infections.png" alt="general info icon">
+          <h2 class="header-section">Exams</h2>
+          <img class="header-icon" src="icons/icon_exams.png" alt="exam icon">
         </section>
 
-        <!-- Infections Card Enter -->
+        <!-- Exams Card Enter -->
         
-        <!-- Infections Card Loaded-->
+        <!-- Exams Card Loaded-->
         <div id="load-card" class="cards">
-          <!-- content created from infection.js file -->
+          <!-- content created from exams.js file -->
         </div>
         
-        <!-- Display of New Infection card -->
+        <!-- Display of New Exam Card -->
         <div id="new-card" class="cards display-none" >
           <div id="card" class="box-shadow-all-light">
             
-            <section id="new-infection-card">
+            <section id="new-exam-card">
               
               <section>
-                <h2>New Infection</h2>
-                <h4 id="field-info">Type</h4>
-                <input id="new-infection-name" type="text" class="field-info " placeholder="enter infection">
+                <h2>New Exam</h2>
+                <h4 class="field-info">Exam Type</h4>
+                <input id="new-exam-name" type="text" class="field-info " placeholder="enter exam type">
+                <h4 class="field-info">Date Taken</h4>
+                <input id="new-exam-date" type="Date">
               </section>
+
             </section>
             <!-- Save Button -->
             <section>
               <button id="save-info" class="button-bg">SAVE</button>
 
               <!-- The popup -->
-              <div id="addInfection" class="popup display-none">
+              <div id="addExam" class="popup display-none">
                 <!-- popup content -->
                 <div class="popup-content box-shadow-all-light">
                   <h2>Add</h2>
                   <p>Are you sure you want to add this information?
                   <div class="options-align">
                     <button id="cancel-entry" class="cancel">CANCEL</button>
-                    <button id="save-infection-btn" class="submit">ADD</button>
+                    <button id="save-exam-btn" class="submit">ADD</button>
                   </div>
                 </div>
               </div>
@@ -142,16 +145,18 @@
         </div>
         
       
-       <!-- Display of Edit Infection card -->
+       <!-- Display of Edit Exam Card -->
         <div id="edit-card" class="cards display-none" >
           <div id="card" class="box-shadow-all-light">
             
-            <section id="edit-infection-card">
+            <section id="edit-exam-card">
               <section>
-                <input type="hidden" id="edit-infection-id">
-                <h4 class="field-info field-title">Edit Infection</h4>
-                <h4 id="field-info">Type</h4>
-                <input id="edit-infection-name" class="field-info" type="text" placeholder="enter infection name">
+                <input type="hidden" id="edit-exam-id">
+                <h2>Edit Exam</h2>
+                <h4 class="field-info">Exam Type</h4>
+                <input id="edit-exam-name" type="text" class="field-info " placeholder="enter exam type">
+                <h4 class="field-info">Date Taken</h4>
+                <input id="edit-exam-date" type="Date">
               </section>
             </section>
               <!-- Save Button -->
@@ -159,14 +164,14 @@
                 <button id="edit-info" class="button-bg">SAVE</button>
 
                 <!-- The popup -->
-                <div id="editInfection" class="popup display-none">
+                <div id="editExam" class="popup display-none">
                   <!-- popup content -->
                   <div class="popup-content box-shadow-all-light">
                     <h2>Edit</h2>
                     <p>Are you sure you want to submit this information?
                     <div class="options-align">
                       <button id="edit-cancel-entry" class="cancel">CANCEL</button>
-                      <button id="edit-infection-btn" class="submit">SUBMIT</button>
+                      <button id="edit-exam-btn" class="submit">SUBMIT</button>
                     </div>
                   </div>
                 </div>
@@ -175,16 +180,18 @@
         </div>
 
 
-        <!-- Display of DELETE Infections card -->
+        <!-- Display of DELETE Exam Card -->
         <div id="delete-card" class="cards display-none" >
           <div id="card" class="box-shadow-all-light">
             
-            <section id="delete-infection-card">
+            <section id="delete-exam-card">
               <section>
-                <input type="hidden" id="delete-infection-id">
-                <h4 class="field-info field-title">Delete Infection</h4>
-                <h4 id="field-info">Type</h4>
-                <input id="delete-infection-name" class="field-info" type="text" placeholder="enter infection name">
+                <input type="hidden" id="delete-exam-id">
+                <h2>Delete Exam</h2>
+                <h4 class="field-info">Exam Type</h4>
+                <input id="delete-exam-name" type="text" class="field-info " placeholder="enter exam type">
+                <h4 class="field-info">Date Taken</h4>
+                <input id="delete-exam-date" type="Date">
               </section>
             </section>
               <!-- Save Button -->
@@ -192,14 +199,14 @@
                 <button id="delete-info" class="button-bg">DELETE</button>
 
                 <!-- The popup -->
-                <div id="deleteInfection" class="popup display-none">
+                <div id="deleteExam" class="popup display-none">
                   <!-- popup content -->
                   <div class="popup-content box-shadow-all-light">
                     <h2>Delete</h2>
                     <p>Are you sure you want to delete this information?
                     <div class="options-align">
                       <button id="delete-cancel-entry" class="cancel">CANCEL</button>
-                      <button id="delete-infection-btn" class="submit">DELETE</button>
+                      <button id="delete-exam-btn" class="submit">DELETE</button>
                     </div>
                   </div>
                 </div>
