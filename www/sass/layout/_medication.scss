@@ -1,0 +1,109 @@
+
+// SASS MEDICATIONS PAGE FILE
+
+body.medication-page main { //always inform the class of the current page body first
+
+  background-color: $color-green-gray;
+
+  // PET INFO SECTION
+
+  #pet-main-info {
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-template-rows: auto;
+    padding: 5px 15px;
+    align-items: center;
+    height: 65px;
+    background-color: $color-white;
+  }
+
+  #pet-main-info #icon-pet-photo {
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/garfield.png');
+    border-radius: 100px;
+    border: 1px solid $color-light-aquamarine;
+    background-size: cover;
+    display: block;
+    background-position: center; //make img be centered
+  }
+
+  #pet-main-info #pet-intro {
+    margin-left: 10px;
+  }
+
+  #pet-main-info #pet-intro h3, #pet-main-info #pet-intro p {
+    margin: 0;
+    line-height: 20px;
+  }
+
+//-------------------------------------
+  //SECTIONS
+
+  //Vaccination Header
+
+  #main-header{
+    display: grid;
+    grid-template-columns: 2fr 1fr 0fr;
+    grid-template-rows: auto;
+    align-items: center;
+    padding: 5px 0px 0px 15px;
+  }
+
+  .header-section{
+    padding: 15px 20px 0px 20px;
+    font-size: 20px;
+    color: $color-dark-gray;
+  }
+
+  .header-icon{
+    filter: invert(60%);
+  }
+
+//------------------------------------
+  //Vaccination Card
+
+  .field-info{
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: normal;
+    text-align: left;
+  }
+
+  .field-name{
+    padding-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .field-title{
+    font-size: 14px;
+
+  }
+
+  .check-box-field{
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .button-bg {
+    width: 88px;
+    height: 36px;
+    border-radius: 2px;
+    background-color: $color-teal;
+    position: absolute;
+    right: 0;
+    margin: 3% 10% 3% 10%;
+
+  }
+
+   div#card {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 5px 15px 15px 15px;
+    background-color: $color-white !important;
+    border-radius: 2px;
+  }
+}
