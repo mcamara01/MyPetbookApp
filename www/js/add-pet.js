@@ -4,22 +4,17 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 $(document).ready(onDeviceReady);
 
-// var initialize = false;
+var initializeAddPet = false;
 
 
 function onDeviceReady() {
 
-// Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBsbBFWEXqhRka-6F8W0xr7oxRVKmc2sE4",
-    authDomain: "mypetbook-addpet.firebaseapp.com",
-    databaseURL: "https://mypetbook-addpet.firebaseio.com",
-    projectId: "mypetbook-addpet",
-    storageBucket: "mypetbook-addpet.appspot.com",
-    messagingSenderId: "297620227211"
-  };
+  if (initializeAddPet) {
+    return 
+  } else {
+    initializeAddPet = true;
+  }
 
-  firebase.initializeApp(config);
   // // code to create a user id on database
   //   var newUser = firebase.database().ref().child('users').push().key;
   //
@@ -43,7 +38,7 @@ function onDeviceReady() {
 
     // code to create a pet id on database
     var petId = firebase.database().ref().child('users/pets').push().key;
-    console.log("petId: " + petId);
+
 
     //path to set the data on Firebase
     firebase.database().ref('users/' + userKey + "/pets/" +  petId + "/general/").set(savePetData);
@@ -58,7 +53,7 @@ function onDeviceReady() {
   // console.log("users " + firebase.database().ref('/users/pets/'));
 
   // using the keys previously created to assign pet info
-  const userKey = "-L7x4ZVLBHYi3KgQIjWa"; //with pets
+  // const userKey = "-L7x4ZVLBHYi3KgQIjWa"; //with pets
   // const userKey = "-L84JpdyM8n31t3z9x1b"; //without pets
 
   let petDataPath = firebase.database().ref('users/' + userKey + "/pets/");
@@ -129,6 +124,11 @@ function onDeviceReady() {
     </div>
 
     </div></div>`)
+
+
+    $(`#${petId} #icon-info`).click(function(){
+      localStorage.setItem("petId", petId);
+    })
 
     //remove loading div when pets Loaded
     $('#loading').addClass("display-none");
