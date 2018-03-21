@@ -395,7 +395,15 @@ footer nav ul li span.menu-button-text {
   line-height: 10px;
 }
 
-body.index-page main div#no-pet-main-info {
+body.index-page main {
+  /* Slideshow container */
+  /* Next & previous buttons */
+  /* Position the "next button" to the right */
+  /* On hover, add a black background color with a little bit see-through */
+  /* Fading animation */
+  /* On smaller screens, decrease text size */
+}
+body.index-page main div#no-pet-main-info:not(.display-none), body.index-page main div#pet-loading:not(.display-none) {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -403,8 +411,192 @@ body.index-page main div#no-pet-main-info {
   min-height: 350px;
   height: 80vh;
 }
-body.index-page main div#no-pet-main-info h3 {
+body.index-page main div#no-pet-main-info:not(.display-none) h3, body.index-page main div#pet-loading:not(.display-none) h3 {
   margin-top: 30px;
+}
+body.index-page main div#loading:not(.display-none) {
+  position: absolute;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body.index-page main div#loading:not(.display-none) h4 {
+  font-size: 1.5em;
+  color: white;
+}
+body.index-page main section:not(.display-none).add-pet-section {
+  width: 90%;
+  margin: 20px auto 10px auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+body.index-page main section:not(.display-none).add-pet-section div#pet-info-add {
+  text-align: left;
+  padding: 10px 20px 10px 20px;
+}
+body.index-page main section:not(.display-none).add-pet-section div#pet-info-add p {
+  margin-top: 20px;
+  margin-bottom: 2px;
+}
+body.index-page main section:not(.display-none).add-pet-section div#pet-info-add p:first-of-type {
+  margin-top: 10px;
+}
+body.index-page main section:not(.display-none).add-pet-section button#next-step {
+  align-self: flex-end;
+  margin: 12px 0;
+  cursor: pointer;
+}
+body.index-page main section#add-pet-step-2 div#add-photo-div {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 10px;
+}
+body.index-page main section#add-pet-step-2 img#pet-photo {
+  max-width: 50%;
+  margin: 10px auto 10px auto;
+}
+body.index-page main section#add-pet-step-2 input {
+  font-size: .9em;
+  border: none;
+  color: #313541;
+  width: 180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.index-page main section#add-pet-step-2 input:focus {
+  border: none;
+  color: #313541;
+}
+body.index-page main section#add-pet-step-2 button#save-pet-btn {
+  align-self: flex-end;
+  margin: 12px 0;
+  cursor: pointer;
+}
+body.index-page main #pet-main-info {
+  display: grid;
+  grid-template-columns: 40px auto;
+  grid-template-rows: auto;
+  padding: 5px 15px;
+  align-items: center;
+  height: 65px;
+}
+body.index-page main #pet-main-info #icon-pet-photo {
+  width: 40px;
+  height: 40px;
+  background-image: url("../icons/icondog_noborder_small.png");
+  border-radius: 50%;
+  border: 1px solid #64FFDA;
+  background-size: cover;
+  display: block;
+  background-position: center;
+  overflow: hidden;
+}
+body.index-page main #pet-main-info #pet-intro {
+  margin-left: 10px;
+}
+body.index-page main #pet-main-info #pet-intro h3, body.index-page main #pet-main-info #pet-intro p {
+  margin: 0;
+  line-height: 20px;
+}
+body.index-page main #pet-content {
+  padding: 30px 0 10px 0;
+}
+body.index-page main #pet-content #main-pet-photo {
+  min-width: 250px;
+  max-width: 80%;
+  min-height: 40vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("../icons/icon_dog_noborder_large.png");
+  border: 1px solid #64FFDA;
+  border-radius: 10px;
+  background-size: cover;
+  display: block;
+  background-position: center;
+  overflow: hidden;
+}
+body.index-page main #pet-content nav ul {
+  width: 60%;
+  margin: 20px auto 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+body.index-page main #pet-content nav ul li:not(#icon-info) {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  padding-left: 5px;
+  top: 2px;
+}
+body.index-page main #pet-content nav ul li#icon-info {
+  padding-bottom: 2px;
+}
+body.index-page main .mySlides {
+  display: none;
+}
+body.index-page main img {
+  vertical-align: middle;
+}
+body.index-page main .slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+body.index-page main .prev, body.index-page main .next {
+  cursor: pointer;
+  position: absolute;
+  top: 57%;
+  width: auto;
+  padding: 11px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  background-color: rgba(0, 0, 0, 0.26);
+}
+body.index-page main .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+body.index-page main .prev:hover, body.index-page main .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+body.index-page main .fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 300px) {
+  body.index-page main .prev, body.index-page main .next, body.index-page main .text {
+    font-size: 11px;
+  }
 }
 
 body.my-pets-page main #pet-main-info {
@@ -582,6 +774,7 @@ body.settings-user-profile-page main section#user-details-info input {
   background-color: transparent;
   border: none;
   flex: 1 0 80%;
+  color: #313541;
 }
 body.settings-user-profile-page main section#edit-user-info {
   margin-top: 20px;

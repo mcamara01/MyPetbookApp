@@ -3,7 +3,7 @@
 
 // ALL SETTINGS PAGES ============================================
 body.settings-page main { //always inform the class of the current page body first
-  
+
   div#card {
     width: 90%;
     margin-left: auto;
@@ -146,6 +146,7 @@ body.settings-user-profile-page main{
     background-color: transparent;
     border: none;
     flex: 1 0 80%;
+    color: $color-black;
   }
 
   section#edit-user-info {

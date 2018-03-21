@@ -2,7 +2,10 @@
 // SASS INDEX PAGE FILE
 
 body.index-page main { //always inform the class of the current page body first
-  div#no-pet-main-info {
+
+// loading ====================================================================
+
+  div#no-pet-main-info:not(.display-none), div#pet-loading:not(.display-none) {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -13,5 +16,219 @@ body.index-page main { //always inform the class of the current page body first
     h3 {
       margin-top: 30px;
     }
+  }
+
+  div#loading:not(.display-none) {
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h4 {
+      font-size: 1.5em;
+      color: white;
+    }
+  }
+
+// adding pet =================================================
+  section:not(.display-none).add-pet-section {
+    width: 90%;
+    margin: 20px auto 10px auto;
+    display: flex;
+    flex-flow: column nowrap;
+
+    div#pet-info-add {
+      text-align: left;
+      padding: 10px 20px 10px 20px;
+
+      p {
+        margin-top: 20px;
+        margin-bottom: 2px;
+
+        &:first-of-type {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    button#next-step {
+      align-self: flex-end;
+      margin: 12px 0;
+      cursor: pointer;
+    }
+  }
+
+  section#add-pet-step-2 {
+
+    div#add-photo-div {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      padding: 10px;
+    }
+
+    img#pet-photo {
+      max-width: 50%;
+      margin: 10px auto 10px auto;
+    }
+
+    input {
+      font-size: .9em;
+      border: none;
+      color: $color-black;
+      width: 180px;
+      margin-left: auto;
+      margin-right: auto;
+
+      &:focus {
+        border: none;
+        color: $color-black;
+      }
+    }
+
+    button#save-pet-btn {
+      align-self: flex-end;
+      margin: 12px 0;
+      cursor: pointer;
+    }
+  }
+
+// displaying PETS
+  #pet-main-info {
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-template-rows: auto;
+    padding: 5px 15px;
+    align-items: center;
+    height: 65px;
+  }
+
+  #pet-main-info #icon-pet-photo {
+    width: 40px;
+    height: 40px;
+    background-image: url('../icons/icondog_noborder_small.png');
+    border-radius: 50%;
+    border: 1px solid $color-light-aquamarine;
+    background-size: cover;
+    display: block;
+    background-position: center; //make img be centered
+    overflow: hidden;
+  }
+
+  #pet-main-info #pet-intro {
+    margin-left: 10px;
+  }
+
+  #pet-main-info #pet-intro h3, #pet-main-info #pet-intro p {
+    margin: 0;
+    line-height: 20px;
+  }
+
+  #pet-content {
+    padding: 30px 0 10px 0;
+  }
+
+  #pet-content #main-pet-photo {
+    min-width: 250px;
+    max-width: 80%;
+    min-height: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('../icons/icon_dog_noborder_large.png');
+    border: 1px solid $color-light-aquamarine;
+    border-radius: 10px;
+    background-size: cover;
+    display: block;
+    background-position: center; //make img be centered
+    overflow: hidden;
+  }
+
+  #pet-content nav ul {
+    width: 60%;
+    margin: 20px auto 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  #pet-content nav ul li:not(#icon-info) {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    padding-left: 5px;
+    top: 2px;
+  }
+
+  #pet-content nav ul li#icon-info {
+    padding-bottom: 2px;
+  }
+
+
+
+  // SLIDER =======================================
+  .mySlides {display: none}
+  img {vertical-align: middle;}
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 57%;
+    width: auto;
+    padding: 11px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    background-color: $color-light-black;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
   }
 }

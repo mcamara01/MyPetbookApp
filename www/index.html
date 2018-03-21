@@ -47,9 +47,13 @@
 
     <!-- JS SCRIPT LINKS -->
     <script src="js/jquery-3.3.1.min.js" ></script>
-
     <script src="js/main.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/add-pet.js"></script>
+    <script src="cordova.js"></script>
+
+    <!-- SCRIPT FIREBASE -->
+    <script src="js/firebase.js"></script>
+
      <!-- END JS SCRIPT LINKS -->
 
     <title>My Pets | MyPetbook</title>
@@ -77,25 +81,101 @@
     </header>
 
     <main>
-      <div id="wrapper">
-        <!-- CHANGE CONTENT OF EACH PAGE ONLY BELOW THIS POINT -->
+      <!-- loading div -->
+      <div id="loading">
+        <h4>Loading...</h4>
+      </div>
 
-        <div id="no-pet-main-info">
-          <a href="add-pet.html"><img src="icons/img_placeholder.png" alt="No pets"></a>
+      <div id="wrapper">
+
+        <!-- Initial pet img -->
+        <div id="pet-loading" class="cards">
+          <img src="icons/pet_pic.png" alt="Loading pets">
+        </div>
+
+        <!-- No pets div -->
+        <div id="no-pet-main-info" class="cards display-none">
+          <img src="icons/pet_pic.png" alt="No pets" class="add-new-button">
           <p>Click on the add button to add a new pet</p>
         </div>
 
-        <!-- END OF CONTENT CHANGE -->
+        <div id="load-pet" class="cards pet-div ">
+          <!-- USER PETS INFO -->
+        </div>
+
+        <!-- Display of Add new pet card -->
+        <div id="new-card" class="cards display-none" >
+          <div id="card">
+
+            <section id="new-pet-card" >
+
+              <!-- STEP 1 - Info -->
+              <section id="add-pet-step-1" class="add-pet-section">
+
+                <div id="pet-info-add" class="box-shadow-all-light">
+                  <p class="field-info">Pet name</p>
+                  <input id="new-pet-name" class="field-info " type="text" required>
+                  <p class="field-info">Date of birth</p>
+                  <input id="new-pet-dob" type="Date" required>
+                  <p class="field-info">Gender</p>
+                  <input id="new-pet-gender" type="text" required>
+                  <p class="field-info">Color</p>
+                  <input id="new-pet-color" type="text" required>
+                  <p class="field-info">Weight</p>
+                  <input id="new-pet-weight" type="number" required>kg
+                </div>
+
+                <!-- Next Button -->
+                <button id="next-step" class="button-text">Next</button>
+
+                <div id="add-pet-slider-1" class="add-pet-slider">
+                  <span class="dot active"></span>
+                  <span class="dot"></span>
+                </div>
+              </section>
+
+
+              <!-- STEP 2 - Photo -->
+              <section id="add-pet-step-2" class="display-none add-pet-section">
+                <h4 class="field-info">Upload your pet picture</h4>
+
+                <div id="add-photo-div" class="box-shadow-all-light">
+                  <img id="pet-photo" src="icons/pet_pic.png" alt="Pet default photo">
+                  <input type='file' onchange="readURL(this);" />
+
+                  <p>You can add a photo later.</p>
+                </div>
+
+                <!-- Save Button -->
+                <button id="save-pet-btn" class="button-bg">Save</button>
+
+                <div id="add-pet-slider-1" class="add-pet-slider">
+                  <span class="dot"></span>
+                  <span class="dot active"></span>
+                </div>
+              </section>
+
+            </section>
+
+          </div>
+        </div>
+
+
+
+        </div><!-- END OF CONTENT CHANGE WRAPPER -->
+
       </div>
     </main>
 
     <footer>
-      <div id="add-new-button-div"><a href="add-pet.html" class="add-new-button"><img src="icons/icon_plus_button.png" alt="add"></a></div>
+      <div id="add-new-button-div">
+        <img class="add-new-button" src="icons/icon_plus_button.png" alt="Add" class="imgClick">
+      </div>
 
       <nav class="menu" id="menu-footer">
         <ul>
           <li>
-            <a href="my-pets.html" class="menu-active">
+            <a href="index.html" class="menu-active">
               <span class="icon icon-pet"></span>
               <span class="menu-button-text">My Pets</span>
             </a>
