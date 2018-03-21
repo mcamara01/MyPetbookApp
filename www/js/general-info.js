@@ -14,21 +14,17 @@ function onDeviceReady() {
     initializeGenInfo = true;
   }
 
-  	
-
-	// using the keys previously created to load general info
-	// const userKey = "-L7qtGJv81gwWN-2R1NS";
-	const petKey = "-L7qujE6zObeeliWQj5p";
 
 	firebase.database().ref('users/' + userKey + "/pet/" +  petKey).on('child_added', function(data){
-		if (data.key != "general-info") {
+		console.log(data.key);
+		if (data.key != "general") {
 			return;
 		}
 		
 		const generalInfoDataObj = data.val();
 		
 		$('#pet-name').text(generalInfoDataObj.name);
-		$('#pet-age').text(generalInfoDataObj.age);
+		$('#pet-dob').text(generalInfoDataObj.dob);
 		$('#pet-gender').text(generalInfoDataObj.gender);
 		$('#pet-colour').text(generalInfoDataObj.colour);
 		$('#pet-weight').text(generalInfoDataObj.weight);
@@ -38,7 +34,7 @@ function onDeviceReady() {
 
 		$('#edit-general-info').click(function(){
 			$('#edit-pet-name').val(generalInfoDataObj.name);
-			$('#edit-pet-age').val(generalInfoDataObj.age);
+			$('#edit-pet-dob').val(generalInfoDataObj.dob);
 			$('#edit-pet-gender').val(generalInfoDataObj.gender);
 			$('#edit-pet-colour').val(generalInfoDataObj.colour);
 			$('#edit-pet-weight').val(generalInfoDataObj.weight);
@@ -55,21 +51,18 @@ function onDeviceReady() {
 
     const users = firebase.database().ref('/users');
 
-
-
-
 	// Edit Allergie Button Submition Action from Edit Allergie Screen
 	$('#edit-generalInfo-btn').click(function(){
 		var editGeneralInfoData = {
 			name: $('#edit-pet-name').val(),
-	        age: $('#edit-pet-age').val(),
+	        dob: $('#edit-pet-dob').val(),
 	        gender: $('#edit-pet-gender').val(),
 	        colour: $('#edit-pet-colour').val(),
 	        weight: $('#edit-pet-weight').val(),		
 		}
 
 	  	// path to set the edited general info data to Firebase
-	    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/general-info/").set(editGeneralInfoData);
+	    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/general/").set(editGeneralInfoData);
 
 	  	// return to main vaccination page
 	    window.location.replace("./general-info.html");

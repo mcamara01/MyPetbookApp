@@ -15,6 +15,9 @@ function onDeviceReady() {
     initializeAddPet = true;
   }
 
+ //Get the user key from LocalStorage if there's one 
+  userKey = localStorage.getItem('userKey');
+
   // // code to create a user id on database
   //   var newUser = firebase.database().ref().child('users').push().key;
   //
@@ -37,11 +40,11 @@ function onDeviceReady() {
     };
 
     // code to create a pet id on database
-    var petId = firebase.database().ref().child('users/pets').push().key;
+    var petKey = firebase.database().ref().child('users/pet').push().key;
 
 
     //path to set the data on Firebase
-    firebase.database().ref('users/' + userKey + "/pets/" +  petId + "/general/").set(savePetData);
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/general/").set(savePetData);
 
     //return to main vaccination page after adding pet
     window.location.replace("./index.html");
@@ -56,7 +59,7 @@ function onDeviceReady() {
   // const userKey = "-L7x4ZVLBHYi3KgQIjWa"; //with pets
   // const userKey = "-L84JpdyM8n31t3z9x1b"; //without pets
 
-  let petDataPath = firebase.database().ref('users/' + userKey + "/pets/");
+  let petDataPath = firebase.database().ref('users/' + userKey + "/pet/");
 
   // If there are no pets ==================================================================
   petDataPath.on('value', function(e){
@@ -79,11 +82,11 @@ function onDeviceReady() {
   petDataPath.on('child_added', function(data) {
 
     // console.log("has pets data " , data);
-    const petId = data.key;
+    const petKey = data.key;
     const savePetDataObj = data.val();
 
     // Show pet added card on HTML ===================================================
-    $('#load-pet').prepend(`<div class="slideshow-container"><div id="${petId}" class="mySlides fade"><div id="card" class="pet-info">
+    $('#load-pet').prepend(`<div class="slideshow-container"><div id="${petKey}" class="mySlides fade"><div id="card" class="pet-info">
         <!-- Pet Header -->
         <section id="pet-main-info">
           <div id="icon-pet-photo"></div>
@@ -125,9 +128,9 @@ function onDeviceReady() {
 
     </div></div>`)
 
-
-    $(`#${petId} #icon-info`).click(function(){
-      localStorage.setItem("petId", petId);
+    // set petId into local Storage
+    $(`#${petKey} #icon-info`).click(function(){
+      localStorage.setItem("petKey", petKey);
     })
 
     //remove loading div when pets Loaded
@@ -244,12 +247,12 @@ function onDeviceReady() {
     // Delete pet =====================================================================
     $(`#delete-pet-btn`).click(function(event) {
       console.log("inside delete from db");
-      firebase.database().ref('users/' + userKey + "/pets/" +  petId).remove();
+      firebase.database().ref('users/' + userKey + "/pet/" +  petKey).remove();
     });
 
-    firebase.database().ref('users/' + userKey + "/pets/" +  petId).on('child_removed', function(data) {
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey).on('child_removed', function(data) {
       console.log("inside delete from html");
-      $(`#${petId}`).remove();
+      $(`#${petKey}`).remove();
       $('#deletePet-popup').addClass("display-none");
     });
 

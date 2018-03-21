@@ -23,20 +23,8 @@ function onDeviceReady() {
       expiration: $('#new-vaccine-expiration').val()
     }
 
-  // code to create a user id on database
-    // var newUserKey = firebase.database().ref().child('users').push().key;
-
-
-    // code to create a pet id on database
-    // var petKey = firebase.database().ref().child('users/pet').push().key;
-
     // code to create a vaccine id on database
     var vaccineId = firebase.database().ref().child('users/pet/vaccination').push().key;
-
-    // const petData = {
-    //     name: "Tutous",
-    //     // vaccination: saveVaccineData
-    //   }
 
     // path to set the data on Firebase
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).set(saveVaccineData);
@@ -46,10 +34,6 @@ function onDeviceReady() {
   });
 
   const users = firebase.database().ref('/users');
-
-  // using the keys previously created to assign vaccination
-  
-  const petKey = "-L7qujE6zObeeliWQj5p";
 
   // FUNCTION CHILD ADDED - Add vaccine related to a pet into Firebase
 

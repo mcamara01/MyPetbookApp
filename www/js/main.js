@@ -7,7 +7,11 @@ $(document).ready(onDeviceReady);
 var initialize = false;
 
 //Get the user key from LocalStorage if there's one 
-var userKey = localStorage.getItem('userKey');
+var userKey;
+
+//Get the petId from LocalStorage if there's one 
+var petKey;
+
 
   
 function onDeviceReady() {
@@ -17,6 +21,11 @@ function onDeviceReady() {
     initialize = true;
   }
 
+  //Get the user key from LocalStorage if there's one 
+  userKey = localStorage.getItem('userKey');
+
+  //Get the petId from LocalStorage if there's one 
+  petKey = localStorage.getItem('petKey');
   //----------------------
   // Initialize Firebase
   var config = {
