@@ -14,8 +14,10 @@ function onDeviceReady() {
     initializeGenInfo = true;
   }
 
+  	
+
 	// using the keys previously created to load general info
-	const userKey = "-L7qtGJv81gwWN-2R1NS";
+	// const userKey = "-L7qtGJv81gwWN-2R1NS";
 	const petKey = "-L7qujE6zObeeliWQj5p";
 
 	firebase.database().ref('users/' + userKey + "/pet/" +  petKey).on('child_added', function(data){

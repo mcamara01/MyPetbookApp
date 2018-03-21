@@ -48,7 +48,7 @@ function onDeviceReady() {
   const users = firebase.database().ref('/users');
 
   // using the keys previously created to assign vaccination
-  const userKey = "-L7qtGJv81gwWN-2R1NS";
+  
   const petKey = "-L7qujE6zObeeliWQj5p";
 
   // FUNCTION CHILD ADDED - Add vaccine related to a pet into Firebase

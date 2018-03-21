@@ -6,7 +6,10 @@ $(document).ready(onDeviceReady);
 
 var initialize = false;
 
+//Get the user key from LocalStorage if there's one 
+var userKey = localStorage.getItem('userKey');
 
+  
 function onDeviceReady() {
   if (initialize) {
     return 
