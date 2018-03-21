@@ -48,6 +48,8 @@ function onDeviceReady() {
   $('#menu-elipse').click(function() {
       $('#elipse-options-nav').slideToggle("slow");
   });
+
+  
   
 };
 
