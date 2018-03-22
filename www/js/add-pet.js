@@ -1,4 +1,4 @@
-// VACCINATION PAGE JS
+// ADD PET PAGE JS
   //----------------------------------------------------------------------
 
 document.addEventListener("deviceready", onDeviceReady, false);
