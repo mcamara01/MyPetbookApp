@@ -1365,4 +1365,102 @@ body.exams-page main div#card {
   border-radius: 2px;
 }
 
+body.notes-page main #card1 {
+  width: 100%;
+  min-height: 50px;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+  border-width: 0.5px;
+  border-image-source: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.02) 95%, rgba(0, 0, 0, 0.04));
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 40px auto;
+  padding: 5px 15px;
+  align-items: center;
+}
+body.notes-page main #card2, body.notes-page main #card3 {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 5px 15px 15px 15px;
+  background-color: #FFFFFF !important;
+  border-radius: 2px;
+}
+body.notes-page main #card1 #icon-pet-photo {
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/garfield.png");
+  border-radius: 100px;
+  border: 1px solid lime;
+  background-size: cover;
+  display: block;
+  background-position: center;
+}
+body.notes-page main #card1 #pet-intro {
+  margin-left: 20px;
+}
+body.notes-page main #card1 #pet-intro h3, body.notes-page main #pet-main-info #pet-intro p {
+  margin: 0;
+  line-height: 20px;
+}
+body.notes-page main #notes {
+  font-family: Roboto;
+  font-size: 20px;
+  line-height: normal;
+  color: #4a4a4a;
+  margin-left: 50px;
+  padding-top: 30px;
+}
+body.notes-page main #lowerBody {
+  background-color: #e0f2f1;
+  height: 100vh;
+}
+body.notes-page main #firstLower {
+  background-color: #e0f2f1;
+  height: 100vh;
+}
+body.notes-page main #noteIcon {
+  max-width: 100%;
+  height: auto;
+  margin-top: -50px;
+  padding-left: 70vw;
+  filter: invert(60%);
+}
+body.notes-page main input, body.notes-page main textarea {
+  color: gray;
+  background-color: transparent;
+  border: navy;
+  margin-top: 5px;
+  padding-left: 5px;
+}
+body.notes-page main #date {
+  margin-top: -15px;
+  margin-left: 55vw;
+}
+body.notes-page main #deleteIcon {
+  padding-left: 10px;
+  display: block;
+}
+body.notes-page main #editIcon {
+  margin-top: -15px;
+  margin-left: 70vw;
+  display: block;
+}
+body.notes-page main .display {
+  display: block;
+}
+body.notes-page main .none {
+  display: none;
+}
+body.notes-page main #saveNote .button-bg {
+  width: 88px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: #009688;
+  position: absolute;
+  right: 0;
+  margin: 3% 10% 3% 10%;
+}
+
 /*# sourceMappingURL=style.css.map */
