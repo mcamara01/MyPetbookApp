@@ -2,10 +2,10 @@
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>MyPetbook</name>
     <description>
-      All your pet information in one place.
+      All your pets information in one place.
     </description>
-    <author email="contact@mypetbook.com" href="http://mypetbook.com">
-        MyPetbook Team
+    <author email="mypetbookapp@gmail.com" href="http://mypetbook.com">
+        Cristiane Silva, Fernanda Teixeira, Mana Koike, Michele Camara and Samaneh Hoseini.
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
