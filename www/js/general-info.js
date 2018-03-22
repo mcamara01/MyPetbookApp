@@ -27,7 +27,7 @@ function onDeviceReady() {
 		$('#pet-name').text(generalInfoDataObj.name);
 		$('#pet-dob').text(generalInfoDataObj.dob);
 		$('#pet-gender').text(generalInfoDataObj.gender);
-		$('#pet-colour').text(generalInfoDataObj.colour);
+		$('#pet-color').text(generalInfoDataObj.color);
 		$('#pet-weight').text(generalInfoDataObj.weight);
 
 		
@@ -41,7 +41,7 @@ function onDeviceReady() {
 			$('#edit-pet-name').val(generalInfoDataObj.name);
 			$('#edit-pet-dob').val(generalInfoDataObj.dob);
 			$('#edit-pet-gender').val(generalInfoDataObj.gender);
-			$('#edit-pet-colour').val(generalInfoDataObj.colour);
+			$('#edit-pet-color').val(generalInfoDataObj.color);
 			$('#edit-pet-weight').val(generalInfoDataObj.weight);
 
 		});
@@ -67,8 +67,9 @@ function onDeviceReady() {
 			name: $('#edit-pet-name').val(),
 	        dob: $('#edit-pet-dob').val(),
 	        gender: $('#edit-pet-gender').val(),
-	        colour: $('#edit-pet-colour').val(),
-	        weight: $('#edit-pet-weight').val(),		
+	        color: $('#edit-pet-color').val(),
+	        weight: $('#edit-pet-weight').val(),
+	        image: imageSrc,
 		}
 
 	  	// path to set the edited general info data to Firebase
