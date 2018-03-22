@@ -253,6 +253,8 @@ function onDeviceReady() {
     $(`#delete-pet-btn`).click(function(event) {
       console.log("inside delete from db");
       firebase.database().ref('users/' + userKey + "/pet/" +  petKey).remove();
+      window.location.replace("./index.html");
+
     });
 
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey).on('child_removed', function(data) {
