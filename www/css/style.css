@@ -1365,18 +1365,31 @@ body.exams-page main div#card {
   border-radius: 2px;
 }
 
-body.notes-page main #card1 {
-  width: 100%;
-  min-height: 50px;
-  border-radius: 2px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
-  border-width: 0.5px;
-  border-image-source: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.02) 95%, rgba(0, 0, 0, 0.04));
-  margin-top: 10px;
+body.notes-page main #pet-main-info {
   display: grid;
   grid-template-columns: 40px auto;
+  grid-template-rows: auto;
   padding: 5px 15px;
   align-items: center;
+  height: 65px;
+  background-color: white;
+}
+body.notes-page main #pet-main-info #icon-pet-photo {
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/garfield.png");
+  border-radius: 100px;
+  border: 1px solid #64FFDA;
+  background-size: cover;
+  display: block;
+  background-position: center;
+}
+body.notes-page main #pet-main-info #pet-intro {
+  margin-left: 10px;
+}
+body.notes-page main #pet-main-info #pet-intro h3, body.notes-page main #pet-main-info #pet-intro p {
+  margin: 0;
+  line-height: 20px;
 }
 body.notes-page main #card2, body.notes-page main #card3 {
   width: 90%;
@@ -1386,23 +1399,6 @@ body.notes-page main #card2, body.notes-page main #card3 {
   padding: 5px 15px 15px 15px;
   background-color: #FFFFFF !important;
   border-radius: 2px;
-}
-body.notes-page main #card1 #icon-pet-photo {
-  width: 50px;
-  height: 50px;
-  background-image: url("../img/garfield.png");
-  border-radius: 100px;
-  border: 1px solid lime;
-  background-size: cover;
-  display: block;
-  background-position: center;
-}
-body.notes-page main #card1 #pet-intro {
-  margin-left: 20px;
-}
-body.notes-page main #card1 #pet-intro h3, body.notes-page main #pet-main-info #pet-intro p {
-  margin: 0;
-  line-height: 20px;
 }
 body.notes-page main #notes {
   font-family: Roboto;
@@ -1433,19 +1429,6 @@ body.notes-page main input, body.notes-page main textarea {
   border: navy;
   margin-top: 5px;
   padding-left: 5px;
-}
-body.notes-page main #date {
-  margin-top: -15px;
-  margin-left: 55vw;
-}
-body.notes-page main #deleteIcon {
-  padding-left: 10px;
-  display: block;
-}
-body.notes-page main #editIcon {
-  margin-top: -15px;
-  margin-left: 70vw;
-  display: block;
 }
 body.notes-page main .display {
   display: block;

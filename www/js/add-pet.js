@@ -1,4 +1,4 @@
-// VACCINATION PAGE JS
+// ADD PET PAGE JS
   //----------------------------------------------------------------------
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -101,7 +101,7 @@ function onDeviceReady() {
           <nav>
             <ul>
               <li id="delete-pet"><img src="icons/icon_trash.png" alt="delete pet" /></li>
-              <li id="icon-info"><a href="pet-profile.html"><img src="icons/icon_info.png" alt="view pet info"></a></li>
+              <li id="icon-info"><a href="pet-profile.html"><img src="icons/icon_view.png" alt="view pet info"></a></li>
             </ul>
           </nav>
         </section>
@@ -128,10 +128,7 @@ function onDeviceReady() {
 
     </div></div>`)
 
-    // set petId into local Storage
-    $(`#${petKey} #icon-info`).click(function(){
-      localStorage.setItem("petKey", petKey);
-    })
+    
 
     //remove loading div when pets Loaded
     $('#loading').addClass("display-none");
@@ -148,6 +145,13 @@ function onDeviceReady() {
     var dobAdded = savePetDataObj.general.dob;
     var petAge = getAge(dobAdded);
     // console.log(getAge(dobAdded));
+
+    // set petId into local Storage
+    $(`#${petKey} #icon-info`).click(function(){
+      localStorage.setItem("petKey", petKey);
+      localStorage.setItem("petAge", petAge);
+      localStorage.setItem("petName", savePetDataObj.general.name);
+    })
 
     //show age calculated on html
     $('#pet-age').html(petAge);

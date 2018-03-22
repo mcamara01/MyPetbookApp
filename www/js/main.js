@@ -12,6 +12,9 @@ var userKey;
 //Get the petId from LocalStorage if there's one 
 var petKey;
 
+var petName;
+
+var petAge;
 
   
 function onDeviceReady() {
@@ -26,6 +29,15 @@ function onDeviceReady() {
 
   //Get the petId from LocalStorage if there's one 
   petKey = localStorage.getItem('petKey');
+
+  //Get the petId from LocalStorage if there's one 
+  petName = localStorage.getItem('petName');
+  $('#header-pet-name').html(petName);
+ 
+  //Get the petId from LocalStorage if there's one 
+  petAge= localStorage.getItem('petAge');
+  $('#pet-age').html(petAge);
+
   //----------------------
   // Initialize Firebase
   var config = {
@@ -49,8 +61,10 @@ function onDeviceReady() {
       $('#elipse-options-nav').slideToggle("slow");
   });
 
+  // --------------------------
+
   
   
 };
-
+  
   
