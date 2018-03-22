@@ -16,6 +16,8 @@ var petName;
 
 var petAge;
 
+var imageSrc;
+
   
 function onDeviceReady() {
   if (initialize) {
@@ -37,6 +39,10 @@ function onDeviceReady() {
   //Get the petId from LocalStorage if there's one 
   petAge= localStorage.getItem('petAge');
   $('#pet-age').html(petAge);
+
+  imageSrc = localStorage.getItem('imageSrc');
+  $('#icon-pet-photo').css('background-image', 'url(' + imageSrc + ')');
+
 
   //----------------------
   // Initialize Firebase

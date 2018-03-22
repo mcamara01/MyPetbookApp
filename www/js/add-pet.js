@@ -151,6 +151,7 @@ function onDeviceReady() {
       localStorage.setItem("petKey", petKey);
       localStorage.setItem("petAge", petAge);
       localStorage.setItem("petName", savePetDataObj.general.name);
+      localStorage.setItem("imageSrc", savePetDataObj.general.image);
     })
 
     //show age calculated on html
