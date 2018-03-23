@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <!-- BROWSER ICON LINK -->
+    <link rel="icon" href="icons/icon.png" type="image/png">
+
+    <!-- LINK TO STYLESHEET -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <!-- END LINK TO STYLESHEET -->
+
+    <!-- JS SCRIPT LINKS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+     <!-- END JS SCRIPT LINKS -->
+
+    <title>Create Account | MyPetbook</title>
+</head>
+
+<body class="createAccount-page">
+    <!-- CONTENT STARTS HERE -->
+    
+      <!-- INSERT HERE THE TOP OPTIONS WINDOW -->
+      <nav id="top-options-nav" class="box-shadow display-none">
+        <ul>
+          <li><a href="mailto:contact@mypetbook.com?Subject=MyPetbook%20Feedback" id="feedback">Send Feedback</a></li>
+          <li><a href="#" id="signout">Sign Out</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <main>
+      <div id="wrapper">
+        <!-- CHANGE CONTENT OF EACH PAGE ONLY BELOW THIS POINT -->
+    <script src="js/emailAuth.js"></script>
+    <!-- <script src="cordova.js"></script> -->
+    <!-- <script src="js/loginStorage.js"></script> -->
+    <!-- <script src="js/firebase.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-messaging.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.6.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.2/firebaseui.css" />
+      
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyDyRm3-_rS5aGpattuN-cT3VfxhtYirTfk",
+          authDomain: "mypetbookapp-4d393.firebaseapp.com",
+          databaseURL: "https://mypetbookapp-4d393.firebaseio.com",
+          projectId: "mypetbookapp-4d393",
+          storageBucket: "mypetbookapp-4d393.appspot.com",
+          messagingSenderId: "353025423183"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <!-- sign in using firebase UI  -->
+ 
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: 'index.html',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          //firebase.auth.EmailAuthProvider.PROVIDER_ID,
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID
+          
+        ],
+        // Terms of service url.
+        tosUrl: '<your-tos-url>'
+      };
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+    
+  </head>
+
+  <body>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+    
+    <img id= "logo" src="img/logo.png">
+    <div id="emailauth">
+      <h2>Sign up</h2>
+      <div id="container" class="form-group mx-sm-3 mb-2">
+        
+        <input id="txtEmail" type="email" placeholder="Email" class="form-control form-control-sm"><br/>
+
+        <input id="pass1" type="password" placeholder="Password" class="form-control"><br/>
+        
+        <input id="pass2" type="password" placeholder="Confirm Password" class="form-control"><br/>
+        
+        <input id="username" type="text" placeholder="Username" class="form-control"><br/>
+       
+        <!--</form>-->
+        <div id="message"></div>
+    </div>
+
+      <p id="terms"><a href="#">I agree with the Terms and Condition</a><!-- <input id="checkBox" type="checkbox" onsubmit="checkbox()"> --></p>
+    </div>
+
+    <div id="firebaseui-auth-container"></div>
+    
+   <button id="btnSignUp" class="btn btn-action" >
+        Sign Up
+        </button><br/>
+    
+
+        <!-- END OF CONTENT CHANGE -->
+      </div>
+    </main>
+
+    <footer>
+      <div id="add-new-button-div"><a href="index.html" class="add-new-button"><img src="icons/icon_plus_button.png" alt="add"></a></div>
+
+      <nav class="menu" id="menu-footer">
+        <ul>
+          <li>
+            <a href="my-pets.html" class="menu-active">
+              <span class="icon icon-pet"></span>
+              <span class="menu-button-text">My Pets</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <span class="icon icon-calendar"></span>
+              <span class="menu-button-text">Calendar</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings-preferences.html">
+              <span class="icon icon-settings"></span>
+              <span class="menu-button-text">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <script type="text/javascript" src="cordova.js"></script>
+    </footer>
+
+
+    <!-- CONTENT ENDS HERE -->
+
+    <!-- <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script> -->
+</body>
+
+</html>
