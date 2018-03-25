@@ -55,7 +55,6 @@ function onDeviceReady() {
             </ul>
           </nav>
         </section>
-
         <section>
 
           <h4 id="note-title" id="field-title">${saveNoteDataObj.title}</h4>
