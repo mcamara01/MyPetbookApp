@@ -89,6 +89,8 @@ function onDeviceReady() {
       // $('#edit-veterinary-phone').val(saveVeterinaryDataObj.phone);
       // $('#edit-veterinary-address').val(saveVeterinaryDataObj.address);
       $('#edit-veterinary-date').val(saveVeterinaryDataObj.date);
+
+      $('#imgPop').addClass("display-none");
     
     });	
 
@@ -104,6 +106,8 @@ function onDeviceReady() {
       // $('#delete-veterinary-phone').val(saveVeterinaryDataObj.phone);
       // $('#delete-veterinary-address').val(saveVeterinaryDataObj.address);
       $('#delete-veterinary-date').val(saveVeterinaryDataObj.date);
+
+      $('#imgPop').addClass("display-none");
 
     });
 
@@ -148,6 +152,7 @@ function onDeviceReady() {
   $('#imgPop').click(function(){
     $(".cards").addClass("display-none");
     $('#new-card').removeClass("display-none");
+    $('#imgPop').addClass("display-none");
 
   });
 

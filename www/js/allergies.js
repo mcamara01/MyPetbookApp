@@ -18,7 +18,7 @@ function onDeviceReady() {
 
 	$('#save-allergie-btn').click(function(){
 		var saveAllergieData = {
-			allergicto: $('#new-allergie-name').val(),
+			allergicto: $('#new-allergie-name').val(),   
     }
 
 	// code to create an allergie id on database
@@ -75,6 +75,8 @@ function onDeviceReady() {
 
       $('#edit-allergie-id').val(allergieId);
       $('#edit-allergie-name').val(saveAllergieDataObj.allergicto);
+
+      $('#imgPop').addClass("display-none");
     
     });	
 
@@ -87,6 +89,8 @@ function onDeviceReady() {
 
       $('#delete-allergie-id').val(allergieId);
       $('#delete-allergie-name').val(saveAllergieDataObj.allergicto);
+
+      $('#imgPop').addClass("display-none");
     });
 
     // Delete allergie from database
@@ -129,6 +133,7 @@ function onDeviceReady() {
   $('#imgPop').click(function(){
     $(".cards").addClass("display-none");
     $('#new-card').removeClass("display-none");
+    $('#imgPop').addClass("display-none");
 
   });
 
@@ -138,6 +143,7 @@ function onDeviceReady() {
     $(".cards").addClass("display-none");
     $('#edit-card').removeClass("display-none");
 
+
   });
 
   // Display Delete Allergie Card after Choosing Entry from Elipse Menu
@@ -146,6 +152,7 @@ function onDeviceReady() {
     $(".cards").addClass("display-none");
     $('#delete-card').removeClass("display-none");
   });
+
 
 
   // POPUPS FOR SAVE BUTTON ON NEW, EDIT AND DELETE ALLERGIES SCREEN
@@ -158,6 +165,7 @@ function onDeviceReady() {
 
   $("#addAllergie").click(function(){
     $("#addAllergie").addClass("display-none");
+
   });
 
   // Edit Info Popup
@@ -178,6 +186,5 @@ function onDeviceReady() {
   $("#deleteAllergie").click(function(){
     $("#deleteAllergie").addClass("display-none");
   });
-
 
 };

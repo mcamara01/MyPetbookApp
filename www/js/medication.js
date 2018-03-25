@@ -102,6 +102,8 @@ function onDeviceReady() {
       $('#edit-medication-date').val(saveMedicationDataObj.date);  
       $('#edit-medication-expiration').val(saveMedicationDataObj.expiration);
       $('#edit-medication-duration').prop('checked', saveMedicationDataObj.duration);
+
+      $('#imgPop').addClass("display-none");
     });
 
     // Delete card for a specific medication entry
@@ -115,6 +117,8 @@ function onDeviceReady() {
       $('#delete-medication-date').val(saveMedicationDataObj.date);  
       $('#delete-medication-expiration').val(saveMedicationDataObj.expiration);
       $('#delete-medication-duration').val(saveMedicationDataObj.duration);
+
+      $('#imgPop').addClass("display-none");
     });
 
     // Delete a specific medication entry
@@ -159,6 +163,7 @@ function onDeviceReady() {
   $('#imgPop').click(function(){
     $(".cards").addClass("display-none");
     $('#new-card').removeClass("display-none");
+    $('#imgPop').addClass("display-none");
 
   });
 

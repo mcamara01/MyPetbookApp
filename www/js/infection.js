@@ -75,6 +75,8 @@ function onDeviceReady() {
 
       $('#edit-infection-id').val(infectionId);
       $('#edit-infection-name').val(saveInfectionDataObj.type);
+
+      $('#imgPop').addClass("display-none");
     
     });	
 
@@ -87,6 +89,8 @@ function onDeviceReady() {
 
       $('#delete-infection-id').val(infectionId);
       $('#delete-infection-name').val(saveInfectionDataObj.type);
+
+      $('#imgPop').addClass("display-none");
     });
 
     // Delete infection from database
@@ -127,6 +131,7 @@ function onDeviceReady() {
   $('#imgPop').click(function(){
     $(".cards").addClass("display-none");
     $('#new-card').removeClass("display-none");
+    $('#imgPop').addClass("display-none");
 
   });
 

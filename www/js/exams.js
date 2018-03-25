@@ -79,6 +79,8 @@ function onDeviceReady() {
       $('#edit-exam-id').val(examId);
       $('#edit-exam-name').val(saveExamDataObj.name);
       $('#edit-exam-date').val(saveExamDataObj.date);
+
+      $('#imgPop').addClass("display-none");
     
     });	
 
@@ -92,6 +94,8 @@ function onDeviceReady() {
       $('#delete-exam-id').val(examId);
       $('#delete-exam-name').val(saveExamDataObj.name);
       $('#delete-exam-date').val(saveExamDataObj.date);
+
+      $('#imgPop').addClass("display-none");
 
     });
 
@@ -134,6 +138,7 @@ function onDeviceReady() {
   $('#imgPop').click(function(){
     $(".cards").addClass("display-none");
     $('#new-card').removeClass("display-none");
+    $('#imgPop').addClass("display-none");
 
   });
 

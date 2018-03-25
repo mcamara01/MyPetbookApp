@@ -111,6 +111,7 @@ function onDeviceReady() {
   $('#addNoteIcon').click(function(){
     $('#firstLower').removeClass('display-none');
     $('#lowerBody').addClass('display-none');
+    $('#addNoteIcon').addClass('display-none');
   });
 
  

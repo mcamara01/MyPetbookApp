@@ -84,6 +84,8 @@ function onDeviceReady() {
       $('#edit-vaccine-name').val(saveVaccineDataObj.name);
       $('#edit-vaccine-date').val(saveVaccineDataObj.date);  
       $('#edit-vaccine-expiration').val(saveVaccineDataObj.expiration);
+
+      $('#imgPop').addClass("display-none");
     });
 
     // Delete card for a specific vaccination entry
@@ -96,6 +98,8 @@ function onDeviceReady() {
       $('#delete-vaccine-name').val(saveVaccineDataObj.name);
       $('#delete-vaccine-date').val(saveVaccineDataObj.date);  
       $('#delete-vaccine-expiration').val(saveVaccineDataObj.expiration);
+
+      $('#imgPop').addClass("display-none");
     });
 
     // Delete a specific vaccination entry
@@ -139,6 +143,7 @@ function onDeviceReady() {
   $('#imgPop').click(function(){
     $(".cards").addClass("display-none");
     $('#new-card').removeClass("display-none");
+    $('#imgPop').addClass("display-none");
 
   });
 
