@@ -1446,4 +1446,120 @@ body.notes-page main #saveNote .button-bg {
   margin: 3% 10% 3% 10%;
 }
 
+body.createAccount-page main {
+  background-image: linear-gradient(to bottom, #009688, #64ffda), linear-gradient(202deg, #1de9b6, #f76b1c);
+  margin-top: 0;
+  height: 100vh;
+}
+body.createAccount-page main a {
+  display: inline-block;
+  border-bottom: 1px solid black;
+  color: black;
+}
+body.createAccount-page main #wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+body.createAccount-page main #logo {
+  width: 15vh;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+body.createAccount-page main h2 {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+body.createAccount-page main #btnSignUp {
+  width: 65vw;
+  height: 35px;
+  background-color: #teal;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  text-align: center;
+  box-shadow: none;
+}
+body.createAccount-page main #container input {
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid;
+  max-width: 400px;
+  font: 13px Roboto,arial,sans-serif;
+  padding-top: 1.2rem;
+  padding-bottom: 0.8rem;
+  width: 267px;
+  height: 61px;
+  color: white;
+}
+body.createAccount-page main ::placeholder {
+  color: white;
+  font-weight: 100;
+}
+
+body.login-page main {
+  background-image: linear-gradient(to bottom, #009688, #64ffda), linear-gradient(202deg, #1de9b6, #f76b1c);
+  margin-top: 0;
+  height: 100vh;
+}
+body.login-page main a {
+  display: inline-block;
+  border-bottom: 1px solid black;
+  color: black;
+}
+body.login-page main #wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0;
+}
+body.login-page main #logo {
+  width: 15vh;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
+body.login-page main p {
+  text-align: center;
+}
+body.login-page main h2 {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0;
+  padding-left: 10px;
+}
+body.login-page main #loginButton {
+  width: 65vw;
+  height: 35px;
+  background-color: #009688;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  text-align: center;
+  box-shadow: none;
+  margin-top: 20px;
+}
+body.login-page main #container input {
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid;
+  max-width: 400px;
+  font: 13px Roboto,arial,sans-serif;
+  padding-top: 1.2rem;
+  padding-bottom: 0.8rem;
+  width: 267px;
+  height: 61px;
+  color: white;
+}
+body.login-page main ::placeholder {
+  color: white;
+  font-weight: lighter;
+}
+
 /*# sourceMappingURL=style.css.map */
