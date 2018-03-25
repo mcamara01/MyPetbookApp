@@ -1,11 +1,11 @@
 
-//Notes SASS
+// SASS ALLERGIES PAGE FILE
 
+body.notes-page main { //always inform the class of the current page body first
 
+background-color: #e0f2f1;
 
-body.notes-page main{
-
-// PET INFO SECTION
+  // PET INFO SECTION
 
   #pet-main-info {
     display: grid;
@@ -37,67 +37,55 @@ body.notes-page main{
     line-height: 20px;
   }
 
+//-------------------------------------
+  //SECTIONS
 
-  #card2, #card3{
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  padding: 5px 15px 15px 15px;
-  background-color: #FFFFFF !important;
-  border-radius: 2px;
+  //Allergie Header
+
+  #main-header{
+    display: grid;
+    grid-template-columns: 2fr 1fr 0fr;
+    grid-template-rows: auto;
+    align-items: center;
+    padding: 5px 0px 0px 15px;
+  }
+
+  .header-section{
+    padding: 15px 20px 0px 20px;
+    font-size: 20px;
+    color: $color-dark-gray;
+  }
+
+  .header-icon{
+    filter: invert(60%);
+  }
+
+//------------------------------------
+ //Allergies Card
+
+  .field-info{
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: normal;
+    text-align: left;
+  }
+
+  .field-name{
+    padding-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .field-title{
+    font-size: 14px;
 
   }
 
-
- #notes {
- font-family: Roboto;
-  font-size: 20px;
-  line-height: normal;
-  color: #4a4a4a;
-  margin-left:50px;
-  padding-top:30px;
- }
-
- #lowerBody{
-     background-color: #e0f2f1;
-    height: 100vh;
- }
-
- #firstLower {
-    background-color: #e0f2f1;
-    height: 100vh;
- }
-
- #noteIcon{
-      max-width: 100%;
-    height: auto;
-    margin-top: -50px;
-    padding-left: 70vw;
-     filter: invert(60%);
- }
-
-input, textarea {
-   color: gray;
-    background-color: transparent;
-    border: navy;
-    margin-top:5px;
-    padding-left:5px;
-
-}
+  nav#elipse-options-nav{
+    height: 100px;
+  }
 
 
-.display {
-  display:block;
-}
-
-
-.none {
-  display:none;
-}
-
-#saveNote{
-  .button-bg {
+ .button-bg {
     width: 88px;
     height: 36px;
     border-radius: 2px;
@@ -107,7 +95,22 @@ input, textarea {
     margin: 3% 10% 3% 10%;
 
   }
-}
 
+  div#card {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 5px 15px 15px 15px;
+    background-color: $color-white !important;
+    border-radius: 2px;
+  }
+
+}
+//------------------------------------
+
+// EDITING FOOTER
+
+body.allergie-page footer {
 
 }
