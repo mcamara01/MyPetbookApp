@@ -83,9 +83,9 @@ function onDeviceReady() {
       $(`#${noteId} #elipse-options-nav`).slideUp("slow");
       $('#deleteNote').removeClass('display-none');
        $('#deleteNote').click(function(){
-      firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/notes/" + noteId).remove();
-      firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/notes/" + noteId).on('child_removed', function(data){
-      $(`#${noteId}`).remove();
+      
+       firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/notes/" + noteId).on('child_removed', function(data){
+        $(`#${noteId}`).remove();
         });
        window.location.replace("./notes.html");
      });
@@ -93,6 +93,20 @@ function onDeviceReady() {
       });
     
   });
+
+  $(`#delete-note-btn`).click(function(){
+    var noteId = $('#delete-note-id').val();
+    console.log(noteId);
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/notes/" + noteId).remove();
+    
+    window.location.replace("./notes.html");
+    });
+
+  $(`#delete-cancel-entry`).click(function(){
+    window.location.replace("./notes.html");
+  });
+
+
 
   $('#addNoteIcon').click(function(){
     $('#firstLower').removeClass('display-none');

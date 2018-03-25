@@ -48,8 +48,6 @@ function onDeviceReady() {
           <nav id="elipse-options-nav" class="box-shadow-bottom-dark display-none">
             <ul>
               <li><a href="#" id="edit-infection">Edit</a></li>
-              <li><a href="#" id="infection-calendar">Add Alert</a></li>
-              <br>
               <br>
               <li><a href="#" id="delete-infection" class="delete-option">Delete</a></li>
             </ul>
@@ -93,10 +91,6 @@ function onDeviceReady() {
 
     // Delete infection from database
 
-    $(`#${infectionId} #delete-infection`).click(function(){
-      firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/infections/" + infectionId).remove();
-    });
-
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/infections/" + infectionId).on('child_removed', function(data){
       $(`#${infectionId}`).remove();
     });
@@ -117,8 +111,16 @@ function onDeviceReady() {
 
   // Delete Infection Button Submition Action from Edit Infection Screen
   $('#delete-infection-btn').click(function(){
+    var infectionId = $('#delete-infection-id').val();
+    console.log(infectionId);
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/infections/" + infectionId).remove();
+  
     window.location.replace("./infections.html");
   });
+
+  $(`#delete-cancel-entry`).click(function(){
+    window.location.replace("./infections.html");
+    });
 
   // Add Infection from Add Button on Bottom Screen
 

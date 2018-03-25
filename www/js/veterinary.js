@@ -109,10 +109,6 @@ function onDeviceReady() {
 
     // Delete veterinary from database
 
-    $(`#${veterinaryId} #delete-veterinary`).click(function(){
-      firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/veterinary/" + veterinaryId).remove();
-    });
-
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/veterinary/" + veterinaryId).on('child_removed', function(data){
       $(`#${veterinaryId}`).remove();
     });
@@ -136,6 +132,14 @@ function onDeviceReady() {
 
   // Delete Veterinary Button Submition Action from Edit Veterinary Screen
   $('#delete-veterinary-btn').click(function(){
+    var veterinaryId = $('#delete-allergie-id').val();
+    console.log(veterinaryId);
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/veterinary/" + veterinaryId).remove();
+
+    window.location.replace("./veterinary.html");
+  });
+
+   $(`#delete-cancel-entry`).click(function(){
     window.location.replace("./veterinary.html");
   });
 

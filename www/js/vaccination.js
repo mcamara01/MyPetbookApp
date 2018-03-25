@@ -100,10 +100,6 @@ function onDeviceReady() {
 
     // Delete a specific vaccination entry
 
-    $(`#${vaccineId} #delete-vaccine`).click(function(event){
-      firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).remove();
-    });
-
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).on('child_removed', function(data){
       $(`#${vaccineId}`).remove();
     });
@@ -127,9 +123,16 @@ function onDeviceReady() {
 
   // Delete Vaccine Button Submition Action from Edit Allergie Screen
   $('#delete-vaccine-btn').click(function(){
+    var vaccineId = $('#delete-vaccine-id').val();
+    console.log(vaccineId);
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).remove();
+
     window.location.replace("./vaccination.html");
   });
 
+  $(`#delete-cancel-entry`).click(function(){
+    window.location.replace("./vaccination.html");
+    });
 
   // Add Vaccine from Add Button on Bottom Screen
 

@@ -981,6 +981,9 @@ body.allergie-page main .field-name {
 body.allergie-page main .field-title {
   font-size: 14px;
 }
+body.allergie-page main nav#elipse-options-nav {
+  height: 100px;
+}
 body.allergie-page main .button-bg {
   width: 88px;
   height: 36px;
@@ -1113,6 +1116,9 @@ body.infection-page main .field-name {
 }
 body.infection-page main .field-title {
   font-size: 14px;
+}
+body.infection-page main nav#elipse-options-nav {
+  height: 100px;
 }
 body.infection-page main .button-bg {
   width: 88px;
@@ -1345,6 +1351,9 @@ body.exams-page main .field-name {
 }
 body.exams-page main .field-title {
   font-size: 14px;
+}
+body.exams-page main nav#elipse-options-nav {
+  height: 100px;
 }
 body.exams-page main .button-bg {
   width: 88px;

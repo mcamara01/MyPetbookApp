@@ -48,8 +48,6 @@ function onDeviceReady() {
           <nav id="elipse-options-nav" class="box-shadow-bottom-dark display-none">
             <ul>
               <li><a href="#" id="edit-allergie">Edit</a></li>
-              <li><a href="#" id="allergie-calendar">Add Alert</a></li>
-              <br>
               <br>
               <li><a href="#" id="delete-allergie" class="delete-option">Delete</a></li>
             </ul>
@@ -93,10 +91,6 @@ function onDeviceReady() {
 
     // Delete allergie from database
 
-    $(`#${allergieId} #delete-allergie`).click(function(){
-      firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergieId).remove();
-    });
-
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergieId).on('child_removed', function(data){
       $(`#${allergieId}`).remove();
     });
@@ -116,9 +110,19 @@ function onDeviceReady() {
   });
 
   // Delete Allergie Button Submition Action from Edit Allergie Screen
-  $('#delete-allergie-btn').click(function(){
+
+  $(`#delete-allergie-btn`).click(function(){
+    var allergieId = $('#delete-allergie-id').val();
+    console.log(allergieId);
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergieId).remove();
+    
+    window.location.replace("./allergie.html");
+    });
+
+  $(`#delete-cancel-entry`).click(function(){
     window.location.replace("./allergie.html");
   });
+
 
   // Add Allergie from Add Button on Bottom Screen
 

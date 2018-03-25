@@ -306,6 +306,8 @@ function onDeviceReady() {
     $("#deletePet-popup").addClass("display-none");
   });
 
+  
+
 
 }; // end on device ready
 
