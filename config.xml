@@ -7,7 +7,7 @@
     <author email="mypetbookapp@gmail.com" href="http://mypetbook.com">
         Cristiane Silva, Fernanda Teixeira, Mana Koike, Michele Camara and Samaneh Hoseini.
     </author>
-    <content src="index.html" />
+    <content src="login.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.2.4" />
@@ -21,6 +21,7 @@
     <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.7.1" />
     <plugin name="cordova-plugin-network-information" source="npm" spec="~1.3.3" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.5" />
+    <plugin name="cordova-plugin-whitelist" source="npm" />
 
     <!-- splash screen -->
     <preference name="SplashScreen" value="splash.png"/>
@@ -111,6 +112,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-navigation href="*" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>

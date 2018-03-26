@@ -7,6 +7,6 @@
     <author email="mypetbook@gmail.com" href="http://phonegap.com">
         MyPetbook Team
     </author>
-    <content src="index.html" />
+    <content src="login.html" />
     <access origin="*" />
 </widget>
