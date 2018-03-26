@@ -1,5 +1,5 @@
 // ALLERGIES PAGE JS
-//---------------------------------------------------------------------- 
+//----------------------------------------------------------------------
 
 document.addEventListener("deviceready", onDeviceReady, false);
 $(document).ready(onDeviceReady);
@@ -9,26 +9,26 @@ var initializeAllergy = false;
 function onDeviceReady() {
 
   if (initializeAllergy) {
-    return 
+    return
   } else {
     initializeAllergy = true;
   }
-	
-	// Save ALLERGIE Data Button from New Allergie Screen
 
-	$('#save-allergie-btn').click(function(){
-		var saveAllergieData = {
-			allergicto: $('#new-allergie-name').val(),   
+	// Save ALLERGY Data Button from New allergy Screen
+
+	$('#save-allergy-btn').click(function(){
+		var saveAllergyData = {
+			allergicto: $('#new-allergy-name').val(),
     }
 
-	// code to create an allergie id on database
-	var allergieId = firebase.database().ref().child('users/pet/allergies').push().key;
+	// code to create an allergy id on database
+	var allergyId = firebase.database().ref().child('users/pet/allergies').push().key;
 
   // path to set the user key data to Firebase
-  firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergieId).set(saveAllergieData);
+  firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergyId).set(saveAllergyData);
 
 	// return to main allergies page
-  window.location.replace("./allergie.html");
+  window.location.replace("./allergy.html");
 });
 
 	const users = firebase.database().ref('/users');
@@ -36,99 +36,99 @@ function onDeviceReady() {
   // FUNCTION CHILD ADDED - Add vaccine related to a pet into Firebase
 
 	firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/").on('child_added', function(data){
-  
-    const allergieId = data.key;
-    const saveAllergieDataObj = data.val();
 
-    $('#load-card').prepend(`<div id="${allergieId}"><div id="card" class="box-shadow-all-light">
-      <section id="allergie-card" >
+    const allergyId = data.key;
+    const saveAllergyDataObj = data.val();
+
+    $('#load-card').prepend(`<div id="${allergyId}"><div id="card" class="box-shadow-all-light">
+      <section id="allergy-card" >
     		<section>
           <span id="menu-elipse"><a href="#">...</a></span>
           <!-- options elipse nav -->
           <nav id="elipse-options-nav" class="box-shadow-bottom-dark display-none">
             <ul>
-              <li><a href="#" id="edit-allergie">Edit</a></li>
+              <li><a href="#" id="edit-allergy">Edit</a></li>
               <br>
-              <li><a href="#" id="delete-allergie" class="delete-option">Delete</a></li>
+              <li><a href="#" id="delete-allergy" class="delete-option">Delete</a></li>
             </ul>
           </nav>
         </section>
 
         <section>
           <h4 id="field-info">Allergic to</h4>
-          <p id="allergie-name">${saveAllergieDataObj.allergicto}</p>
+          <p id="allergy-name">${saveAllergyDataObj.allergicto}</p>
         </section>
-			</section>   
+			</section>
     </div></div>`)
 
-    // Display the menu elipse for each card/allergieId
+    // Display the menu elipse for each card/allergyId
 
-    $(`#${allergieId} #menu-elipse`).click(function() {
-      $(`#${allergieId} #elipse-options-nav`).slideToggle("slow");
+    $(`#${allergyId} #menu-elipse`).click(function() {
+      $(`#${allergyId} #elipse-options-nav`).slideToggle("slow");
     });
 
-    // Edit card for a specific Allergie Data Stored 
+    // Edit card for a specific allergy Data Stored
 
-    $(`#${allergieId} #edit-allergie`).click(function(){
+    $(`#${allergyId} #edit-allergy`).click(function(){
       $("#edit-card").removeClass("display-none");
       $("#load-card").addClass("display-none");
 
-      $('#edit-allergie-id').val(allergieId);
-      $('#edit-allergie-name').val(saveAllergieDataObj.allergicto);
+      $('#edit-allergy-id').val(allergyId);
+      $('#edit-allergy-name').val(saveAllergyDataObj.allergicto);
 
       $('#imgPop').addClass("display-none");
-    
-    });	
+
+    });
 
 
-    // Delete card for a specific allergie entry
+    // Delete card for a specific allergy entry
 
-    $(`#${allergieId} #delete-allergie`).click(function(){
+    $(`#${allergyId} #delete-allergy`).click(function(){
       $("#delete-card").removeClass("display-none");
       $("#load-card").addClass("display-none");
 
-      $('#delete-allergie-id').val(allergieId);
-      $('#delete-allergie-name').val(saveAllergieDataObj.allergicto);
+      $('#delete-allergy-id').val(allergyId);
+      $('#delete-allergy-name').val(saveAllergyDataObj.allergicto);
 
       $('#imgPop').addClass("display-none");
     });
 
     // Delete allergie from database
 
-    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergieId).on('child_removed', function(data){
-      $(`#${allergieId}`).remove();
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergyId).on('child_removed', function(data){
+      $(`#${allergyId}`).remove();
     });
   }); //End of function "on child_added"
 
 
-	// Edit Allergie Button Submition Action from Edit Allergie Screen
-  $('#edit-allergie-btn').click(function(){
-    var editAllergieData = {
-      allergicto: $('#edit-allergie-name').val()
+	// Edit allergy Button Submition Action from Edit allergy Screen
+  $('#edit-allergy-btn').click(function(){
+    var editAllergyData = {
+      allergicto: $('#edit-allergy-name').val()
     }
-    var allergieId = $('#edit-allergie-id').val();
+    var allergyId = $('#edit-allergy-id').val();
 
-    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergieId).set(editAllergieData);
-    
-    window.location.replace("./allergie.html");
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergyId).set(editAllergyData);
+
+    window.location.replace("./allergy.html");
   });
 
-  // Delete Allergie Button Submition Action from Edit Allergie Screen
+  // Delete allergy Button Submition Action from Edit allergy Screen
 
-  $(`#delete-allergie-btn`).click(function(){
-    var allergieId = $('#delete-allergie-id').val();
-    console.log(allergieId);
-    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergieId).remove();
-    
-    window.location.replace("./allergie.html");
+  $(`#delete-allergy-btn`).click(function(){
+    var allergyId = $('#delete-allergy-id').val();
+    console.log(allergyId);
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergyId).remove();
+
+    window.location.replace("./allergy.html");
     });
 
   $(`#delete-cancel-entry`).click(function(){
-    window.location.replace("./allergie.html");
+    window.location.replace("./allergy.html");
   });
 
 
-  // Add Allergie from Add Button on Bottom Screen
+  // Add allergy from Add Button on Bottom Screen
 
   $('#imgPop').click(function(){
     $(".cards").addClass("display-none");
@@ -137,54 +137,54 @@ function onDeviceReady() {
 
   });
 
-  // Display Edit Card after Choosing Edit Allergie Entry from Elipse Menu
+  // Display Edit Card after Choosing Edit allergy Entry from Elipse Menu
 
-  $('#edit-allergie').click(function(){
+  $('#edit-allergy').click(function(){
     $(".cards").addClass("display-none");
     $('#edit-card').removeClass("display-none");
 
 
   });
 
-  // Display Delete Allergie Card after Choosing Entry from Elipse Menu
+  // Display Delete allergy Card after Choosing Entry from Elipse Menu
 
-  $('#delete-allergie').click(function(){
+  $('#delete-allergy').click(function(){
     $(".cards").addClass("display-none");
     $('#delete-card').removeClass("display-none");
   });
 
 
 
-  // POPUPS FOR SAVE BUTTON ON NEW, EDIT AND DELETE ALLERGIES SCREEN
+  // POPUPS FOR SAVE BUTTON ON NEW, EDIT AND DELETE allergyS SCREEN
 
   // Save Info popup
 
   $('#save-info').click(function(){
-  $('#addAllergie').removeClass("display-none");
-  }); 
+  $('#addAllergy').removeClass("display-none");
+  });
 
-  $("#addAllergie").click(function(){
-    $("#addAllergie").addClass("display-none");
+  $("#addAllergy").click(function(){
+    $("#addAllergy").addClass("display-none");
 
   });
 
   // Edit Info Popup
   $('#edit-info').click(function(){
-  $('#editAllergie').removeClass("display-none");
-  }); 
+  $('#editAllergy').removeClass("display-none");
+  });
 
-  $("#editAllergie").click(function(){
-    $("#editAllergie").addClass("display-none");
+  $("#editAllergy").click(function(){
+    $("#editAllergy").addClass("display-none");
   });
 
 
    // Delete Info Popup
   $('#delete-info').click(function(){
-  $('#deleteAllergie').removeClass("display-none");
-  }); 
+  $('#deleteAllergy').removeClass("display-none");
+  });
 
-  $("#deleteAllergie").click(function(){
-    $("#deleteAllergie").addClass("display-none");
+  $("#deleteAllergy").click(function(){
+    $("#deleteAllergy").addClass("display-none");
   });
 
 };
