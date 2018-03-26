@@ -1,5 +1,5 @@
 // GENERAL INFO PAGE JS
-//---------------------------------------------------------------------- 
+//----------------------------------------------------------------------
 
 document.addEventListener("deviceready", onDeviceReady, false);
 $(document).ready(onDeviceReady);
@@ -9,7 +9,7 @@ var initializeGenInfo = false;
 function onDeviceReady() {
 
 	if (initializeGenInfo) {
-    return 
+    return
   } else {
     initializeGenInfo = true;
   }
@@ -20,17 +20,17 @@ function onDeviceReady() {
 		if (data.key != "general") {
 			return;
 		}
-		
+
 
 		const generalInfoDataObj = data.val();
-		
+
 		$('#pet-name').text(generalInfoDataObj.name);
 		$('#pet-dob').text(generalInfoDataObj.dob);
 		$('#pet-gender').text(generalInfoDataObj.gender);
 		$('#pet-color').text(generalInfoDataObj.color);
-		$('#pet-weight').text(generalInfoDataObj.weight + " Kg");
+		$('#pet-weight').text(generalInfoDataObj.weight + " kg(s)");
 
-		
+
 
 
 
@@ -78,7 +78,7 @@ function onDeviceReady() {
 	  	// return to main vaccination page
 	    window.location.replace("./general-info.html");
    	});
-	
+
 
 
 	// POPUPS FOR SAVE BUTTON ON NEW, EDIT AND DELETE ALLERGIES SCREEN
@@ -86,14 +86,9 @@ function onDeviceReady() {
 	// Edit Info Popup
 	$('#edit-info').click(function(){
 	$('#editGeneralInfo').removeClass("display-none");
-	}); 
+	});
 
 	$("#editGeneralInfo").click(function(){
 	$("#editGeneralInfo").addClass("display-none");
 	});
 };
-
-
-
-
-

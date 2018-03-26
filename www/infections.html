@@ -53,7 +53,7 @@
 
     <!-- SCRIPT FIREBASE -->
     <script src="js/firebase.js"></script>
-    
+
      <!-- END JS SCRIPT LINKS -->
 
     <title> Infections | MyPetbook</title>
@@ -102,28 +102,32 @@
         </section>
 
         <!-- Infections Card Enter -->
-        
+
         <!-- Infections Card Loaded-->
         <div id="load-card" class="cards">
           <!-- content created from infection.js file -->
         </div>
-        
+
         <!-- Display of New Infection card -->
         <div id="new-card" class="cards display-none" >
           <div id="card" class="box-shadow-all-light">
-            
+
             <section id="new-infection-card">
-              
+
               <section>
                 <h2>New Infection</h2>
                 <h4 id="field-info">Type</h4>
-                <input id="new-infection-name" type="text" class="field-info " placeholder="enter infection">
+                <input id="new-infection-name" type="text" placeholder="Enter infection type">
               </section>
             </section>
-            <!-- Save Button -->
-            <section>
-              <button id="save-info" class="button-bg">SAVE</button>
+          </div>
 
+            <!-- Save Button -->
+            <div id="save-button-div">
+              <button id="save-info" class="button-text">SAVE</button>
+            </div>
+
+            <section>
               <!-- The popup -->
               <div id="addInfection" class="popup display-none">
                 <!-- popup content -->
@@ -137,26 +141,30 @@
                 </div>
               </div>
             </section>
-          </div>
         </div>
-        
-      
+
+
        <!-- Display of Edit Infection card -->
         <div id="edit-card" class="cards display-none" >
           <div id="card" class="box-shadow-all-light">
-            
+
             <section id="edit-infection-card">
               <section>
                 <input type="hidden" id="edit-infection-id">
                 <h4 class="field-info field-title">Edit Infection</h4>
                 <h4 id="field-info">Type</h4>
-                <input id="edit-infection-name" class="field-info" type="text" placeholder="enter infection name">
+                <input id="edit-infection-name" type="text" placeholder="enter infection name">
               </section>
             </section>
-              <!-- Save Button -->
-              <section>
-                <button id="edit-info" class="button-bg">SAVE</button>
 
+          </div>
+
+            <!-- Save Button -->
+            <div id="save-button-div">
+                <button id="edit-info" class="button-bg">SAVE</button>
+            </div>
+
+            <section>
                 <!-- The popup -->
                 <div id="editInfection" class="popup display-none">
                   <!-- popup content -->
@@ -177,7 +185,7 @@
         <!-- Display of DELETE Infections card -->
         <div id="delete-card" class="cards display-none" >
           <div id="card" class="box-shadow-all-light">
-            
+
             <section id="delete-infection-card">
               <section>
                 <input type="hidden" id="delete-infection-id">
@@ -186,10 +194,14 @@
                 <input id="delete-infection-name" class="field-info" type="text" placeholder="enter infection name">
               </section>
             </section>
-              <!-- Save Button -->
-              <section>
-                <button id="delete-info" class="button-bg">DELETE</button>
+          </div>
 
+            <!-- Save Button -->
+            <div id="save-button-div">
+              <button id="delete-info" class="button-bg">DELETE</button>
+            </div>
+
+            <section>
                 <!-- The popup -->
                 <div id="deleteInfection" class="popup display-none">
                   <!-- popup content -->

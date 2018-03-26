@@ -1,5 +1,5 @@
 // NOTES PAGE JS
-//---------------------------------------------------------------------- 
+//----------------------------------------------------------------------
 
 document.addEventListener("deviceready", onDeviceReady, false);
 $(document).ready(onDeviceReady);
@@ -9,18 +9,18 @@ var initializeAllergy = false;
 function onDeviceReady() {
 
   if (initializeAllergy) {
-    return 
+    return
   } else {
     initializeAllergy = true;
   }
-    
+
     // Save Note Data Button from New Note Screen
 
     $('#save-note-btn').click(function(){
         var saveNoteData = {
-            title: $('#new-note-title').val(),  
+            title: $('#new-note-title').val(),
             date: $('#new-note-date').val(),
-            text: $('#new-note-text').val(), 
+            text: $('#new-note-text').val(),
     }
 
     // code to create an note id on database
@@ -38,7 +38,7 @@ function onDeviceReady() {
   // FUNCTION CHILD ADDED - Add note related to a pet into Firebase
 
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/notes/").on('child_added', function(data){
-  
+
     const noteId = data.key;
     const saveNoteDataObj = data.val();
 
@@ -57,11 +57,11 @@ function onDeviceReady() {
         </section>
         <section>
 
-          <h4 id="note-title" id="field-title">${saveNoteDataObj.title}</h4>
-          <p id="note-date">${saveNoteDataObj.date}</p>
-          <p id="note-text">${saveNoteDataObj.text}</p>
+          <h4 id="note-title" class="field-info field-name">${saveNoteDataObj.title}</h4>
+          <p id="note-date" class="field-response">${saveNoteDataObj.date}</p>
+          <p id="note-text" class="field-response">${saveNoteDataObj.text}</p>
         </section>
-            </section>   
+            </section>
     </div></div>`)
 
     // Display the menu elipse for each card/noteId
@@ -70,7 +70,7 @@ function onDeviceReady() {
       $(`#${noteId} #elipse-options-nav`).slideToggle("slow");
     });
 
-    // Edit card for a specific Note Data Stored 
+    // Edit card for a specific Note Data Stored
 
     $(`#${noteId} #edit-note`).click(function(){
       $("#edit-card").removeClass("display-none");
@@ -82,8 +82,8 @@ function onDeviceReady() {
       $('#edit-note-text').val(saveNoteDataObj.text);
 
       $('#imgPop').addClass("display-none");
-    
-    }); 
+
+    });
 
 
     // Delete card for a specific Note entry
@@ -111,14 +111,14 @@ function onDeviceReady() {
     // Edit Note Button Submition Action from Edit Note Screen
   $('#edit-note-btn').click(function(){
     var editNoteData = {
-      title: $('#edit-note-title').val(),  
+      title: $('#edit-note-title').val(),
       date: $('#edit-note-date').val(),
       text: $('#edit-note-text').val(),
     }
     var noteId = $('#edit-note-id').val();
 
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/notes/" + noteId).set(editNoteData);
-    
+
     window.location.replace("./notes.html");
   });
 
@@ -128,7 +128,7 @@ function onDeviceReady() {
     var noteId = $('#delete-note-id').val();
     console.log(noteId);
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/notes/" + noteId).remove();
-    
+
     window.location.replace("./notes.html");
     });
 
@@ -170,7 +170,7 @@ function onDeviceReady() {
 
   $('#save-info').click(function(){
   $('#addNote').removeClass("display-none");
-  }); 
+  });
 
   $("#addNote").click(function(){
     $("#addNote").addClass("display-none");
@@ -180,7 +180,7 @@ function onDeviceReady() {
   // Edit Info Popup
   $('#edit-info').click(function(){
   $('#editNote').removeClass("display-none");
-  }); 
+  });
 
   $("#editNote").click(function(){
     $("#editNote").addClass("display-none");
@@ -190,7 +190,7 @@ function onDeviceReady() {
    // Delete Info Popup
   $('#delete-info').click(function(){
   $('#deleteNote').removeClass("display-none");
-  }); 
+  });
 
   $("#deleteNote").click(function(){
     $("#deleteNote").addClass("display-none");

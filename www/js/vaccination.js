@@ -1,5 +1,5 @@
 // VACCINATION PAGE JS
-//---------------------------------------------------------------------- 
+//----------------------------------------------------------------------
 
 document.addEventListener("deviceready", onDeviceReady, false);
 $(document).ready(onDeviceReady);
@@ -9,7 +9,7 @@ var initializeVaccination = false;
 function onDeviceReady() {
 
   if (initializeVaccination) {
-    return 
+    return
   } else {
     initializeVaccination = true;
   }
@@ -38,12 +38,12 @@ function onDeviceReady() {
   // FUNCTION CHILD ADDED - Add vaccine related to a pet into Firebase
 
   firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/").on('child_added', function(data){
-    
+
     const vaccineId = data.key;
     const saveVaccineDataObj = data.val();
 
     $('#load-card').prepend(`<div id="${vaccineId}"><div id="card" class="box-shadow-all-light">
-      <section id="vaccine-card" >
+      <section id="vaccine-card">
         <section>
           <span id="menu-elipse"><a href="#">...</a></span>
           <!-- options elipse nav -->
@@ -59,11 +59,11 @@ function onDeviceReady() {
         </section>
 
         <section>
-          <h4 id="vaccine-name" class=" field-info field-name">${saveVaccineDataObj.name}</h4>
+          <h4 id="vaccine-name" class="field-info field-name">${saveVaccineDataObj.name}</h4>
           <h4 class="field-info">Date Taken</h4>
-          <p id="vaccine-date">${saveVaccineDataObj.date}</p>
+          <p id="vaccine-date" class="field-response">${saveVaccineDataObj.date}</p>
           <h4 class="field-info">Expiration Date</h4>
-          <p id="vaccine-expiration">${saveVaccineDataObj.expiration}</p>
+          <p id="vaccine-expiration" class="field-response">${saveVaccineDataObj.expiration}</p>
         </section>
       </section>
     </div></div>`)
@@ -74,7 +74,7 @@ function onDeviceReady() {
       $(`#${vaccineId} #elipse-options-nav`).slideToggle("slow");
     });
 
-    // Edit a specific Vaccine Data Stored 
+    // Edit a specific Vaccine Data Stored
 
     $(`#${vaccineId} #edit-vaccine`).click(function(){
       $("#edit-card").removeClass("display-none");
@@ -82,7 +82,7 @@ function onDeviceReady() {
 
       $('#edit-vaccine-id').val(vaccineId);
       $('#edit-vaccine-name').val(saveVaccineDataObj.name);
-      $('#edit-vaccine-date').val(saveVaccineDataObj.date);  
+      $('#edit-vaccine-date').val(saveVaccineDataObj.date);
       $('#edit-vaccine-expiration').val(saveVaccineDataObj.expiration);
 
       $('#imgPop').addClass("display-none");
@@ -96,7 +96,7 @@ function onDeviceReady() {
 
       $('#delete-vaccine-id').val(vaccineId);
       $('#delete-vaccine-name').val(saveVaccineDataObj.name);
-      $('#delete-vaccine-date').val(saveVaccineDataObj.date);  
+      $('#delete-vaccine-date').val(saveVaccineDataObj.date);
       $('#delete-vaccine-expiration').val(saveVaccineDataObj.expiration);
 
       $('#imgPop').addClass("display-none");
@@ -121,7 +121,7 @@ function onDeviceReady() {
     var vaccineId = $('#edit-vaccine-id').val();
 
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).set(editVaccineData);
-    
+
     window.location.replace("./vaccination.html");
   });
 
@@ -169,7 +169,7 @@ function onDeviceReady() {
 
   $('#save-info').click(function(){
   $('#addVaccine').removeClass("display-none");
-  }); 
+  });
 
   $("#addVaccine").click(function(){
     $("#addVaccine").addClass("display-none");
@@ -178,7 +178,7 @@ function onDeviceReady() {
   // Edit Info Popup
   $('#edit-info').click(function(){
   $('#editVaccine').removeClass("display-none");
-  }); 
+  });
 
   $("#editVaccine").click(function(){
     $("#editVaccine").addClass("display-none");
@@ -188,7 +188,7 @@ function onDeviceReady() {
    // Delete Info Popup
   $('#delete-info').click(function(){
   $('#deleteVaccine').removeClass("display-none");
-  }); 
+  });
 
   $("#deleteVaccine").click(function(){
     $("#deleteVaccine").addClass("display-none");
