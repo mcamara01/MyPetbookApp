@@ -50,7 +50,7 @@
 
     <!-- SCRIPT FIREBASE -->
     <script src="js/firebase.js"></script>
-    
+
      <!-- END JS SCRIPT LINKS -->
 
     <title>Create Account | MyPetbook</title>
@@ -58,84 +58,41 @@
 
 <body class="createAccount-page">
     <!-- CONTENT STARTS HERE -->
-    
-      <!-- INSERT HERE THE TOP OPTIONS WINDOW -->
-      <nav id="top-options-nav" class="box-shadow display-none">
-        <ul>
-          <li><a href="mailto:contact@mypetbook.com?Subject=MyPetbook%20Feedback" id="feedback">Send Feedback</a></li>
-          <li><a href="#" id="signout">Sign Out</a></li>
-        </ul>
-      </nav>
-
-    </header>
 
     <main>
       <div id="wrapper">
-    
-  </head>
 
-  <body>
     <!-- The surrounding HTML is left untouched by FirebaseUI.
          Your app may use that space for branding, controls and other customizations.-->
-    
-    <img id= "logo" src="img/logo.png">
-    <div id="emailauth">
-      <h2>Sign up</h2>
-      <div id="container" class="form-group mx-sm-3 mb-2">
-        
-        <input id="txtEmail" type="email" placeholder="Email" class="form-control form-control-sm"><br/>
 
-        <input id="pass1" type="password" placeholder="Password" class="form-control"><br/>
-        
-        <input id="pass2" type="password" placeholder="Confirm Password" class="form-control"><br/>
-        
-        <input id="username" type="text" placeholder="Username" class="form-control"><br/>
-       
-        <!--</form>-->
-        <div id="message"></div>
-    </div>
+         <img id= "logo" src="icons/logo_font_big.png">
 
-      <p id="terms"><a href="#">I agree with the Terms and Condition</a><!-- <input id="checkBox" type="checkbox" onsubmit="checkbox()"> --></p>
-    </div>
+          <div id="emailauth">
+            <h2>Sign up</h2>
+            <div id="container" class="form-group mx-sm-3 mb-2">
 
-    <div id="firebaseui-auth-container"></div>
-    
-   <button id="btnSignUp" class="btn btn-action" >
-        Sign Up
-        </button><br/>
-    
+              <input id="txtEmail" type="email" placeholder="Email" class="form-control form-control-sm"><br/>
+
+              <input id="pass1" type="password" placeholder="Password" class="form-control"><br/>
+
+              <input id="pass2" type="password" placeholder="Confirm Password" class="form-control"><br/>
+
+              <input id="username" type="text" placeholder="Username" class="form-control"><br/>
+
+              <!--</form>-->
+              <div id="message"></div>
+            </div>
+
+            <p id="terms"><a href="#">I agree with the Terms and Conditions</a><!-- <input id="checkBox" type="checkbox" onsubmit="checkbox()"> --></p>
+          </div>
+
+          <div id="firebaseui-auth-container"></div>
+
+          <button id="btnSignUp" class="btn btn-action">Sign Up</button><br/>
 
         <!-- END OF CONTENT CHANGE -->
       </div>
     </main>
-
-    <footer>
-      <div id="add-new-button-div"><a href="index.html" class="add-new-button"><img src="icons/icon_plus_button.png" alt="add"></a></div>
-
-      <nav class="menu" id="menu-footer">
-        <ul>
-          <li>
-            <a href="my-pets.html" class="menu-active">
-              <span class="icon icon-pet"></span>
-              <span class="menu-button-text">My Pets</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.html">
-              <span class="icon icon-calendar"></span>
-              <span class="menu-button-text">Calendar</span>
-            </a>
-          </li>
-          <li>
-            <a href="settings-preferences.html">
-              <span class="icon icon-settings"></span>
-              <span class="menu-button-text">Settings</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      
-    </footer>
 
 
     <!-- CONTENT ENDS HERE -->
