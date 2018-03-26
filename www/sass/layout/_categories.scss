@@ -157,18 +157,17 @@ body.pet-profile-page main {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1vw;
     padding: 5px;
-
   }
 
-  .grid > section {
+  .grid > a {
     font-size: 4vw;
-    padding: .7em;
+    padding: .9em;
     background: $color-teal;
     text-align: center;
-  }
 
-  div#grid p{
-    color: $color-white;
+    p {
+      margin-bottom: 0;
+    }
   }
 
   .header-icon {
