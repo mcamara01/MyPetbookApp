@@ -55,8 +55,8 @@ function onDeviceReady() {
         </section>
 
         <section>
-          <h4 id="field-info">Allergic to</h4>
-          <p id="allergy-name">${saveAllergyDataObj.allergicto}</p>
+          <h4 class="field-info">Allergic to</h4>
+          <p id="allergy-name" class="field-response">${saveAllergyDataObj.allergicto}</p>
         </section>
 			</section>
     </div></div>`)

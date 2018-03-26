@@ -1,5 +1,5 @@
 // EXAMS PAGE JS
-//---------------------------------------------------------------------- 
+//----------------------------------------------------------------------
 
 document.addEventListener("deviceready", onDeviceReady, false);
 $(document).ready(onDeviceReady);
@@ -9,11 +9,11 @@ var initializeExam = false;
 function onDeviceReady() {
 
   if (initializeExam) {
-    return 
+    return
   } else {
     initializeExam = true;
   }
-	
+
 	// Save Exam Data Button from New Exam Screen
 
 	$('#save-exam-btn').click(function(){
@@ -37,7 +37,7 @@ function onDeviceReady() {
   // FUNCTION CHILD ADDED - Add exam related to a pet into Firebase
 
 	firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/exams/").on('child_added', function(data){
-  
+
     const examId = data.key;
     const saveExamDataObj = data.val();
 
@@ -57,11 +57,11 @@ function onDeviceReady() {
 
         <section>
           <h4 class="field-info">Exam Type</h4>
-          <p id="exam-name">${saveExamDataObj.name}</p>
+          <p id="exam-name" class="field-response">${saveExamDataObj.name}</p>
           <h4 class="field-info">Date Taken</h4>
-          <p id="exam-date">${saveExamDataObj.date}</p>
+          <p id="exam-date" class="field-response">${saveExamDataObj.date}</p>
         </section>
-			</section>   
+			</section>
     </div></div>`)
 
     // Display the menu elipse for each card/examId
@@ -70,7 +70,7 @@ function onDeviceReady() {
       $(`#${examId} #elipse-options-nav`).slideToggle("slow");
     });
 
-    // Edit card for a specific Exam Data Stored 
+    // Edit card for a specific Exam Data Stored
 
     $(`#${examId} #edit-exam`).click(function(){
       $("#edit-card").removeClass("display-none");
@@ -81,8 +81,8 @@ function onDeviceReady() {
       $('#edit-exam-date').val(saveExamDataObj.date);
 
       $('#imgPop').addClass("display-none");
-    
-    });	
+
+    });
 
 
     // Delete card for a specific Exam entry
@@ -116,7 +116,7 @@ function onDeviceReady() {
     var examId = $('#edit-exam-id').val();
 
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/exams/" + examId).set(editExamData);
-    
+
     window.location.replace("./exams.html");
   });
 
@@ -125,7 +125,7 @@ function onDeviceReady() {
     var examId = $('#delete-exam-id').val();
     console.log(examId);
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/exams/" + examId).remove();
-    
+
     window.location.replace("./exams.html");
   });
 
@@ -164,7 +164,7 @@ function onDeviceReady() {
 
   $('#save-info').click(function(){
   $('#addExam').removeClass("display-none");
-  }); 
+  });
 
   $("#addExam").click(function(){
     $("#addExam").addClass("display-none");
@@ -173,7 +173,7 @@ function onDeviceReady() {
   // Edit Info Popup
   $('#edit-info').click(function(){
   $('#editExam').removeClass("display-none");
-  }); 
+  });
 
   $("#editExam").click(function(){
     $("#editExam").addClass("display-none");
@@ -183,7 +183,7 @@ function onDeviceReady() {
    // Delete Info Popup
   $('#delete-info').click(function(){
   $('#deleteExam').removeClass("display-none");
-  }); 
+  });
 
   $("#deleteExam").click(function(){
     $("#deleteExam").addClass("display-none");
