@@ -48,18 +48,22 @@ body.pet-profile-page main {
 //-------------------------------------
   //SECTIONS
 
-  //General Info Header
+  //Category name and icon header
 
   #main-header{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
     display: grid;
-    grid-template-columns: 2fr 1fr 0fr;
+    grid-template-columns: auto 36px;
     grid-template-rows: auto;
     align-items: center;
-    padding: 5px 0px 0px 15px;
+    margin-top: 10px;
+    padding: 0 20px;
   }
 
   .header-section{
-    padding: 15px 20px 0px 20px;
     font-size: 18px;
     color: $color-dark-gray;
   }
@@ -71,19 +75,6 @@ body.pet-profile-page main {
 
 //------------------------------------
  //Cards
-
-  .field-info{
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: normal;
-    text-align: left;
-  }
-
-  .field-response{
-    font-size: 12px;
-    letter-spacing: normal;
-    text-align: left;
-  }
 
   .button-bg {
     width: 88px;
@@ -100,53 +91,29 @@ body.pet-profile-page main {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-    padding: 5px 15px 15px 15px;
+    padding: 15px;
     background-color: $color-white !important;
     border-radius: 2px;
+    position: relative;
+  }
+
+  div#save-button-div {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
-
-// Smaller options menu (no delete/alert) ===================================
-body.general-info-page main {
-  //Elipse Menu on card
-
-   #menu-elipse a{
-    display: flex;
-    justify-content: flex-end;
-    font-size: 50px;
-    height: 0px;
-    color: $color-dark-gray;
-    cursor: pointer;
-  }
-
-  nav#elipse-options-nav {
-    background-color: $color-light-gray;
-    width: 120px;
-    height: 50px;
-    position: absolute;
-    right: 0;
-    z-index: 2;
-    margin: 10% 5% 10% 5%;
-  }
-
-  nav#elipse-options-nav a{
-    color: $color-black;
-  }
-
-  nav#elipse-options-nav a.delete-option{
-    color: $color-alert-red;
-  }
-
-  nav#elipse-options-nav li {
-    line-height: 40px;
-    padding-left: 10px;
-  }
+h4#note-title {
+  color: $color-black;
 }
 
 
 //======================================================================
 body.pet-profile-page main {
+  background-color: $color-white;
 
   .header-icon { //white icons
     filter: invert(0%);

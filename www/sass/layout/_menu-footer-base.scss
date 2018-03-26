@@ -15,30 +15,30 @@
 body {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 100% 50px;
+  grid-template-rows: $header-nav-height 100% $footer-height;
 }
 
 header {
   width: 100%;
   position: fixed;
   z-index: 2;
-  height: $header-nav-height; //50px
+  height: $header-nav-height;
 
   nav#header-menu {
     background-color: $color-teal;
     padding: 5px 0px;
     color: $color-white;
-    height: $header-nav-height; //50px
+    height: $header-nav-height;
 
     ul {
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
-      height: 40px;
+      height: 100%;
 
       li, li a {
         height: 100%;
-        line-height: 40px;
+        line-height: 45px;
         flex: 0 0 40px;
       }
 
@@ -58,7 +58,7 @@ header {
       }
 
       li#menu-hamb {
-        padding: 10px 17px;
+        padding: 13px 17px 13px 17px;
         cursor: pointer;
       }
     }
@@ -85,7 +85,7 @@ header {
 }
 
 main {
-  margin-top: 50px;
+  margin-top: $header-nav-height;
   display: block;
   overflow: auto;
   height: calc(100vh - (50px + 55px));  //all page height
