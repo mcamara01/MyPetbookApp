@@ -1009,4 +1009,76 @@ body.general-info-page footer #add-new-button-div {
   visibility: hidden;
 }
 
+body.createAccount-page main, body.login-page main {
+  background: linear-gradient(to bottom, #009688, #64FFDA);
+  margin-top: 0;
+  height: 100vh;
+}
+body.createAccount-page main a, body.login-page main a {
+  display: inline-block;
+  border-bottom: 1px solid #313541;
+  color: #313541;
+}
+body.createAccount-page main #wrapper, body.login-page main #wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.createAccount-page main #logo, body.login-page main #logo {
+  width: 25vw;
+  max-width: 120px;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+body.createAccount-page main h2, body.login-page main h2 {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+body.createAccount-page main p#terms, body.login-page main p#terms {
+  text-align: center;
+  color: #4A4A4A;
+  margin-top: 20px;
+}
+body.createAccount-page main #btnSignUp, body.createAccount-page main #loginButton, body.login-page main #btnSignUp, body.login-page main #loginButton {
+  width: 100%;
+  height: 35px;
+  background-color: #009688;
+  border: none;
+  border-radius: 3px;
+  color: #FFFFFF;
+  text-align: center;
+  box-shadow: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+body.createAccount-page main #loginButton, body.login-page main #loginButton {
+  margin-top: 30px;
+}
+body.createAccount-page main #emailauth, body.createAccount-page main #container, body.login-page main #emailauth, body.login-page main #container {
+  width: 100%;
+}
+body.createAccount-page main #container input, body.login-page main #container input {
+  font-size: 14px;
+  line-height: 16px;
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid #4A4A4A;
+  width: 100%;
+  padding-top: 1.2rem;
+  height: 50px;
+  color: #4A4A4A;
+}
+body.createAccount-page main #container input::placeholder, body.login-page main #container input::placeholder {
+  color: #4A4A4A;
+  font-weight: 100;
+}
+
 /*# sourceMappingURL=style.css.map */
