@@ -8,7 +8,8 @@ body.exams-page main,
 body.medication-page main,
 body.notes-page main,
 body.vaccination-page main,
-body.veterinary-page main {
+body.veterinary-page main,
+body.pet-profile-page main {
 
   background-color: #e0f2f1;
 
@@ -63,9 +64,10 @@ body.veterinary-page main {
     color: $color-dark-gray;
   }
 
-  .header-icon{ //NOT ON PET PROFILE
+  .header-icon {
     filter: invert(60%);
   }
+
 
 //------------------------------------
  //Cards
@@ -103,6 +105,7 @@ body.veterinary-page main {
     border-radius: 2px;
   }
 }
+
 
 // Smaller options menu (no delete/alert) ===================================
 body.general-info-page main {
@@ -144,7 +147,10 @@ body.general-info-page main {
 
 //======================================================================
 body.pet-profile-page main {
- //General Info Content
+
+  .header-icon { //white icons
+    filter: invert(0%);
+  }
 
   .grid {
     display: grid;
