@@ -1,0 +1,185 @@
+
+// SASS ALL CATEGORIES PAGES FILE
+
+body.general-info-page main,
+body.infection-page main,
+body.allergy-page main,
+body.exams-page main,
+body.medication-page main,
+body.notes-page main,
+body.vaccination-page main,
+body.veterinary-page main,
+body.pet-profile-page main {
+
+  background-color: #e0f2f1;
+
+  // PET INFO SECTION
+
+  #pet-main-info {
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-template-rows: auto;
+    padding: 5px 15px;
+    align-items: center;
+    height: 65px;
+    background-color: white;
+  }
+
+  #pet-main-info #icon-pet-photo {
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/garfield.png');
+    border-radius: 100px;
+    border: 1px solid $color-light-aquamarine;
+    background-size: cover;
+    display: block;
+    background-position: center; //make img be centered
+  }
+
+  #pet-main-info #pet-intro {
+    margin-left: 10px;
+  }
+
+  #pet-main-info #pet-intro h3, #pet-main-info #pet-intro p {
+    margin: 0;
+    line-height: 20px;
+  }
+
+//-------------------------------------
+  //SECTIONS
+
+  //General Info Header
+
+  #main-header{
+    display: grid;
+    grid-template-columns: 2fr 1fr 0fr;
+    grid-template-rows: auto;
+    align-items: center;
+    padding: 5px 0px 0px 15px;
+  }
+
+  .header-section{
+    padding: 15px 20px 0px 20px;
+    font-size: 18px;
+    color: $color-dark-gray;
+  }
+
+  .header-icon {
+    filter: invert(60%);
+  }
+
+
+//------------------------------------
+ //Cards
+
+  .field-info{
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: normal;
+    text-align: left;
+  }
+
+  .field-response{
+    font-size: 12px;
+    letter-spacing: normal;
+    text-align: left;
+  }
+
+  .button-bg {
+    width: 88px;
+    height: 36px;
+    border-radius: 2px;
+    background-color: $color-teal;
+    position: relative;
+    margin: 2% 0% 2% 65%;
+
+  }
+
+  div#card {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 5px 15px 15px 15px;
+    background-color: $color-white !important;
+    border-radius: 2px;
+  }
+}
+
+
+// Smaller options menu (no delete/alert) ===================================
+body.general-info-page main {
+  //Elipse Menu on card
+
+   #menu-elipse a{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 50px;
+    height: 0px;
+    color: $color-dark-gray;
+    cursor: pointer;
+  }
+
+  nav#elipse-options-nav {
+    background-color: $color-light-gray;
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    margin: 10% 5% 10% 5%;
+  }
+
+  nav#elipse-options-nav a{
+    color: $color-black;
+  }
+
+  nav#elipse-options-nav a.delete-option{
+    color: $color-alert-red;
+  }
+
+  nav#elipse-options-nav li {
+    line-height: 40px;
+    padding-left: 10px;
+  }
+}
+
+
+//======================================================================
+body.pet-profile-page main {
+
+  .header-icon { //white icons
+    filter: invert(0%);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1vw;
+    padding: 5px;
+  }
+
+  .grid > a {
+    font-size: 4vw;
+    padding: .9em;
+    background: $color-teal;
+    text-align: center;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .header-icon {
+    display: inline;
+  }
+
+}
+
+// EDITING FOOTER
+
+body.general-info-page footer {
+  #add-new-button-div {
+    visibility: hidden;
+  }
+}
