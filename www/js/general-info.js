@@ -15,6 +15,7 @@ function onDeviceReady() {
   }
 
 
+  	console.log(userKey);
 
 	firebase.database().ref('users/' + userKey + "/pet/" +  petKey).on('child_added', function(data){
 		if (data.key != "general") {

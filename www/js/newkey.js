@@ -17,25 +17,7 @@ function onDeviceReady() {
     initializeNewKey = true;
   }
 
-  var userKey = localStorage.getItem('userKey');
-
-  // Test if there's an userId on Local Storage
-  if (userKey != null){
-    return
-  }else {
-    // code to create a user id on database in case there's no userId on Local Storage
-    var userKey = firebase.database().ref().child('users').push().key;
-
-    const userData = {
-        name: "User 1",
-    }
-    // set userKey to Local Storage
-    localStorage.setItem('userKey', userKey);
-
-    // path to set the user key data to Firebase
-    firebase.database().ref('users/' + userKey).set(userData);
-  }
-  
+    
 
 
 
