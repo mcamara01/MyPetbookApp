@@ -18,7 +18,7 @@ function onDeviceReady() {
 
 	$('#save-allergie-btn').click(function(){
 		var saveAllergieData = {
-			allergicto: $('#new-allergie-name').val(),
+			allergicto: $('#new-allergie-name').val(),   
     }
 
 	// code to create an allergie id on database
@@ -48,8 +48,6 @@ function onDeviceReady() {
           <nav id="elipse-options-nav" class="box-shadow-bottom-dark display-none">
             <ul>
               <li><a href="#" id="edit-allergie">Edit</a></li>
-              <li><a href="#" id="allergie-calendar">Add Alert</a></li>
-              <br>
               <br>
               <li><a href="#" id="delete-allergie" class="delete-option">Delete</a></li>
             </ul>
@@ -77,6 +75,8 @@ function onDeviceReady() {
 
       $('#edit-allergie-id').val(allergieId);
       $('#edit-allergie-name').val(saveAllergieDataObj.allergicto);
+
+      $('#imgPop').addClass("display-none");
     
     });	
 
@@ -89,13 +89,11 @@ function onDeviceReady() {
 
       $('#delete-allergie-id').val(allergieId);
       $('#delete-allergie-name').val(saveAllergieDataObj.allergicto);
+
+      $('#imgPop').addClass("display-none");
     });
 
     // Delete allergie from database
-
-    $(`#${allergieId} #delete-allergie`).click(function(){
-      firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergieId).remove();
-    });
 
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergieId).on('child_removed', function(data){
       $(`#${allergieId}`).remove();
@@ -116,15 +114,26 @@ function onDeviceReady() {
   });
 
   // Delete Allergie Button Submition Action from Edit Allergie Screen
-  $('#delete-allergie-btn').click(function(){
+
+  $(`#delete-allergie-btn`).click(function(){
+    var allergieId = $('#delete-allergie-id').val();
+    console.log(allergieId);
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/allergies/" + allergieId).remove();
+    
+    window.location.replace("./allergie.html");
+    });
+
+  $(`#delete-cancel-entry`).click(function(){
     window.location.replace("./allergie.html");
   });
+
 
   // Add Allergie from Add Button on Bottom Screen
 
   $('#imgPop').click(function(){
     $(".cards").addClass("display-none");
     $('#new-card').removeClass("display-none");
+    $('#imgPop').addClass("display-none");
 
   });
 
@@ -134,6 +143,7 @@ function onDeviceReady() {
     $(".cards").addClass("display-none");
     $('#edit-card').removeClass("display-none");
 
+
   });
 
   // Display Delete Allergie Card after Choosing Entry from Elipse Menu
@@ -142,6 +152,7 @@ function onDeviceReady() {
     $(".cards").addClass("display-none");
     $('#delete-card').removeClass("display-none");
   });
+
 
 
   // POPUPS FOR SAVE BUTTON ON NEW, EDIT AND DELETE ALLERGIES SCREEN
@@ -154,6 +165,7 @@ function onDeviceReady() {
 
   $("#addAllergie").click(function(){
     $("#addAllergie").addClass("display-none");
+
   });
 
   // Edit Info Popup
@@ -174,6 +186,5 @@ function onDeviceReady() {
   $("#deleteAllergie").click(function(){
     $("#deleteAllergie").addClass("display-none");
   });
-
 
 };

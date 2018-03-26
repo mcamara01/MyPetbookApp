@@ -249,6 +249,10 @@ function onDeviceReady() {
       $('#deletePet-popup').removeClass("display-none");
     });
 
+    $('#delete-cancel-entry').click(function() {
+      window.location.replace("./index.html");
+    });
+
     // Delete pet =====================================================================
     $(`#delete-pet-btn`).click(function(event) {
       console.log("inside delete from db");
@@ -275,13 +279,15 @@ function onDeviceReady() {
     $(".cards").addClass("display-none");
     $('#new-card').removeClass("display-none");
     $("#menu-title").html("<h1>New Pet</h1>");
-    $("#add-new-button").addClass("display-none");
+    $(".add-new-button").addClass("display-none");
   });
 
   // Go to second step to add photo
   $('#next-step').click(function(){
     $("#add-pet-step-1").addClass("display-none");
     $('#add-pet-step-2').removeClass("display-none");
+    $(".add-new-button").addClass("display-none");
+
   });
 
 
@@ -305,6 +311,8 @@ function onDeviceReady() {
   $("#deletePet-popup").click(function() { //this part of popup is outside child added because button already exists
     $("#deletePet-popup").addClass("display-none");
   });
+
+  
 
 
 }; // end on device ready

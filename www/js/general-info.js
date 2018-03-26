@@ -29,7 +29,7 @@ function onDeviceReady() {
 		$('#pet-dob').text(generalInfoDataObj.dob);
 		$('#pet-gender').text(generalInfoDataObj.gender);
 		$('#pet-color').text(generalInfoDataObj.color);
-		$('#pet-weight').text(generalInfoDataObj.weight);
+		$('#pet-weight').text(generalInfoDataObj.weight + " Kg");
 
 		
 

@@ -49,8 +49,6 @@ function onDeviceReady() {
           <nav id="elipse-options-nav" class="box-shadow-bottom-dark display-none">
             <ul>
               <li><a href="#" id="edit-exam">Edit</a></li>
-              <li><a href="#" id="exam-calendar">Add Alert</a></li>
-              <br>
               <br>
               <li><a href="#" id="delete-exam" class="delete-option">Delete</a></li>
             </ul>
@@ -81,6 +79,8 @@ function onDeviceReady() {
       $('#edit-exam-id').val(examId);
       $('#edit-exam-name').val(saveExamDataObj.name);
       $('#edit-exam-date').val(saveExamDataObj.date);
+
+      $('#imgPop').addClass("display-none");
     
     });	
 
@@ -95,13 +95,11 @@ function onDeviceReady() {
       $('#delete-exam-name').val(saveExamDataObj.name);
       $('#delete-exam-date').val(saveExamDataObj.date);
 
+      $('#imgPop').addClass("display-none");
+
     });
 
     // Delete Exam from database
-
-    $(`#${examId} #delete-exam`).click(function(){
-      firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/exams/" + examId).remove();
-    });
 
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/exams/" + examId).on('child_removed', function(data){
       $(`#${examId}`).remove();
@@ -124,14 +122,23 @@ function onDeviceReady() {
 
   // Delete Exam Button Submition Action from Edit Exam Screen
   $('#delete-exam-btn').click(function(){
+    var examId = $('#delete-exam-id').val();
+    console.log(examId);
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/exams/" + examId).remove();
+    
     window.location.replace("./exams.html");
   });
+
+  $(`#delete-cancel-entry`).click(function(){
+    window.location.replace("./exams.html");
+    });
 
   // Add Exam from Add Button on Bottom Screen
 
   $('#imgPop').click(function(){
     $(".cards").addClass("display-none");
     $('#new-card').removeClass("display-none");
+    $('#imgPop').addClass("display-none");
 
   });
 

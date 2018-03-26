@@ -84,6 +84,8 @@ function onDeviceReady() {
       $('#edit-vaccine-name').val(saveVaccineDataObj.name);
       $('#edit-vaccine-date').val(saveVaccineDataObj.date);  
       $('#edit-vaccine-expiration').val(saveVaccineDataObj.expiration);
+
+      $('#imgPop').addClass("display-none");
     });
 
     // Delete card for a specific vaccination entry
@@ -96,13 +98,11 @@ function onDeviceReady() {
       $('#delete-vaccine-name').val(saveVaccineDataObj.name);
       $('#delete-vaccine-date').val(saveVaccineDataObj.date);  
       $('#delete-vaccine-expiration').val(saveVaccineDataObj.expiration);
+
+      $('#imgPop').addClass("display-none");
     });
 
     // Delete a specific vaccination entry
-
-    $(`#${vaccineId} #delete-vaccine`).click(function(event){
-      firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).remove();
-    });
 
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).on('child_removed', function(data){
       $(`#${vaccineId}`).remove();
@@ -127,15 +127,23 @@ function onDeviceReady() {
 
   // Delete Vaccine Button Submition Action from Edit Allergie Screen
   $('#delete-vaccine-btn').click(function(){
+    var vaccineId = $('#delete-vaccine-id').val();
+    console.log(vaccineId);
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/vaccination/" + vaccineId).remove();
+
     window.location.replace("./vaccination.html");
   });
 
+  $(`#delete-cancel-entry`).click(function(){
+    window.location.replace("./vaccination.html");
+    });
 
   // Add Vaccine from Add Button on Bottom Screen
 
   $('#imgPop').click(function(){
     $(".cards").addClass("display-none");
     $('#new-card').removeClass("display-none");
+    $('#imgPop').addClass("display-none");
 
   });
 

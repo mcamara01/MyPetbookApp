@@ -102,6 +102,8 @@ function onDeviceReady() {
       $('#edit-medication-date').val(saveMedicationDataObj.date);  
       $('#edit-medication-expiration').val(saveMedicationDataObj.expiration);
       $('#edit-medication-duration').prop('checked', saveMedicationDataObj.duration);
+
+      $('#imgPop').addClass("display-none");
     });
 
     // Delete card for a specific medication entry
@@ -115,13 +117,11 @@ function onDeviceReady() {
       $('#delete-medication-date').val(saveMedicationDataObj.date);  
       $('#delete-medication-expiration').val(saveMedicationDataObj.expiration);
       $('#delete-medication-duration').val(saveMedicationDataObj.duration);
+
+      $('#imgPop').addClass("display-none");
     });
 
     // Delete a specific medication entry
-
-    $(`#${medicationId} #delete-medication`).click(function(event){
-      firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/medications/" + medicationId).remove();
-    });
 
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/medications/" + medicationId).on('child_removed', function(data){
       $(`#${medicationId}`).remove();
@@ -147,15 +147,23 @@ function onDeviceReady() {
 
   // Delete Medication Button Submition Action from Edit Medication Screen
   $('#delete-medication-btn').click(function(){
+    var medicationId = $('#delete-medication-id').val();
+    console.log(medicationId);
+    firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/medications/" + medicationId).remove();
+
     window.location.replace("./medication.html");
   });
 
+  $(`#delete-cancel-entry`).click(function(){
+    window.location.replace("./medication.html");
+    });
 
   // Add Medication from Add Button on Bottom Screen
 
   $('#imgPop').click(function(){
     $(".cards").addClass("display-none");
     $('#new-card').removeClass("display-none");
+    $('#imgPop').addClass("display-none");
 
   });
 
