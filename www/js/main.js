@@ -26,7 +26,8 @@ function onDeviceReady() {
     initialize = true;
   }
 
-  //Get the user key from LocalStorage if there's one 
+  
+  //Get the petId from LocalStorage if there's one 
   userKey = localStorage.getItem('userKey');
 
   //Get the petId from LocalStorage if there's one 
@@ -47,14 +48,28 @@ function onDeviceReady() {
   //----------------------
   // Initialize Firebase
   var config = {
-      apiKey: "AIzaSyDyRm3-_rS5aGpattuN-cT3VfxhtYirTfk",
-      authDomain: "mypetbookapp-4d393.firebaseapp.com",
-      databaseURL: "https://mypetbookapp-4d393.firebaseio.com",
-      projectId: "mypetbookapp-4d393",
-      storageBucket: "mypetbookapp-4d393.appspot.com",
-      messagingSenderId: "353025423183"
+    apiKey: "AIzaSyCGmJ6ojK_IpKS8U2DKRSz1LvDYuuqpsE0",
+    authDomain: "logintest-553a2.firebaseapp.com",
+    databaseURL: "https://logintest-553a2.firebaseio.com",
+    projectId: "logintest-553a2",
+    storageBucket: "logintest-553a2.appspot.com",
+    messagingSenderId: "838848343201"
   };
   firebase.initializeApp(config);
+
+//   firebase.auth().onAuthStateChanged(function(user) {
+//   if (user) {
+//     userKey = user.uid;
+//         // User is signed in.
+//   } else {
+//     window.location.replace("./login.html");
+//     // No user is signed in.
+//   }
+// });
+
+  // //Get the user key from LocalStorage if there's one 
+  // userKey = firebase.auth().getUid();
+  // console.log("this is the user uid " + userKey);
 
   // top options nav open window
   $('#menu-hamb').click(function() {

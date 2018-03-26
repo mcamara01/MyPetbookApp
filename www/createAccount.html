@@ -43,8 +43,13 @@
     <!-- END LINK TO STYLESHEET -->
 
     <!-- JS SCRIPT LINKS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/createAccount.js"></script>
+    <script src="cordova.js"></script>
+
+    <!-- SCRIPT FIREBASE -->
+    <script src="js/firebase.js"></script>
     
      <!-- END JS SCRIPT LINKS -->
 
@@ -67,33 +72,22 @@
     <main>
       <div id="wrapper">
         <!-- CHANGE CONTENT OF EACH PAGE ONLY BELOW THIS POINT -->
-    <script src="js/emailAuth.js"></script>
+  <!--   <script src="js/emailAuth.js"></script> -->
     <!-- <script src="cordova.js"></script> -->
     <!-- <script src="js/loginStorage.js"></script> -->
     <!-- <script src="js/firebase.js"></script> -->
-    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
+  <!--   <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-messaging.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/2.6.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.2/firebaseui.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.2/firebaseui.css"> -->
       
-      <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyDyRm3-_rS5aGpattuN-cT3VfxhtYirTfk",
-          authDomain: "mypetbookapp-4d393.firebaseapp.com",
-          databaseURL: "https://mypetbookapp-4d393.firebaseio.com",
-          projectId: "mypetbookapp-4d393",
-          storageBucket: "mypetbookapp-4d393.appspot.com",
-          messagingSenderId: "353025423183"
-        };
-        firebase.initializeApp(config);
-    </script>
+     
     <!-- sign in using firebase UI  -->
  
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       // FirebaseUI config.
       var uiConfig = {
         signInSuccessUrl: 'index.html',
@@ -110,7 +104,7 @@
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
       // The start method will wait until the DOM is loaded.
       ui.start('#firebaseui-auth-container', uiConfig);
-    </script>
+    </script> -->
     
   </head>
 
