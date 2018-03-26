@@ -53,7 +53,7 @@
 
     <!-- SCRIPT FIREBASE -->
     <script src="js/firebase.js"></script>
-    
+
      <!-- END JS SCRIPT LINKS -->
 
     <title> Exams | MyPetbook</title>
@@ -104,31 +104,35 @@
         </section>
 
         <!-- Exams Card Enter -->
-        
+
         <!-- Exams Card Loaded-->
         <div id="load-card" class="cards">
           <!-- content created from exams.js file -->
         </div>
-        
+
         <!-- Display of New Exam Card -->
         <div id="new-card" class="cards display-none" >
           <div id="card" class="box-shadow-all-light">
-            
+
             <section id="new-exam-card">
-              
+
               <section>
                 <h2>New Exam</h2>
                 <h4 class="field-info">Exam Type</h4>
-                <input id="new-exam-name" type="text" class="field-info " placeholder="enter exam type">
+                <input id="new-exam-name" type="text" placeholder="Enter exam type">
                 <h4 class="field-info">Date Taken</h4>
                 <input id="new-exam-date" type="Date">
               </section>
 
             </section>
-            <!-- Save Button -->
-            <section>
-              <button id="save-info" class="button-bg">SAVE</button>
+          </div>
 
+            <!-- Save Button -->
+            <div id="save-button-div">
+              <button id="save-info" class="button-bg">SAVE</button>
+            </div>
+
+            <section>
               <!-- The popup -->
               <div id="addExam" class="popup display-none">
                 <!-- popup content -->
@@ -142,14 +146,13 @@
                 </div>
               </div>
             </section>
-          </div>
         </div>
-        
-      
+
+
        <!-- Display of Edit Exam Card -->
         <div id="edit-card" class="cards display-none" >
           <div id="card" class="box-shadow-all-light">
-            
+
             <section id="edit-exam-card">
               <section>
                 <input type="hidden" id="edit-exam-id">
@@ -160,10 +163,14 @@
                 <input id="edit-exam-date" type="Date">
               </section>
             </section>
-              <!-- Save Button -->
-              <section>
-                <button id="edit-info" class="button-bg">SAVE</button>
+          </div>
 
+            <!-- Save Button -->
+            <div id="save-button-div">
+              <button id="edit-info" class="button-bg">SAVE</button>
+            </div>
+
+            <section>
                 <!-- The popup -->
                 <div id="editExam" class="popup display-none">
                   <!-- popup content -->
@@ -178,27 +185,30 @@
                 </div>
               </section>
           </div>
-        </div>
 
 
         <!-- Display of DELETE Exam Card -->
         <div id="delete-card" class="cards display-none" >
           <div id="card" class="box-shadow-all-light">
-            
+
             <section id="delete-exam-card">
               <section>
                 <input type="hidden" id="delete-exam-id">
                 <h2>Delete Exam</h2>
                 <h4 class="field-info">Exam Type</h4>
-                <input id="delete-exam-name" type="text" class="field-info " placeholder="enter exam type">
+                <input id="delete-exam-name" type="text" placeholder="Enter exam type">
                 <h4 class="field-info">Date Taken</h4>
                 <input id="delete-exam-date" type="Date">
               </section>
             </section>
-              <!-- Save Button -->
-              <section>
-                <button id="delete-info" class="button-bg">DELETE</button>
+          </div>
 
+            <!-- Save Button -->
+            <div id="save-button-div">
+              <button id="delete-info" class="button-bg">DELETE</button>
+            </div>
+
+            <section>
                 <!-- The popup -->
                 <div id="deleteExam" class="popup display-none">
                   <!-- popup content -->
