@@ -53,7 +53,7 @@
 
     <!-- SCRIPT FIREBASE -->
     <script src="js/firebase.js"></script>
-    
+
      <!-- END JS SCRIPT LINKS -->
 
     <title> Veterinary | MyPetbook</title>
@@ -104,22 +104,22 @@
         </section>
 
         <!-- Veterinary Card Enter -->
-        
+
         <!-- Veterinary card Loaded-->
         <div id="load-card" class="cards">
           <!-- content created from veterinary.js file -->
         </div>
-        
+
         <!-- Display of New veterinary card -->
         <div id="new-card" class="cards display-none" >
           <div id="card" class="box-shadow-all-light">
-            
+
             <section id="new-veterinary-card">
-              
+
               <section>
                 <h2>New Veterinary</h2>
                 <h4 class="field-info">Name</h4>
-                <input id="new-veterinary-name" type="text" class="field-info " placeholder="enter veterinary">
+                <input id="new-veterinary-name" type="text" placeholder="Enter veterinary name">
                 <!-- <h4 class="field-info">Phone</h4>
                 <input id="new-veterinary-phone" type="number" class="field-info " placeholder="enter veterinary phone">
                 <h4 class="field-info">Address</h4>
@@ -129,10 +129,14 @@
               </section>
 
             </section>
-            <!-- Save Button -->
-            <section>
-              <button id="save-info" class="button-bg">SAVE</button>
+          </div>
 
+            <!-- Save Button -->
+            <div id="save-button-div">
+              <button id="save-info" class="button-bg">SAVE</button>
+            </div>
+
+            <section>
               <!-- The popup -->
               <div id="addVeterinary" class="popup display-none">
                 <!-- popup content -->
@@ -147,19 +151,18 @@
               </div>
             </section>
           </div>
-        </div>
-        
-      
+
+
        <!-- Display of Edit veterinary card -->
         <div id="edit-card" class="cards display-none" >
           <div id="card" class="box-shadow-all-light">
-            
+
             <section id="edit-veterinary-card">
               <section>
                 <input type="hidden" id="edit-veterinary-id">
                 <h2>Edit Veterinary</h2>
                 <h4 class="field-info">Name</h4>
-                <input id="edit-veterinary-name" type="text" class="field-info " placeholder="enter veterinary">
+                <input id="edit-veterinary-name" type="text" placeholder="Enter veterinary">
                 <!-- <h4 class="field-info">Phone</h4>
                 <input id="edit-veterinary-phone" type="number" class="field-info " placeholder="enter veterinary phone">
                 <h4 class="field-info">Address</h4>
@@ -168,10 +171,14 @@
                 <input id="edit-veterinary-date" type="Date">
               </section>
             </section>
-              <!-- Save Button -->
-              <section>
-                <button id="edit-info" class="button-bg">SAVE</button>
+          </div>
 
+            <!-- Save Button -->
+            <div id="save-button-div">
+              <button id="edit-info" class="button-bg">SAVE</button>
+            </div>
+
+            <section>
                 <!-- The popup -->
                 <div id="editVeterinary" class="popup display-none">
                   <!-- popup content -->
@@ -186,19 +193,18 @@
                 </div>
               </section>
           </div>
-        </div>
 
 
         <!-- Display of DELETE veterinary card -->
         <div id="delete-card" class="cards display-none" >
           <div id="card" class="box-shadow-all-light">
-            
+
             <section id="delete-veterinary-card">
               <section>
                 <input type="hidden" id="delete-veterinary-id">
-                <h4 class="field-info field-title">Delete Veterinary</h4>
+                <h2>Delete Veterinary</h2>
                 <h4 class="field-info">Name</h4>
-                <input id="delete-veterinary-name" class="field-info" type="text" placeholder="enter veterinary name">
+                <input id="delete-veterinary-name" type="text" placeholder="enter veterinary name">
                 <!-- h4 class="field-info">Phone</h4>
                 <input id="delete-veterinary-phone" type="number" class="field-info " placeholder="enter veterinary phone">
                 <h4 class="field-info">Address</h4>
@@ -207,10 +213,14 @@
                 <input id="delete-veterinary-date" type="Date">
               </section>
             </section>
-              <!-- Save Button -->
-              <section>
-                <button id="delete-info" class="button-bg">DELETE</button>
+          </div>
 
+            <!-- Save Button -->
+            <div id="save-button-div">
+              <button id="delete-info" class="button-bg">DELETE</button>
+            </div>
+
+            <section>
                 <!-- The popup -->
                 <div id="deleteVeterinary" class="popup display-none">
                   <!-- popup content -->

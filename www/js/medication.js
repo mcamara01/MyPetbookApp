@@ -1,5 +1,5 @@
 // MEDICATION PAGE JS
-//---------------------------------------------------------------------- 
+//----------------------------------------------------------------------
 
 document.addEventListener("deviceready", onDeviceReady, false);
 $(document).ready(onDeviceReady);
@@ -9,7 +9,7 @@ var initializeMedication = false;
 function onDeviceReady() {
 
   if (initializeMedication) {
-    return 
+    return
   } else {
     initializeMedication = true;
   }
@@ -41,7 +41,7 @@ function onDeviceReady() {
   // FUNCTION CHILD ADDED - Add medication related to a pet into Firebase
 
   firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/medications/").on('child_added', function(data){
-    
+
     const medicationId = data.key;
     const saveMedicationDataObj = data.val();
 
@@ -64,22 +64,22 @@ function onDeviceReady() {
         <section>
           <h4 id="medication-name" class=" field-info field-name">${saveMedicationDataObj.name}</h4>
           <h4 class="field-info">Date Taken</h4>
-          <p id="medication-date">${saveMedicationDataObj.date}</p>
+          <p id="medication-date" class="field-response">${saveMedicationDataObj.date}</p>
           <h4 class="field-info">Expiration Date</h4>
-          <p id="medication-expiration">${saveMedicationDataObj.expiration}</p>
+          <p id="medication-expiration" class="field-response">${saveMedicationDataObj.expiration}</p>
           <section id="field-duration">
             <h4 class="field-info">Duration</h4>
-            <p id="medication-duration">On-Going</p
+            <p id="medication-duration" class="field-response">On-Going</p
           </section>
         </section>
       </section>
     </div></div>`)
-    
+
     // If On-Going is not checked
     if (!saveMedicationDataObj.duration) {
       $('#field-duration').addClass("display-none");
     }
-    
+
 
 
     // Display the menu elipse for each card/medicationId
@@ -88,10 +88,10 @@ function onDeviceReady() {
       $(`#${medicationId} #elipse-options-nav`).slideToggle("slow");
     });
 
-   
-  
 
-    // Edit a specific Medication Data Stored 
+
+
+    // Edit a specific Medication Data Stored
 
     $(`#${medicationId} #edit-medication`).click(function(){
       $("#edit-card").removeClass("display-none");
@@ -99,7 +99,7 @@ function onDeviceReady() {
 
       $('#edit-medication-id').val(medicationId);
       $('#edit-medication-name').val(saveMedicationDataObj.name);
-      $('#edit-medication-date').val(saveMedicationDataObj.date);  
+      $('#edit-medication-date').val(saveMedicationDataObj.date);
       $('#edit-medication-expiration').val(saveMedicationDataObj.expiration);
       $('#edit-medication-duration').prop('checked', saveMedicationDataObj.duration);
 
@@ -114,7 +114,7 @@ function onDeviceReady() {
 
       $('#delete-medication-id').val(medicationId);
       $('#delete-medication-name').val(saveMedicationDataObj.name);
-      $('#delete-medication-date').val(saveMedicationDataObj.date);  
+      $('#delete-medication-date').val(saveMedicationDataObj.date);
       $('#delete-medication-expiration').val(saveMedicationDataObj.expiration);
       $('#delete-medication-duration').val(saveMedicationDataObj.duration);
 
@@ -127,8 +127,8 @@ function onDeviceReady() {
       $(`#${medicationId}`).remove();
     });
 
-  }); //End of function "on child_added"    
-    
+  }); //End of function "on child_added"
+
 
   // Edit Medication Button Submition Action from Edit Medication Screen
   $('#edit-medication-btn').click(function(){
@@ -141,7 +141,7 @@ function onDeviceReady() {
     var medicationId = $('#edit-medication-id').val();
 
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/medications/" + medicationId).set(editMedicationData);
-    
+
     window.location.replace("./medication.html");
   });
 
@@ -189,7 +189,7 @@ function onDeviceReady() {
 
   $('#save-info').click(function(){
   $('#addMedication').removeClass("display-none");
-  }); 
+  });
 
   $("#addMedication").click(function(){
     $("#addMedication").addClass("display-none");
@@ -198,7 +198,7 @@ function onDeviceReady() {
   // Edit Info Popup
   $('#edit-info').click(function(){
   $('#editMedication').removeClass("display-none");
-  }); 
+  });
 
   $("#editMedication").click(function(){
     $("#editMedication").addClass("display-none");
@@ -208,7 +208,7 @@ function onDeviceReady() {
    // Delete Info Popup
   $('#delete-info').click(function(){
   $('#deleteMedication').removeClass("display-none");
-  }); 
+  });
 
   $("#deleteMedication").click(function(){
     $("#deleteMedication").addClass("display-none");

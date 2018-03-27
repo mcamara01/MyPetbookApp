@@ -1,0 +1,85 @@
+//SASS create account and login page
+
+
+body.createAccount-page main, body.login-page main {
+	background: linear-gradient(to bottom, $color-teal, $color-light-aquamarine);
+  // background-color: $color-light-aquamarine;
+  margin-top: 0;
+	height: 100vh;
+
+	a {
+  	display: inline-block;
+  	border-bottom: 1px solid $color-black;
+  	color: $color-black;
+	}
+
+	#wrapper {
+	  display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+	}
+
+	#logo {
+	  width: 25vw;
+		max-width: 120px;
+	  height: auto;
+	  margin-top: 30px;
+	  margin-bottom:30px;
+  }
+
+  h2 {
+    color: $color-white;
+  	font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  p#terms {
+    text-align: center;
+		color: $color-gray-brown;
+		margin-top: 20px;
+  }
+
+  #btnSignUp, #loginButton {
+  	width: 100%;
+    height: 35px;
+    background-color: $color-teal;
+    border: none;
+    border-radius: 3px;
+    color: $color-white;
+    text-align: center;
+    box-shadow: none;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+	#loginButton {
+		margin-top: 30px;
+	}
+
+  #emailauth, #container {
+    width: 100%;
+  }
+
+  #container input {
+    font-size: 14px;
+    line-height: 16px;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid $color-gray-brown;
+    width: 100%;
+    padding-top: 1.2rem;
+		height: 50px;
+  	color: $color-gray-brown;
+
+    &::placeholder {
+  	  color: $color-gray-brown;
+  	  font-weight: 100;
+	  }
+  }
+}

@@ -97,7 +97,7 @@
         <!-- Vaccination Header -->
 
         <section id="main-header">
-          <h2 class="header-section">Vaccination</h2>
+          <h2 class="header-section">Vaccinations</h2>
           <img class="header-icon" src="icons/icon_vaccinations.png" alt="general info icon">
         </section>
 
@@ -117,17 +117,22 @@
               <section>
                 <h2>New Vaccination</h2>
                 <h4 class="field-info">Name</h4>
-                <input id="new-vaccine-name" class="field-info " type="text" placeholder="enter vaccine name">
+                <input id="new-vaccine-name" type="text" placeholder="Enter vaccine name">
                 <h4 class="field-info">Date Taken</h4>
                 <input id="new-vaccine-date" type="Date">
                 <h4 class="field-info">Expiration Date</h4>
                 <input id="new-vaccine-expiration" type="Date">
               </section>
             </section>
-             <!-- Save Button -->
-              <section>
-              <button id="save-info" class="button-bg">SAVE</button>
 
+          </div>
+
+            <!-- Save Button -->
+            <div id="save-button-div">
+              <button id="save-info" class="button-text">SAVE</button>
+            </div>
+
+            <section>
               <!-- The popup -->
               <div id="addVaccine" class="popup display-none">
                 <!-- popup content -->
@@ -140,10 +145,7 @@
                   </div>
                 </div>
               </div>
-
             </section>
-
-          </div>
         </div>
 
 
@@ -156,17 +158,21 @@
               <section>
                 <input type="hidden" id="edit-vaccine-id">
                 <h4 class="field-info field-title">Edit Vaccine</h4>
-                <input id="edit-vaccine-name" class="field-info" type="text" placeholder="enter vaccine name">
+                <input id="edit-vaccine-name" type="text" placeholder="Enter vaccine name">
                 <h4 class="field-info">Date Taken</h4>
                 <input id="edit-vaccine-date" type="Date">
                 <h4 class="field-info">Expiration Date</h4>
                 <input id="edit-vaccine-expiration" type="Date">
               </section>
             </section>
-             <!-- Save Button -->
-              <section>
-              <button id="edit-info" class="button-bg">SAVE</button>
+          </div>
 
+            <!-- Save Button -->
+            <div id="save-button-div">
+              <button id="edit-info" class="button-bg">SAVE</button>
+            </div>
+
+            <section>
               <!-- The popup -->
               <div id="editVaccine" class="popup display-none">
                 <!-- popup content -->
@@ -180,8 +186,6 @@
                 </div>
               </div>
             </section>
-
-          </div>
         </div>
 
 
@@ -200,10 +204,14 @@
                 <input id="delete-vaccine-expiration" type="Date">
               </section>
             </section>
-             <!-- Save Button -->
-              <section>
-              <button id="delete-info" class="button-bg">DELETE</button>
+          </div>
 
+            <!-- Save Button -->
+            <div id="save-button-div">
+              <button id="delete-info" class="button-bg">DELETE</button>
+            </div>
+
+            <section>
               <!-- The popup -->
               <div id="deleteVaccine" class="popup display-none">
                 <!-- popup content -->

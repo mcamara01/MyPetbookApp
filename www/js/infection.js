@@ -1,5 +1,5 @@
 // INFECTIONS PAGE JS
-//---------------------------------------------------------------------- 
+//----------------------------------------------------------------------
 
 document.addEventListener("deviceready", onDeviceReady, false);
 $(document).ready(onDeviceReady);
@@ -9,11 +9,11 @@ var initializeInfection = false;
 function onDeviceReady() {
 
   if (initializeInfection) {
-    return 
+    return
   } else {
     initializeInfection = true;
   }
-	
+
 	// Save Infection Data Button from New Infection Screen
 
 	$('#save-infection-btn').click(function(){
@@ -36,7 +36,7 @@ function onDeviceReady() {
   // FUNCTION CHILD ADDED - Add infection related to a pet into Firebase
 
 	firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/infections/").on('child_added', function(data){
-  
+
     const infectionId = data.key;
     const saveInfectionDataObj = data.val();
 
@@ -55,10 +55,10 @@ function onDeviceReady() {
         </section>
 
         <section>
-          <h4 id="field-info">Type</h4>
-          <p id="infection-name">${saveInfectionDataObj.type}</p>
+          <h4 class="field-info">Type</h4>
+          <p id="infection-name" class="field-response">${saveInfectionDataObj.type}</p>
         </section>
-			</section>   
+			</section>
     </div></div>`)
 
     // Display the menu elipse for each card/infectionId
@@ -67,7 +67,7 @@ function onDeviceReady() {
       $(`#${infectionId} #elipse-options-nav`).slideToggle("slow");
     });
 
-    // Edit card for a specific Infection Data Stored 
+    // Edit card for a specific Infection Data Stored
 
     $(`#${infectionId} #edit-infection`).click(function(){
       $("#edit-card").removeClass("display-none");
@@ -77,8 +77,8 @@ function onDeviceReady() {
       $('#edit-infection-name').val(saveInfectionDataObj.type);
 
       $('#imgPop').addClass("display-none");
-    
-    });	
+
+    });
 
 
     // Delete card for a specific infection entry
@@ -109,7 +109,7 @@ function onDeviceReady() {
     var infectionId = $('#edit-infection-id').val();
 
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/infections/" + infectionId).set(editInfectionData);
-    
+
     window.location.replace("./infections.html");
   });
 
@@ -118,7 +118,7 @@ function onDeviceReady() {
     var infectionId = $('#delete-infection-id').val();
     console.log(infectionId);
     firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/infections/" + infectionId).remove();
-  
+
     window.location.replace("./infections.html");
   });
 
@@ -157,7 +157,7 @@ function onDeviceReady() {
 
   $('#save-info').click(function(){
   $('#addInfection').removeClass("display-none");
-  }); 
+  });
 
   $("#addInfection").click(function(){
     $("#addInfection").addClass("display-none");
@@ -166,7 +166,7 @@ function onDeviceReady() {
   // Edit Info Popup
   $('#edit-info').click(function(){
   $('#editInfection').removeClass("display-none");
-  }); 
+  });
 
   $("#editInfection").click(function(){
     $("#editInfection").addClass("display-none");
@@ -176,7 +176,7 @@ function onDeviceReady() {
    // Delete Info Popup
   $('#delete-info').click(function(){
   $('#deleteInfection').removeClass("display-none");
-  }); 
+  });
 
   $("#deleteInfection").click(function(){
     $("#deleteInfection").addClass("display-none");

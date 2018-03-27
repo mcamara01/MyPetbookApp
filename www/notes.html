@@ -85,7 +85,7 @@
       <!-- CHANGE CONTENT OF EACH PAGE ONLY BELOW THIS POINT -->
 
       <!-- Note Header -->
-      
+
       <!-- Pet Header -->
       <section id="pet-main-info">
         <div id="icon-pet-photo"></div>
@@ -118,16 +118,23 @@
 
             <section>
               <h2>New Note</h2>
+              <h4 class="field-info">Note title</h4>
               <input id ="new-note-title" type="text" placeholder="Enter title">
+              <h4 class="field-info">Date</h4>
               <input id="new-note-date" type="date" name="bday" placeholder="yyyy-mm-dd">
-              <textarea id = "new-note-text" rows="8" cols="35" placeholder="Type your Note"></textarea>
+              <h4 class="field-info">Note</h4>
+              <textarea id = "new-note-text" rows="8" cols="35" placeholder="Type your note"></textarea>
             </section>
 
           </section>
-          <!-- Save Button -->
-          <section>
-            <button id="save-info" class="button-bg">SAVE</button>
+        </div>
 
+          <!-- Save Button -->
+          <div id="save-button-div">
+            <button id="save-info" class="button-bg">SAVE</button>
+          </div>
+
+          <section>
             <!-- The popup -->
             <div id="addNote" class="popup display-none">
               <!-- popup content -->
@@ -142,8 +149,7 @@
               </div>
             </section>
           </div>
-        </div>
-        
+
 
         <!-- Display of Edit note card -->
         <div id="edit-card" class="cards display-none" >
@@ -152,16 +158,20 @@
             <section id="edit-note-card">
               <section>
                 <input type="hidden" id="edit-note-id">
-                <h4 class="field-info field-title">Edit Note</h4>
+                <h2>Edit Note</h2>
                 <input id ="edit-note-title" type="text" placeholder="Enter title">
                 <input id="edit-note-date" type="date" name="bday" placeholder="yyyy-mm-dd">
                 <textarea id = "edit-note-text" rows="8" cols="35" name="comment" form="usrform" placeholder="Type your Note"></textarea>
               </section>
             </section>
-            <!-- Save Button -->
-            <section>
-              <button id="edit-info" class="button-bg">SAVE</button>
+          </div>
 
+            <!-- Save Button -->
+            <div id="save-button-div">
+              <button id="edit-info" class="button-bg">SAVE</button>
+            </div>
+
+            <section>
               <!-- The popup -->
               <div id="editNote" class="popup display-none">
                 <!-- popup content -->
@@ -176,7 +186,6 @@
                 </div>
               </section>
             </div>
-          </div>
 
 
           <!-- Display of DELETE note card -->
@@ -191,10 +200,14 @@
                   <textarea id = "delete-note-text" rows="8" cols="35" name="comment" form="usrform" placeholder="Type your Note"></textarea>
                 </section>
               </section>
-              <!-- Save Button -->
-              <section>
-                <button id="delete-info" class="button-bg">DELETE</button>
+            </div>
 
+              <!-- Save Button -->
+              <div id="save-button-div">
+                <button id="delete-info" class="button-bg">DELETE</button>
+              </div>
+
+              <section>
                 <!-- The popup -->
                 <div id="deleteNote" class="popup display-none">
                   <!-- popup content -->

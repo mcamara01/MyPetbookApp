@@ -53,18 +53,21 @@ a {
 }
 
 button {
-  width: 110px;
+  width: 90px;
   height: 35px;
   background-color: #009688;
   border: none;
   color: #FFFFFF;
   text-align: center;
-  box-shadow: 0px 2px 2px 2px rgba(79, 79, 79, 0.26);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.26), 0 0 2px 0 rgba(0, 0, 0, 0.26);
+  align-self: flex-end;
+  margin: 12px 0;
+  cursor: pointer;
 }
 
 .button-text {
-  font-size: 14pt;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -88,7 +91,7 @@ button {
 .popup-content {
   background-color: #FFFFFF;
   margin: auto;
-  padding: 20px;
+  padding: 10px 20px;
   width: 250px;
 }
 
@@ -132,6 +135,7 @@ button {
 .options-align {
   display: flex;
   justify-content: flex-end;
+  height: 40px;
 }
 
 .cancel:hover, .submit:hover,
@@ -151,16 +155,19 @@ img.imgClick {
   height: 0px;
   color: #555555;
   cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 20px;
 }
 
 nav#elipse-options-nav {
   background-color: #FAFAFA;
   width: 120px;
-  height: 150px;
+  height: auto;
   position: absolute;
   right: 0;
   z-index: 2;
-  margin: 10% 5% 10% 5%;
+  margin: 7% 5% 10% 5%;
 }
 
 nav#elipse-options-nav a {
@@ -203,6 +210,66 @@ Behaviors (visibility, display, box shadow)
   visibility: hidden;
 }
 
+input {
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.26);
+  width: 90%;
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.26);
+  margin-top: 4px;
+}
+input:focus {
+  border-bottom: 2px solid #009688;
+  color: #009688;
+}
+
+textarea {
+  border: 2px solid rgba(0, 0, 0, 0.26);
+  width: 90%;
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.26);
+  margin-top: 4px;
+  font-family: "Roboto", Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+textarea:focus {
+  border: 2px solid #009688;
+  color: #009688;
+}
+
+.field-info {
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: normal;
+  text-align: left;
+  margin-bottom: 2px;
+  margin-top: 20px;
+}
+
+body.general-info-page section:nth-child(2) .field-info:first-of-type {
+  margin-top: 5px !important;
+}
+body.general-info-page section:first-of-type .field-info:first-of-type {
+  margin-top: 5px !important;
+}
+
+.field-response, .field-name {
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
+  height: 16px;
+  margin-top: 3px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.field-name {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
 /*---------------------------------------------------------------
 Layout structure
 ---------------------------------------------------------------*/
@@ -241,31 +308,31 @@ ul {
 body {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 100% 50px;
+  grid-template-rows: 55px 100% 55px;
 }
 
 header {
   width: 100%;
   position: fixed;
   z-index: 2;
-  height: 50px;
+  height: 55px;
 }
 header nav#header-menu {
   background-color: #009688;
   padding: 5px 0px;
   color: #FFFFFF;
-  height: 50px;
+  height: 55px;
 }
 header nav#header-menu ul {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  height: 40px;
+  height: 100%;
   /* not displaying */
 }
 header nav#header-menu ul li, header nav#header-menu ul li a {
   height: 100%;
-  line-height: 40px;
+  line-height: 45px;
   flex: 0 0 40px;
 }
 header nav#header-menu ul li#menu-back a {
@@ -280,7 +347,7 @@ header nav#header-menu ul h1 {
   padding-left: 17px;
 }
 header nav#header-menu ul li#menu-hamb {
-  padding: 10px 17px;
+  padding: 13px 17px 13px 17px;
   cursor: pointer;
 }
 header nav#top-options-nav {
@@ -301,7 +368,7 @@ header nav#top-options-nav a {
 }
 
 main {
-  margin-top: 50px;
+  margin-top: 55px;
   display: block;
   overflow: auto;
   height: calc(100vh - (50px + 55px));
@@ -438,7 +505,7 @@ body.index-page main section:not(.display-none).add-pet-section {
 }
 body.index-page main section:not(.display-none).add-pet-section div#pet-info-add {
   text-align: left;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px 30px 20px;
 }
 body.index-page main section:not(.display-none).add-pet-section div#pet-info-add p {
   margin-top: 20px;
@@ -446,11 +513,6 @@ body.index-page main section:not(.display-none).add-pet-section div#pet-info-add
 }
 body.index-page main section:not(.display-none).add-pet-section div#pet-info-add p:first-of-type {
   margin-top: 10px;
-}
-body.index-page main section:not(.display-none).add-pet-section button#next-step {
-  align-self: flex-end;
-  margin: 12px 0;
-  cursor: pointer;
 }
 body.index-page main section#add-pet-step-2 div#add-photo-div {
   display: flex;
@@ -483,9 +545,9 @@ body.index-page main #pet-main-info {
   display: grid;
   grid-template-columns: 40px auto;
   grid-template-rows: auto;
-  padding: 5px 15px;
+  padding: 10px 15px;
   align-items: center;
-  height: 65px;
+  height: 70px;
 }
 body.index-page main #pet-main-info #icon-pet-photo {
   width: 40px;
@@ -744,265 +806,25 @@ body.settings-user-profile-page main .icon-phone:before {
   font-size: 20px;
 }
 
-body.general-info-page main {
+body.general-info-page main,
+body.infection-page main,
+body.allergy-page main,
+body.exams-page main,
+body.medication-page main,
+body.notes-page main,
+body.vaccination-page main,
+body.veterinary-page main,
+body.pet-profile-page main {
   background-color: #e0f2f1;
 }
-body.general-info-page main #pet-main-info {
-  display: grid;
-  grid-template-columns: 40px auto;
-  grid-template-rows: auto;
-  padding: 5px 15px;
-  align-items: center;
-  height: 65px;
-  background-color: white;
-}
-body.general-info-page main #pet-main-info #icon-pet-photo {
-  width: 40px;
-  height: 40px;
-  background-image: url("../img/garfield.png");
-  border-radius: 100px;
-  border: 1px solid #64FFDA;
-  background-size: cover;
-  display: block;
-  background-position: center;
-}
-body.general-info-page main #pet-main-info #pet-intro {
-  margin-left: 10px;
-}
-body.general-info-page main #pet-main-info #pet-intro h3, body.general-info-page main #pet-main-info #pet-intro p {
-  margin: 0;
-  line-height: 20px;
-}
-body.general-info-page main #main-header {
-  display: grid;
-  grid-template-columns: 2fr 1fr 0fr;
-  grid-template-rows: auto;
-  align-items: center;
-  padding: 5px 0px 0px 15px;
-}
-body.general-info-page main .header-section {
-  padding: 15px 20px 0px 20px;
-  font-size: 18px;
-  color: #555555;
-}
-body.general-info-page main .header-icon {
-  filter: invert(60%);
-}
-body.general-info-page main .field-info {
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: normal;
-  text-align: left;
-}
-body.general-info-page main .field-response {
-  font-size: 12px;
-  letter-spacing: normal;
-  text-align: left;
-}
-body.general-info-page main .button-bg {
-  width: 88px;
-  height: 36px;
-  border-radius: 2px;
-  background-color: #009688;
-  position: relative;
-  margin: 2% 0% 2% 65%;
-}
-body.general-info-page main div#card {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  padding: 5px 15px 15px 15px;
-  background-color: #FFFFFF !important;
-  border-radius: 2px;
-}
-body.general-info-page main #menu-elipse a {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 50px;
-  height: 0px;
-  color: #555555;
-  cursor: pointer;
-}
-body.general-info-page main nav#elipse-options-nav {
-  background-color: #FAFAFA;
-  width: 120px;
-  height: 50px;
-  position: absolute;
-  right: 0;
-  z-index: 2;
-  margin: 10% 5% 10% 5%;
-}
-body.general-info-page main nav#elipse-options-nav a {
-  color: #313541;
-}
-body.general-info-page main nav#elipse-options-nav a.delete-option {
-  color: #C91914;
-}
-body.general-info-page main nav#elipse-options-nav li {
-  line-height: 40px;
-  padding-left: 10px;
-}
-
-body.general-info-page footer #add-new-button-div {
-  visibility: hidden;
-}
-
-body.vaccination-page main {
-  background-color: #E0F2F1;
-}
-body.vaccination-page main #pet-main-info {
-  display: grid;
-  grid-template-columns: 40px auto;
-  grid-template-rows: auto;
-  padding: 5px 15px;
-  align-items: center;
-  height: 65px;
-  background-color: #FFFFFF;
-}
-body.vaccination-page main #pet-main-info #icon-pet-photo {
-  width: 40px;
-  height: 40px;
-  background-image: url("../img/garfield.png");
-  border-radius: 100px;
-  border: 1px solid #64FFDA;
-  background-size: cover;
-  display: block;
-  background-position: center;
-}
-body.vaccination-page main #pet-main-info #pet-intro {
-  margin-left: 10px;
-}
-body.vaccination-page main #pet-main-info #pet-intro h3, body.vaccination-page main #pet-main-info #pet-intro p {
-  margin: 0;
-  line-height: 20px;
-}
-body.vaccination-page main #main-header {
-  display: grid;
-  grid-template-columns: 2fr 1fr 0fr;
-  grid-template-rows: auto;
-  align-items: center;
-  padding: 5px 0px 0px 15px;
-}
-body.vaccination-page main .header-section {
-  padding: 15px 20px 0px 20px;
-  font-size: 20px;
-  color: #555555;
-}
-body.vaccination-page main .header-icon {
-  filter: invert(60%);
-}
-body.vaccination-page main .field-info {
-  font-weight: 500;
-  font-size: 12px;
-  letter-spacing: normal;
-  text-align: left;
-}
-body.vaccination-page main .field-name {
-  padding-bottom: 10px;
-  font-weight: 500;
-}
-body.vaccination-page main .field-title {
-  font-size: 14px;
-}
-body.vaccination-page main .button-bg {
-  width: 88px;
-  height: 36px;
-  border-radius: 2px;
-  background-color: #009688;
-  position: absolute;
-  right: 0;
-  margin: 3% 10% 3% 10%;
-}
-body.vaccination-page main div#card {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  padding: 5px 15px 15px 15px;
-  background-color: #FFFFFF !important;
-  border-radius: 2px;
-}
-
-body.allergie-page main {
-  background-color: #e0f2f1;
-}
-body.allergie-page main #pet-main-info {
-  display: grid;
-  grid-template-columns: 40px auto;
-  grid-template-rows: auto;
-  padding: 5px 15px;
-  align-items: center;
-  height: 65px;
-  background-color: white;
-}
-body.allergie-page main #pet-main-info #icon-pet-photo {
-  width: 40px;
-  height: 40px;
-  background-image: url("../img/garfield.png");
-  border-radius: 100px;
-  border: 1px solid #64FFDA;
-  background-size: cover;
-  display: block;
-  background-position: center;
-}
-body.allergie-page main #pet-main-info #pet-intro {
-  margin-left: 10px;
-}
-body.allergie-page main #pet-main-info #pet-intro h3, body.allergie-page main #pet-main-info #pet-intro p {
-  margin: 0;
-  line-height: 20px;
-}
-body.allergie-page main #main-header {
-  display: grid;
-  grid-template-columns: 2fr 1fr 0fr;
-  grid-template-rows: auto;
-  align-items: center;
-  padding: 5px 0px 0px 15px;
-}
-body.allergie-page main .header-section {
-  padding: 15px 20px 0px 20px;
-  font-size: 20px;
-  color: #555555;
-}
-body.allergie-page main .header-icon {
-  filter: invert(60%);
-}
-body.allergie-page main .field-info {
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: normal;
-  text-align: left;
-}
-body.allergie-page main .field-name {
-  padding-bottom: 10px;
-  font-weight: 500;
-}
-body.allergie-page main .field-title {
-  font-size: 14px;
-}
-body.allergie-page main nav#elipse-options-nav {
-  height: 100px;
-}
-body.allergie-page main .button-bg {
-  width: 88px;
-  height: 36px;
-  border-radius: 2px;
-  background-color: #009688;
-  position: absolute;
-  right: 0;
-  margin: 3% 10% 3% 10%;
-}
-body.allergie-page main div#card {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  padding: 5px 15px 15px 15px;
-  background-color: #FFFFFF !important;
-  border-radius: 2px;
-}
-
+body.general-info-page main #pet-main-info,
+body.infection-page main #pet-main-info,
+body.allergy-page main #pet-main-info,
+body.exams-page main #pet-main-info,
+body.medication-page main #pet-main-info,
+body.notes-page main #pet-main-info,
+body.vaccination-page main #pet-main-info,
+body.veterinary-page main #pet-main-info,
 body.pet-profile-page main #pet-main-info {
   display: grid;
   grid-template-columns: 40px auto;
@@ -1010,8 +832,16 @@ body.pet-profile-page main #pet-main-info {
   padding: 5px 15px;
   align-items: center;
   height: 65px;
-  background-color: #FFFFFF;
+  background-color: white;
 }
+body.general-info-page main #pet-main-info #icon-pet-photo,
+body.infection-page main #pet-main-info #icon-pet-photo,
+body.allergy-page main #pet-main-info #icon-pet-photo,
+body.exams-page main #pet-main-info #icon-pet-photo,
+body.medication-page main #pet-main-info #icon-pet-photo,
+body.notes-page main #pet-main-info #icon-pet-photo,
+body.vaccination-page main #pet-main-info #icon-pet-photo,
+body.veterinary-page main #pet-main-info #icon-pet-photo,
 body.pet-profile-page main #pet-main-info #icon-pet-photo {
   width: 40px;
   height: 40px;
@@ -1022,24 +852,139 @@ body.pet-profile-page main #pet-main-info #icon-pet-photo {
   display: block;
   background-position: center;
 }
+body.general-info-page main #pet-main-info #pet-intro,
+body.infection-page main #pet-main-info #pet-intro,
+body.allergy-page main #pet-main-info #pet-intro,
+body.exams-page main #pet-main-info #pet-intro,
+body.medication-page main #pet-main-info #pet-intro,
+body.notes-page main #pet-main-info #pet-intro,
+body.vaccination-page main #pet-main-info #pet-intro,
+body.veterinary-page main #pet-main-info #pet-intro,
 body.pet-profile-page main #pet-main-info #pet-intro {
   margin-left: 10px;
 }
-body.pet-profile-page main #pet-main-info #pet-intro h3, body.pet-profile-page main #pet-main-info #pet-intro p {
+body.general-info-page main #pet-main-info #pet-intro h3, body.general-info-page main #pet-main-info #pet-intro p,
+body.infection-page main #pet-main-info #pet-intro h3,
+body.infection-page main #pet-main-info #pet-intro p,
+body.allergy-page main #pet-main-info #pet-intro h3,
+body.allergy-page main #pet-main-info #pet-intro p,
+body.exams-page main #pet-main-info #pet-intro h3,
+body.exams-page main #pet-main-info #pet-intro p,
+body.medication-page main #pet-main-info #pet-intro h3,
+body.medication-page main #pet-main-info #pet-intro p,
+body.notes-page main #pet-main-info #pet-intro h3,
+body.notes-page main #pet-main-info #pet-intro p,
+body.vaccination-page main #pet-main-info #pet-intro h3,
+body.vaccination-page main #pet-main-info #pet-intro p,
+body.veterinary-page main #pet-main-info #pet-intro h3,
+body.veterinary-page main #pet-main-info #pet-intro p,
+body.pet-profile-page main #pet-main-info #pet-intro h3,
+body.pet-profile-page main #pet-main-info #pet-intro p {
   margin: 0;
   line-height: 20px;
 }
+body.general-info-page main #main-header,
+body.infection-page main #main-header,
+body.allergy-page main #main-header,
+body.exams-page main #main-header,
+body.medication-page main #main-header,
+body.notes-page main #main-header,
+body.vaccination-page main #main-header,
+body.veterinary-page main #main-header,
 body.pet-profile-page main #main-header {
-  display: inline-flex;
-  grid-template-columns: 40px auto;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 60px;
+  display: grid;
+  grid-template-columns: auto 36px;
   grid-template-rows: auto;
-  justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
+  padding: 0 20px;
 }
+body.general-info-page main .header-section,
+body.infection-page main .header-section,
+body.allergy-page main .header-section,
+body.exams-page main .header-section,
+body.medication-page main .header-section,
+body.notes-page main .header-section,
+body.vaccination-page main .header-section,
+body.veterinary-page main .header-section,
 body.pet-profile-page main .header-section {
-  padding: 15px 20px 0px 20px;
-  font-size: 20px;
+  font-size: 18px;
   color: #555555;
+}
+body.general-info-page main .header-icon,
+body.infection-page main .header-icon,
+body.allergy-page main .header-icon,
+body.exams-page main .header-icon,
+body.medication-page main .header-icon,
+body.notes-page main .header-icon,
+body.vaccination-page main .header-icon,
+body.veterinary-page main .header-icon,
+body.pet-profile-page main .header-icon {
+  filter: invert(60%);
+}
+body.general-info-page main .button-bg,
+body.infection-page main .button-bg,
+body.allergy-page main .button-bg,
+body.exams-page main .button-bg,
+body.medication-page main .button-bg,
+body.notes-page main .button-bg,
+body.vaccination-page main .button-bg,
+body.veterinary-page main .button-bg,
+body.pet-profile-page main .button-bg {
+  width: 88px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: #009688;
+  position: relative;
+  margin: 2% 0% 2% 65%;
+}
+body.general-info-page main div#card,
+body.infection-page main div#card,
+body.allergy-page main div#card,
+body.exams-page main div#card,
+body.medication-page main div#card,
+body.notes-page main div#card,
+body.vaccination-page main div#card,
+body.veterinary-page main div#card,
+body.pet-profile-page main div#card {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #FFFFFF !important;
+  border-radius: 2px;
+  position: relative;
+}
+body.general-info-page main div#save-button-div,
+body.infection-page main div#save-button-div,
+body.allergy-page main div#save-button-div,
+body.exams-page main div#save-button-div,
+body.medication-page main div#save-button-div,
+body.notes-page main div#save-button-div,
+body.vaccination-page main div#save-button-div,
+body.veterinary-page main div#save-button-div,
+body.pet-profile-page main div#save-button-div {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+h4#note-title {
+  color: #313541;
+}
+
+body.pet-profile-page main {
+  background-color: #FFFFFF;
+}
+body.pet-profile-page main .header-icon {
+  filter: invert(0%);
 }
 body.pet-profile-page main .grid {
   display: grid;
@@ -1047,526 +992,93 @@ body.pet-profile-page main .grid {
   grid-gap: 1vw;
   padding: 5px;
 }
-body.pet-profile-page main .grid > section {
+body.pet-profile-page main .grid > a {
   font-size: 4vw;
-  padding: .7em;
+  padding: .9em;
   background: #009688;
   text-align: center;
 }
-body.pet-profile-page main div#grid p {
-  color: #FFFFFF;
+body.pet-profile-page main .grid > a p {
+  margin-bottom: 0;
 }
 body.pet-profile-page main .header-icon {
   display: inline;
 }
 
-body.infection-page main {
-  background-color: #e0f2f1;
-}
-body.infection-page main #pet-main-info {
-  display: grid;
-  grid-template-columns: 40px auto;
-  grid-template-rows: auto;
-  padding: 5px 15px;
-  align-items: center;
-  height: 65px;
-  background-color: white;
-}
-body.infection-page main #pet-main-info #icon-pet-photo {
-  width: 40px;
-  height: 40px;
-  background-image: url("../img/garfield.png");
-  border-radius: 100px;
-  border: 1px solid #64FFDA;
-  background-size: cover;
-  display: block;
-  background-position: center;
-}
-body.infection-page main #pet-main-info #pet-intro {
-  margin-left: 10px;
-}
-body.infection-page main #pet-main-info #pet-intro h3, body.infection-page main #pet-main-info #pet-intro p {
-  margin: 0;
-  line-height: 20px;
-}
-body.infection-page main #main-header {
-  display: grid;
-  grid-template-columns: 2fr 1fr 0fr;
-  grid-template-rows: auto;
-  align-items: center;
-  padding: 5px 0px 0px 15px;
-}
-body.infection-page main .header-section {
-  padding: 15px 20px 0px 20px;
-  font-size: 20px;
-  color: #555555;
-}
-body.infection-page main .header-icon {
-  filter: invert(60%);
-}
-body.infection-page main .field-info {
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: normal;
-  text-align: left;
-}
-body.infection-page main .field-name {
-  padding-bottom: 10px;
-  font-weight: 500;
-}
-body.infection-page main .field-title {
-  font-size: 14px;
-}
-body.infection-page main nav#elipse-options-nav {
-  height: 100px;
-}
-body.infection-page main .button-bg {
-  width: 88px;
-  height: 36px;
-  border-radius: 2px;
-  background-color: #009688;
-  position: absolute;
-  right: 0;
-  margin: 3% 10% 3% 10%;
-}
-body.infection-page main div#card {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  padding: 5px 15px 15px 15px;
-  background-color: #FFFFFF !important;
-  border-radius: 2px;
+body.general-info-page footer #add-new-button-div {
+  visibility: hidden;
 }
 
-body.medication-page main {
-  background-color: #E0F2F1;
-}
-body.medication-page main #pet-main-info {
-  display: grid;
-  grid-template-columns: 40px auto;
-  grid-template-rows: auto;
-  padding: 5px 15px;
-  align-items: center;
-  height: 65px;
-  background-color: #FFFFFF;
-}
-body.medication-page main #pet-main-info #icon-pet-photo {
-  width: 40px;
-  height: 40px;
-  background-image: url("../img/garfield.png");
-  border-radius: 100px;
-  border: 1px solid #64FFDA;
-  background-size: cover;
-  display: block;
-  background-position: center;
-}
-body.medication-page main #pet-main-info #pet-intro {
-  margin-left: 10px;
-}
-body.medication-page main #pet-main-info #pet-intro h3, body.medication-page main #pet-main-info #pet-intro p {
-  margin: 0;
-  line-height: 20px;
-}
-body.medication-page main #main-header {
-  display: grid;
-  grid-template-columns: 2fr 1fr 0fr;
-  grid-template-rows: auto;
-  align-items: center;
-  padding: 5px 0px 0px 15px;
-}
-body.medication-page main .header-section {
-  padding: 15px 20px 0px 20px;
-  font-size: 20px;
-  color: #555555;
-}
-body.medication-page main .header-icon {
-  filter: invert(60%);
-}
-body.medication-page main .field-info {
-  font-weight: 500;
-  font-size: 12px;
-  letter-spacing: normal;
-  text-align: left;
-}
-body.medication-page main .field-name {
-  padding-bottom: 10px;
-  font-weight: 500;
-}
-body.medication-page main .field-title {
-  font-size: 14px;
-}
-body.medication-page main .check-box-field {
-  display: flex;
-  justify-content: space-between;
-}
-body.medication-page main .button-bg {
-  width: 88px;
-  height: 36px;
-  border-radius: 2px;
-  background-color: #009688;
-  position: absolute;
-  right: 0;
-  margin: 3% 10% 3% 10%;
-}
-body.medication-page main div#card {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  padding: 5px 15px 15px 15px;
-  background-color: #FFFFFF !important;
-  border-radius: 2px;
-}
-
-body.veterinary-page main {
-  background-color: #e0f2f1;
-}
-body.veterinary-page main #pet-main-info {
-  display: grid;
-  grid-template-columns: 40px auto;
-  grid-template-rows: auto;
-  padding: 5px 15px;
-  align-items: center;
-  height: 65px;
-  background-color: white;
-}
-body.veterinary-page main #pet-main-info #icon-pet-photo {
-  width: 40px;
-  height: 40px;
-  background-image: url("../img/garfield.png");
-  border-radius: 100px;
-  border: 1px solid #64FFDA;
-  background-size: cover;
-  display: block;
-  background-position: center;
-}
-body.veterinary-page main #pet-main-info #pet-intro {
-  margin-left: 10px;
-}
-body.veterinary-page main #pet-main-info #pet-intro h3, body.veterinary-page main #pet-main-info #pet-intro p {
-  margin: 0;
-  line-height: 20px;
-}
-body.veterinary-page main #main-header {
-  display: grid;
-  grid-template-columns: 2fr 1fr 0fr;
-  grid-template-rows: auto;
-  align-items: center;
-  padding: 5px 0px 0px 15px;
-}
-body.veterinary-page main .header-section {
-  padding: 15px 20px 0px 20px;
-  font-size: 20px;
-  color: #555555;
-}
-body.veterinary-page main .header-icon {
-  filter: invert(60%);
-}
-body.veterinary-page main .field-info {
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: normal;
-  text-align: left;
-}
-body.veterinary-page main .field-name {
-  padding-bottom: 10px;
-  font-weight: 500;
-}
-body.veterinary-page main .field-title {
-  font-size: 14px;
-}
-body.veterinary-page main .button-bg {
-  width: 88px;
-  height: 36px;
-  border-radius: 2px;
-  background-color: #009688;
-  position: absolute;
-  right: 0;
-  margin: 3% 10% 3% 10%;
-}
-body.veterinary-page main div#card {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  padding: 5px 15px 15px 15px;
-  background-color: #FFFFFF !important;
-  border-radius: 2px;
-}
-
-body.exams-page main {
-  background-color: #e0f2f1;
-}
-body.exams-page main #pet-main-info {
-  display: grid;
-  grid-template-columns: 40px auto;
-  grid-template-rows: auto;
-  padding: 5px 15px;
-  align-items: center;
-  height: 65px;
-  background-color: white;
-}
-body.exams-page main #pet-main-info #icon-pet-photo {
-  width: 40px;
-  height: 40px;
-  background-image: url("../img/garfield.png");
-  border-radius: 100px;
-  border: 1px solid #64FFDA;
-  background-size: cover;
-  display: block;
-  background-position: center;
-}
-body.exams-page main #pet-main-info #pet-intro {
-  margin-left: 10px;
-}
-body.exams-page main #pet-main-info #pet-intro h3, body.exams-page main #pet-main-info #pet-intro p {
-  margin: 0;
-  line-height: 20px;
-}
-body.exams-page main #main-header {
-  display: grid;
-  grid-template-columns: 2fr 1fr 0fr;
-  grid-template-rows: auto;
-  align-items: center;
-  padding: 5px 0px 0px 15px;
-}
-body.exams-page main .header-section {
-  padding: 15px 20px 0px 20px;
-  font-size: 20px;
-  color: #555555;
-}
-body.exams-page main .header-icon {
-  filter: invert(60%);
-}
-body.exams-page main .field-info {
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: normal;
-  text-align: left;
-}
-body.exams-page main .field-name {
-  padding-bottom: 10px;
-  font-weight: 500;
-}
-body.exams-page main .field-title {
-  font-size: 14px;
-}
-body.exams-page main nav#elipse-options-nav {
-  height: 100px;
-}
-body.exams-page main .button-bg {
-  width: 88px;
-  height: 36px;
-  border-radius: 2px;
-  background-color: #009688;
-  position: absolute;
-  right: 0;
-  margin: 3% 10% 3% 10%;
-}
-body.exams-page main div#card {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  padding: 5px 15px 15px 15px;
-  background-color: #FFFFFF !important;
-  border-radius: 2px;
-}
-
-body.notes-page main {
-  background-color: #e0f2f1;
-}
-body.notes-page main #pet-main-info {
-  display: grid;
-  grid-template-columns: 40px auto;
-  grid-template-rows: auto;
-  padding: 5px 15px;
-  align-items: center;
-  height: 65px;
-  background-color: white;
-}
-body.notes-page main #pet-main-info #icon-pet-photo {
-  width: 40px;
-  height: 40px;
-  background-image: url("../img/garfield.png");
-  border-radius: 100px;
-  border: 1px solid #64FFDA;
-  background-size: cover;
-  display: block;
-  background-position: center;
-}
-body.notes-page main #pet-main-info #pet-intro {
-  margin-left: 10px;
-}
-body.notes-page main #pet-main-info #pet-intro h3, body.notes-page main #pet-main-info #pet-intro p {
-  margin: 0;
-  line-height: 20px;
-}
-body.notes-page main #main-header {
-  display: grid;
-  grid-template-columns: 2fr 1fr 0fr;
-  grid-template-rows: auto;
-  align-items: center;
-  padding: 5px 0px 0px 15px;
-}
-body.notes-page main .header-section {
-  padding: 15px 20px 0px 20px;
-  font-size: 20px;
-  color: #555555;
-}
-body.notes-page main .header-icon {
-  filter: invert(60%);
-}
-body.notes-page main .field-info {
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: normal;
-  text-align: left;
-}
-body.notes-page main .field-name {
-  padding-bottom: 10px;
-  font-weight: 500;
-}
-body.notes-page main .field-title {
-  font-size: 14px;
-}
-body.notes-page main nav#elipse-options-nav {
-  height: 100px;
-}
-body.notes-page main .button-bg {
-  width: 88px;
-  height: 36px;
-  border-radius: 2px;
-  background-color: #009688;
-  position: absolute;
-  right: 0;
-  margin: 3% 10% 3% 10%;
-}
-body.notes-page main div#card {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  padding: 5px 15px 15px 15px;
-  background-color: #FFFFFF !important;
-  border-radius: 2px;
-}
-
-body.createAccount-page main {
-  background-image: linear-gradient(to bottom, #009688, #64ffda), linear-gradient(202deg, #1de9b6, #f76b1c);
+body.createAccount-page main, body.login-page main {
+  background: linear-gradient(to bottom, #009688, #64FFDA);
   margin-top: 0;
   height: 100vh;
 }
-body.createAccount-page main a {
+body.createAccount-page main a, body.login-page main a {
   display: inline-block;
-  border-bottom: 1px solid black;
-  color: black;
+  border-bottom: 1px solid #313541;
+  color: #313541;
 }
-body.createAccount-page main #wrapper {
+body.createAccount-page main #wrapper, body.login-page main #wrapper {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  width: 80%;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
 }
-body.createAccount-page main #logo {
-  width: 15vh;
+body.createAccount-page main #logo, body.login-page main #logo {
+  width: 25vw;
+  max-width: 120px;
   height: auto;
   margin-top: 30px;
   margin-bottom: 30px;
 }
-body.createAccount-page main h2 {
-  color: white;
-  font-size: 20px;
+body.createAccount-page main h2, body.login-page main h2 {
+  color: #FFFFFF;
+  font-size: 18px;
   font-weight: 500;
   margin-bottom: 0;
 }
-body.createAccount-page main #btnSignUp {
-  width: 65vw;
-  height: 35px;
-  background-color: #teal;
-  border: none;
-  border-radius: 3px;
-  color: white;
+body.createAccount-page main p#terms, body.login-page main p#terms {
   text-align: center;
-  box-shadow: none;
+  color: #4A4A4A;
+  margin-top: 20px;
 }
-body.createAccount-page main #container input {
-  border: none;
-  background: transparent;
-  border-bottom: 1px solid;
-  max-width: 400px;
-  font: 13px Roboto,arial,sans-serif;
-  padding-top: 1.2rem;
-  padding-bottom: 0.8rem;
-  width: 267px;
-  height: 61px;
-  color: white;
-}
-body.createAccount-page main ::placeholder {
-  color: white;
-  font-weight: 100;
-}
-
-body.login-page main {
-  background-image: linear-gradient(to bottom, #009688, #64ffda), linear-gradient(202deg, #1de9b6, #f76b1c);
-  margin-top: 0;
-  height: 100vh;
-}
-body.login-page main a {
-  display: inline-block;
-  border-bottom: 1px solid black;
-  color: black;
-}
-body.login-page main #wrapper {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 0;
-}
-body.login-page main #logo {
-  width: 15vh;
-  height: auto;
-  margin-top: 30px;
-  margin-bottom: 80px;
-}
-body.login-page main p {
-  text-align: center;
-}
-body.login-page main h2 {
-  color: white;
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 0;
-  padding-left: 10px;
-}
-body.login-page main #loginButton {
-  width: 65vw;
+body.createAccount-page main #btnSignUp, body.createAccount-page main #loginButton, body.login-page main #btnSignUp, body.login-page main #loginButton {
+  width: 100%;
   height: 35px;
   background-color: #009688;
   border: none;
   border-radius: 3px;
-  color: white;
+  color: #FFFFFF;
   text-align: center;
   box-shadow: none;
-  margin-top: 20px;
+  font-weight: 500;
+  font-size: 14px;
 }
-body.login-page main #container input {
+body.createAccount-page main #loginButton, body.login-page main #loginButton {
+  margin-top: 30px;
+}
+body.createAccount-page main #emailauth, body.createAccount-page main #container, body.login-page main #emailauth, body.login-page main #container {
+  width: 100%;
+}
+body.createAccount-page main #container input, body.login-page main #container input {
+  font-size: 14px;
+  line-height: 16px;
   border: none;
   background: transparent;
-  border-bottom: 1px solid;
-  max-width: 400px;
-  font: 13px Roboto,arial,sans-serif;
+  border-bottom: 2px solid #4A4A4A;
+  width: 100%;
   padding-top: 1.2rem;
-  padding-bottom: 0.8rem;
-  width: 267px;
-  height: 61px;
-  color: white;
+  height: 50px;
+  color: #4A4A4A;
 }
-body.login-page main ::placeholder {
-  color: white;
-  font-weight: lighter;
+body.createAccount-page main #container input::placeholder, body.login-page main #container input::placeholder {
+  color: #4A4A4A;
+  font-weight: 100;
 }
 
 /*# sourceMappingURL=style.css.map */

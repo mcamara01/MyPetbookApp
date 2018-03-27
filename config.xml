@@ -44,8 +44,8 @@
         <splash qualifier="port-mdpi" src="www/res/screen/android/splash-port-mdpi.png" />
         <splash qualifier="port-hdpi" src="www/res/screen/android/splash-port-hdpi.png" />
         <splash qualifier="port-xhdpi" src="www/res/screen/android/splash-port-xhdpi.png" />
-        <splash qualifier="port-xxhdpi" src="www/res/screen/android/splash-port-xhdpi.png" />
-        <splash qualifier="port-xxxhdpi" src="www/res/screen/android/splash-port-xhdpi.png" />
+        <splash qualifier="port-xxhdpi" src="www/res/screen/android/splash-port-xxhdpi.png" />
+        <splash qualifier="port-xxxhdpi" src="www/res/screen/android/splash-port-xxxhdpi.png" />
 
         <splash src="splash.png" /> <!-- default -->
 
