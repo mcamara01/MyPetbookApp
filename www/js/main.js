@@ -57,19 +57,6 @@ function onDeviceReady() {
   };
   firebase.initializeApp(config);
 
-//   firebase.auth().onAuthStateChanged(function(user) {
-//   if (user) {
-//     userKey = user.uid;
-//         // User is signed in.
-//   } else {
-//     window.location.replace("./login.html");
-//     // No user is signed in.
-//   }
-// });
-
-  // //Get the user key from LocalStorage if there's one 
-  // userKey = firebase.auth().getUid();
-  // console.log("this is the user uid " + userKey);
 
   // top options nav open window
   $('#menu-hamb').click(function() {
@@ -84,6 +71,19 @@ function onDeviceReady() {
 
   // --------------------------
 
+  $('#signout').click(function(){
+    firebase.auth().signOut().then(function() {
+    console.log("dracarys");
+      // Sign-out successful.
+    }).catch(function(error) {
+      // An error happened.
+    }).then(function(){
+      // direct user to login page
+      window.location.replace("./login.html");
+    });
+
+
+  });
   
   
 };

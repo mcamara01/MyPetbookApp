@@ -14,7 +14,6 @@ function onDeviceReady() {
 	}
 
 	$('#loginButton').click(function(){
-		console.log("dracarys");
 		var email = $('#userEmail').val();
 		var password = $('#userPassword').val();
 		console.log(email);
@@ -29,6 +28,7 @@ function onDeviceReady() {
 		  // ...
 		}).then(function(result){
 			console.log(result);
+			
 			// code to get user uid from auth
 		    var userKey = result.uid;
 
@@ -58,4 +58,6 @@ function onDeviceReady() {
 		
 		
 	});
+
+
 };
