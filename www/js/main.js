@@ -48,12 +48,12 @@ function onDeviceReady() {
   //----------------------
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyCGmJ6ojK_IpKS8U2DKRSz1LvDYuuqpsE0",
-    authDomain: "logintest-553a2.firebaseapp.com",
-    databaseURL: "https://logintest-553a2.firebaseio.com",
-    projectId: "logintest-553a2",
-    storageBucket: "logintest-553a2.appspot.com",
-    messagingSenderId: "838848343201"
+    apiKey: "AIzaSyDyRm3-_rS5aGpattuN-cT3VfxhtYirTfk",
+    authDomain: "mypetbookapp-4d393.firebaseapp.com",
+    databaseURL: "https://mypetbookapp-4d393.firebaseio.com",
+    projectId: "mypetbookapp-4d393",
+    storageBucket: "mypetbookapp-4d393.appspot.com",
+    messagingSenderId: "353025423183"
   };
   firebase.initializeApp(config);
 
