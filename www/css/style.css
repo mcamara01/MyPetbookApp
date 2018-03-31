@@ -1047,6 +1047,9 @@ body.createAccount-page main p#terms, body.login-page main p#terms {
   color: #4A4A4A;
   margin-top: 20px;
 }
+body.createAccount-page main p#terms input, body.login-page main p#terms input {
+  width: 14px;
+}
 body.createAccount-page main #btnSignUp, body.createAccount-page main #loginButton, body.login-page main #btnSignUp, body.login-page main #loginButton {
   width: 100%;
   height: 35px;
