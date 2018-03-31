@@ -8,7 +8,7 @@ body.settings-page main { //always inform the class of the current page body fir
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 5px 15px 15px 15px;
     background-color: $color-white !important;
     border-radius: 2px;
@@ -97,28 +97,9 @@ body.settings-user-profile-page main{
   div#card {
     padding: 5px 20px 20px 20px;
   }
-  section#user-main-info {
-    display: grid;
-    grid-template-columns: 40px auto;
-    grid-template-rows: auto;
-    justify-content: space-between;
-    align-items: center;
-    height: 65px;
-  }
-
-  section#user-main-info #icon-user-photo {
-    width: 40px;
-    height: 40px;
-    background-image: url('../img/fernanda.jpg');
-    border-radius: 100px;
-    border: 1px solid $color-light-aquamarine;
-    background-size: cover;
-    display: block;
-    background-position: center; //make img be centered
-  }
 
   section#user-main-info #user-name {
-    margin-left: 10px;
+    margin-left: 5px;
   }
 
   section#user-main-info #user-intro h3 {
@@ -128,31 +109,19 @@ body.settings-user-profile-page main{
 
   // detailed info
   section#user-details-info {
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   section#user-details-info div {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-
-  section#user-details-info span {
-    flex: 0 0 40px;
+    display: grid;
+    grid-template-columns: 40px auto;
+    margin-top: 20px;
   }
 
   section#user-details-info input {
     background-color: transparent;
     border: none;
-    flex: 1 0 80%;
     color: $color-black;
-  }
-
-  section#edit-user-info {
-    margin-top: 20px;
-    display: flex;
-    justify-content: flex-end;
   }
 
   // ICONS
