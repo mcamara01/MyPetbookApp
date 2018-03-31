@@ -43,7 +43,13 @@ body.createAccount-page main, body.login-page main {
     text-align: center;
 		color: $color-gray-brown;
 		margin-top: 20px;
+
+		input {
+			width: 14px;
+		}
   }
+
+
 
   #btnSignUp, #loginButton {
   	width: 100%;
