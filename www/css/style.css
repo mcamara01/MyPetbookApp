@@ -665,7 +665,7 @@ body.settings-page main div#card {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
+  margin-top: 20px;
   padding: 5px 15px 15px 15px;
   background-color: #FFFFFF !important;
   border-radius: 2px;
@@ -738,53 +738,25 @@ body.settings-preferences-page .slider.round:before {
 body.settings-user-profile-page main div#card {
   padding: 5px 20px 20px 20px;
 }
-body.settings-user-profile-page main section#user-main-info {
-  display: grid;
-  grid-template-columns: 40px auto;
-  grid-template-rows: auto;
-  justify-content: space-between;
-  align-items: center;
-  height: 65px;
-}
-body.settings-user-profile-page main section#user-main-info #icon-user-photo {
-  width: 40px;
-  height: 40px;
-  background-image: url("../img/fernanda.jpg");
-  border-radius: 100px;
-  border: 1px solid #64FFDA;
-  background-size: cover;
-  display: block;
-  background-position: center;
-}
 body.settings-user-profile-page main section#user-main-info #user-name {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 body.settings-user-profile-page main section#user-main-info #user-intro h3 {
   margin: 0;
   line-height: 20px;
 }
 body.settings-user-profile-page main section#user-details-info {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 body.settings-user-profile-page main section#user-details-info div {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-body.settings-user-profile-page main section#user-details-info span {
-  flex: 0 0 40px;
+  display: grid;
+  grid-template-columns: 40px auto;
+  margin-top: 20px;
 }
 body.settings-user-profile-page main section#user-details-info input {
   background-color: transparent;
   border: none;
-  flex: 1 0 80%;
   color: #313541;
-}
-body.settings-user-profile-page main section#edit-user-info {
-  margin-top: 20px;
-  display: flex;
-  justify-content: flex-end;
 }
 body.settings-user-profile-page main .icon {
   font-family: 'icomoon';
