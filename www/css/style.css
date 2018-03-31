@@ -1081,4 +1081,47 @@ body.createAccount-page main #container input::placeholder, body.login-page main
   font-weight: 100;
 }
 
+body.terms-page main {
+  background: linear-gradient(to bottom, #009688, #64FFDA);
+  margin-top: 0;
+  height: 100vh !important;
+}
+body.terms-page main #wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.terms-page main #logo {
+  width: 25vw;
+  max-width: 120px;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+body.terms-page main h2 {
+  text-align: center;
+  line-height: 1.1;
+}
+body.terms-page main div#card {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 5px 15px 15px 15px;
+  background-color: #FFFFFF !important;
+  border-radius: 2px;
+}
+body.terms-page main div#card ol {
+  padding: 10px 20px 10px 20px;
+  margin: 0;
+}
+body.terms-page main div#card ol li {
+  margin-bottom: 30px;
+}
+
 /*# sourceMappingURL=style.css.map */
