@@ -10,30 +10,19 @@ var initializeAddPet = false;
 function onDeviceReady() {
 
   if (initializeAddPet) {
-    return 
+    return
   } else {
     initializeAddPet = true;
   }
 
- //Get the user key from LocalStorage if there's one 
+ //Get the user key from LocalStorage if there's one
   userKey = localStorage.getItem('userKey');
 
-  // // code to create a user id on database
-  //   var newUser = firebase.database().ref().child('users').push().key;
-  //
-  //   const userData = {
-  //         name: "Daenerys Targaryen",
-  //     }
-  //
-  //   // path to set the user key data to Firebase
-  //     firebase.database().ref('users/' + newUser).set(userData);
-  //
-  // Save Pet Data added from New Pet Screen
   $('#save-pet-btn').click(function() {
     var savePetData = {
       name: $('#new-pet-name').val(),
       dob: $('#new-pet-dob').val(),
-      gender: $('#new-pet-gender').val(),
+      gender: $('input[name=gender]:checked').val(),
       color: $('#new-pet-color').val(),
       weight: $('#new-pet-weight').val(),
       image: $('#pet-photo').attr('src')
@@ -128,7 +117,7 @@ function onDeviceReady() {
 
     </div></div>`)
 
-    
+
 
     //remove loading div when pets Loaded
     $('#loading').addClass("display-none");
@@ -312,7 +301,7 @@ function onDeviceReady() {
     $("#deletePet-popup").addClass("display-none");
   });
 
-  
+
 
 
 }; // end on device ready

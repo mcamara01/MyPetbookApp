@@ -41,7 +41,14 @@ function onDeviceReady() {
 		$('#edit-general-info').click(function(){
 			$('#edit-pet-name').val(generalInfoDataObj.name);
 			$('#edit-pet-dob').val(generalInfoDataObj.dob);
-			$('#edit-pet-gender').val(generalInfoDataObj.gender);
+
+			let gender = generalInfoDataObj.gender;
+			if(gender == "Male") {
+				$('input[name=gender][value="Male"]').attr('checked', 'checked');
+			} else {
+				$('input[name=gender][value="Female"]').attr('checked', 'checked');
+			}
+
 			$('#edit-pet-color').val(generalInfoDataObj.color);
 			$('#edit-pet-weight').val(generalInfoDataObj.weight);
 
@@ -67,7 +74,7 @@ function onDeviceReady() {
 		var editGeneralInfoData = {
 			name: $('#edit-pet-name').val(),
 	        dob: $('#edit-pet-dob').val(),
-	        gender: $('#edit-pet-gender').val(),
+	        gender: $('input[name=gender]:checked').val(),
 	        color: $('#edit-pet-color').val(),
 	        weight: $('#edit-pet-weight').val(),
 	        image: imageSrc,
