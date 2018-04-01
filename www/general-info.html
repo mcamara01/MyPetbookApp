@@ -182,7 +182,16 @@
 
               <section>
                 <h4 class="field-info">Weight</h4>
-                <input type="text" id="edit-pet-weight" class="field-response"> kg(s)
+                <input type="text" id="edit-pet-weight" class="field-response"> kg<small>(s)</small>
+              </section>
+
+              <section>
+                <h4 class="field-info">Photo</h4>
+                <div id="add-photo-div">
+                  <img id="pet-photo" alt="Pet default photo">
+                  <input type='file' onchange="readURL(this);" />
+
+                </div>
               </section>
             </div>
           </div>
