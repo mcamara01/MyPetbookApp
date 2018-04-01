@@ -133,7 +133,7 @@ function onDeviceReady() {
     // get the dob added and calculate age
     var dobAdded = savePetDataObj.general.dob;
     var petAge = getAge(dobAdded);
-    // console.log(getAge(dobAdded));
+    console.log(dobAdded);
 
     // set petId into local Storage
     $(`#${petKey} #icon-info`).click(function(){
@@ -154,14 +154,15 @@ function onDeviceReady() {
       var monthNow = now.getMonth()+1; //starts from 0
       var dateNow = now.getDate();
 
-      var dob = new Date(dateString.substring(0,4),
-                         dateString.substring(5,7),
-                         dateString.substring(8,10)
-                         );
+      var dob = {
+        year: dateString.substring(0,4),
+        month: dateString.substring(5,7),
+        day: dateString.substring(8,10)
+      };
 
-      var yearDob = dob.getFullYear();
-      var monthDob = dob.getMonth();
-      var dateDob = dob.getDate();
+      var yearDob = dob.year;
+      var monthDob = dob.month;
+      var dateDob = dob.day;
       var age = {};
       var ageString = "";
       var yearString = "";
@@ -213,7 +214,7 @@ function onDeviceReady() {
       else if ( (age.years == 0) && (age.months == 0))
         ageString = age.days + dayString;
       else if ( (age.years > 0) && (age.months == 0) )
-        ageString = age.years + yearString +". Happy Birthday ${savePetDataObj.general.name}!!";
+        ageString = age.years + yearString +`. Happy Birthday ${savePetDataObj.general.name}!`;
       else if ( (age.years > 0) && (age.months > 0) )
         ageString = age.years + yearString + " and " + age.months + monthString + " old.";
       else if ( (age.years == 0) && (age.months > 0) )
