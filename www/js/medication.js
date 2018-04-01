@@ -21,7 +21,6 @@ function onDeviceReady() {
       name: $('#new-medication-name').val(),
       date: $('#new-medication-date').val(),
       expiration: $('#new-medication-expiration').val(),
-      duration: $('#new-medication-duration').is(':checked')
     }
 
     // code to create a medication id on database
@@ -67,19 +66,9 @@ function onDeviceReady() {
           <p id="medication-date" class="field-response">${saveMedicationDataObj.date}</p>
           <h4 class="field-info">Expiration Date</h4>
           <p id="medication-expiration" class="field-response">${saveMedicationDataObj.expiration}</p>
-          <section id="field-duration">
-            <h4 class="field-info">Duration</h4>
-            <p id="medication-duration" class="field-response">On-Going</p
-          </section>
         </section>
       </section>
     </div></div>`)
-
-    // If On-Going is not checked
-    if (!saveMedicationDataObj.duration) {
-      $('#field-duration').addClass("display-none");
-    }
-
 
 
     // Display the menu elipse for each card/medicationId
@@ -87,8 +76,6 @@ function onDeviceReady() {
     $(`#${medicationId} #menu-elipse`).click(function() {
       $(`#${medicationId} #elipse-options-nav`).slideToggle("slow");
     });
-
-
 
 
     // Edit a specific Medication Data Stored
@@ -101,7 +88,6 @@ function onDeviceReady() {
       $('#edit-medication-name').val(saveMedicationDataObj.name);
       $('#edit-medication-date').val(saveMedicationDataObj.date);
       $('#edit-medication-expiration').val(saveMedicationDataObj.expiration);
-      $('#edit-medication-duration').prop('checked', saveMedicationDataObj.duration);
 
       $('#imgPop').addClass("display-none");
     });
@@ -116,7 +102,6 @@ function onDeviceReady() {
       $('#delete-medication-name').val(saveMedicationDataObj.name);
       $('#delete-medication-date').val(saveMedicationDataObj.date);
       $('#delete-medication-expiration').val(saveMedicationDataObj.expiration);
-      $('#delete-medication-duration').val(saveMedicationDataObj.duration);
 
       $('#imgPop').addClass("display-none");
     });
@@ -136,7 +121,6 @@ function onDeviceReady() {
       name: $('#edit-medication-name').val(),
       date: $('#edit-medication-date').val(),
       expiration: $('#edit-medication-expiration').val(),
-      duration: $('#edit-medication-duration').is(':checked')
     }
     var medicationId = $('#edit-medication-id').val();
 
