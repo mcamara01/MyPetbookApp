@@ -224,6 +224,20 @@ input:focus {
   border-bottom: 2px solid #009688;
   color: #009688;
 }
+input[id*="weight"] {
+  width: 75%;
+  max-width: 260px !important;
+}
+
+input.radio-input {
+  width: 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+section#gender-section span, div#pet-info-add span {
+  margin-right: 20px;
+}
 
 textarea {
   border: 2px solid rgba(0, 0, 0, 0.26);
@@ -249,7 +263,7 @@ textarea:focus {
   margin-top: 20px;
 }
 
-body.general-info-page section:nth-child(2) .field-info:first-of-type {
+body.general-info-page #load-card section:nth-child(2) .field-info:first-of-type {
   margin-top: 5px !important;
 }
 body.general-info-page section:first-of-type .field-info:first-of-type {
