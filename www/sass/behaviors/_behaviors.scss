@@ -47,6 +47,25 @@ input {
     border-bottom: 2px solid $color-teal;
     color: $color-teal;
   }
+
+  &[id*="weight"] {
+    width: 75%;
+    max-width: 260px !important;
+  }
+}
+
+// male and female radio buttons
+input.radio-input {
+  width: 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// male and female text
+section#gender-section, div#pet-info-add {
+  span {
+    margin-right: 20px;
+  }
 }
 
 textarea {
@@ -68,7 +87,7 @@ textarea {
 //FORMS VIEWING
 
 // h4 info label
-.field-info{
+.field-info {
   font-weight: 500;
   font-size: 12px;
   letter-spacing: normal;
@@ -79,7 +98,7 @@ textarea {
 
 body.general-info-page {
 
-  section:nth-child(2) .field-info:first-of-type { //when displaying
+  #load-card section:nth-child(2) .field-info:first-of-type { //when displaying
     margin-top: 5px !important;
   }
 
