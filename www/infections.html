@@ -118,29 +118,17 @@
                 <h2>New Infection</h2>
                 <h4 id="field-info">Type</h4>
                 <input id="new-infection-name" type="text" placeholder="Enter infection type">
+                <h4 class="field-info">Date</h4>
+                <input id="new-infection-date" type="Date">
               </section>
             </section>
           </div>
 
             <!-- Save Button -->
             <div id="save-button-div">
-              <button id="save-info" class="button-text">SAVE</button>
+              <button id="save-infection-btn" class="button-text">SAVE</button>
             </div>
 
-            <section>
-              <!-- The popup -->
-              <div id="addInfection" class="popup display-none">
-                <!-- popup content -->
-                <div class="popup-content box-shadow-all-light">
-                  <h2>Add</h2>
-                  <p>Are you sure you want to add this information?
-                  <div class="options-align">
-                    <button id="cancel-entry" class="cancel">CANCEL</button>
-                    <button id="save-infection-btn" class="submit">ADD</button>
-                  </div>
-                </div>
-              </div>
-            </section>
         </div>
 
 
@@ -153,7 +141,9 @@
                 <input type="hidden" id="edit-infection-id">
                 <h4 class="field-info field-title">Edit Infection</h4>
                 <h4 id="field-info">Type</h4>
-                <input id="edit-infection-name" type="text" placeholder="enter infection name">
+                <input id="edit-infection-name" class="field-response" type="text" placeholder="Enter infection name">
+                <h4 class="field-info">Date</h4>
+                <input id="edit-infection-date" type="Date">
               </section>
             </section>
 
@@ -178,7 +168,6 @@
                   </div>
                 </div>
               </section>
-          </div>
         </div>
 
 
@@ -191,7 +180,9 @@
                 <input type="hidden" id="delete-infection-id">
                 <h4 class="field-info field-title">Delete Infection</h4>
                 <h4 id="field-info">Type</h4>
-                <input id="delete-infection-name" class="field-info" type="text" placeholder="enter infection name">
+                <input id="delete-infection-name" class="field-response" type="text" placeholder="enter infection name">
+                <h4 class="field-info">Date</h4>
+                <input id="delete-infection-date" type="Date">
               </section>
             </section>
           </div>
