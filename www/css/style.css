@@ -263,10 +263,11 @@ textarea:focus {
   margin-top: 20px;
 }
 
-body.general-info-page #load-card section:nth-child(2) .field-info:first-of-type {
+#load-card section:nth-child(2) .field-info:first-of-type {
   margin-top: 5px !important;
 }
-body.general-info-page section:first-of-type .field-info:first-of-type {
+
+section:first-of-type .field-info:first-of-type {
   margin-top: 5px !important;
 }
 
