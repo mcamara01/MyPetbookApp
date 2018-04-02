@@ -96,16 +96,16 @@ textarea {
   margin-top: 20px;
 }
 
-body.general-info-page {
 
-  #load-card section:nth-child(2) .field-info:first-of-type { //when displaying
-    margin-top: 5px !important;
-  }
 
-  section:first-of-type .field-info:first-of-type { //when editing
-    margin-top: 5px !important;
-  }
+#load-card section:nth-child(2) .field-info:first-of-type { //when displaying
+  margin-top: 5px !important;
 }
+
+section:first-of-type .field-info:first-of-type { //when editing
+  margin-top: 5px !important;
+}
+
 
 // pet info
 .field-response, .field-name {
