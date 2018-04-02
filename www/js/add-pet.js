@@ -65,7 +65,7 @@ function onDeviceReady() {
     }
   });
 
-
+let noPets = 0;
 
   // IF CHILD ADDED - Add pet related to user into Firebase and HTML ================================
   petDataPath.on('child_added', function(data) {
@@ -133,7 +133,7 @@ function onDeviceReady() {
     // get the dob added and calculate age
     var dobAdded = savePetDataObj.general.dob;
     var petAge = getAge(dobAdded);
-    console.log(dobAdded);
+    // console.log(dobAdded);
 
     // set petId into local Storage
     $(`#${petKey} #icon-info`).click(function(){
@@ -261,6 +261,8 @@ function onDeviceReady() {
     //DISPLAY SLIDES function ==============================================================
     showSlides(slideIndex);
 
+    // noPets++;
+    // console.log("noPets", noPets);
   }); //End of function "on child_added"
 
 
@@ -328,17 +330,29 @@ function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+// function currentSlide(n) {
+//   showSlides(slideIndex = n);
+// }
 
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
+  console.log("no of slides", slides.length);
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
   }
   slides[slideIndex-1].style.display = "block";
+
+  // hide prev and next arrows if there's only one pet
+  if(slides.length == 1) {
+    $('.prev').addClass("display-none");
+    $('.next').addClass("display-none");
+    // console.log("slides length is 1");
+  } else {
+    $('.prev').removeClass("display-none");
+    $('.next').removeClass("display-none");
+    // console.log("slides length is NOT 1");
+  }
 }
