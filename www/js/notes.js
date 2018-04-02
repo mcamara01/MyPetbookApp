@@ -166,17 +166,6 @@ function onDeviceReady() {
 
   // POPUPS FOR SAVE BUTTON ON NEW, EDIT AND DELETE ALLERGIES SCREEN
 
-  // Save Info popup
-
-  $('#save-info').click(function(){
-  $('#addNote').removeClass("display-none");
-  });
-
-  $("#addNote").click(function(){
-    $("#addNote").addClass("display-none");
-
-  });
-
   // Edit Info Popup
   $('#edit-info').click(function(){
   $('#editNote').removeClass("display-none");

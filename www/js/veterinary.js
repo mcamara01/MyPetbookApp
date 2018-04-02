@@ -174,16 +174,6 @@ function onDeviceReady() {
 
   // POPUPS FOR SAVE BUTTON ON NEW, EDIT AND DELETE VETERINARY SCREEN
 
-  // Save Info popup
-
-  $('#save-info').click(function(){
-  $('#addVeterinary').removeClass("display-none");
-  });
-
-  $("#addVeterinary").click(function(){
-    $("#addVeterinary").addClass("display-none");
-  });
-
   // Edit Info Popup
   $('#edit-info').click(function(){
   $('#editVeterinary').removeClass("display-none");

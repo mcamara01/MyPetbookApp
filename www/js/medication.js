@@ -169,16 +169,6 @@ function onDeviceReady() {
 
   // POPUPS FOR SAVE BUTTON ON NEW, EDIT AND DELETE MEDICATION SCREEN
 
-  // Save Info popup
-
-  $('#save-info').click(function(){
-  $('#addMedication').removeClass("display-none");
-  });
-
-  $("#addMedication").click(function(){
-    $("#addMedication").addClass("display-none");
-  });
-
   // Edit Info Popup
   $('#edit-info').click(function(){
   $('#editMedication').removeClass("display-none");

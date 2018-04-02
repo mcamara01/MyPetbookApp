@@ -19,6 +19,7 @@ function onDeviceReady() {
 	$('#save-infection-btn').click(function(){
 		var saveInfectionData = {
 			type: $('#new-infection-name').val(),
+      date: $('#new-infection-date').val()
     }
 
 	// code to create an infection id on database
@@ -57,6 +58,8 @@ function onDeviceReady() {
         <section>
           <h4 class="field-info">Type</h4>
           <p id="infection-name" class="field-response">${saveInfectionDataObj.type}</p>
+          <h4 class="field-info">Date</h4>
+          <p id="infection-date" class="field-response">${saveInfectionDataObj.date}</p>
         </section>
 			</section>
     </div></div>`)
@@ -75,6 +78,7 @@ function onDeviceReady() {
 
       $('#edit-infection-id').val(infectionId);
       $('#edit-infection-name').val(saveInfectionDataObj.type);
+      $('#edit-infection-date').val(saveInfectionDataObj.date);
 
       $('#imgPop').addClass("display-none");
 
@@ -89,6 +93,7 @@ function onDeviceReady() {
 
       $('#delete-infection-id').val(infectionId);
       $('#delete-infection-name').val(saveInfectionDataObj.type);
+      $('#delete-infection-date').val(saveInfectionDataObj.date);
 
       $('#imgPop').addClass("display-none");
     });
@@ -104,7 +109,8 @@ function onDeviceReady() {
 	// Edit Infection Button Submition Action from Edit Infections Screen
   $('#edit-infection-btn').click(function(){
     var editInfectionData = {
-      type: $('#edit-infection-name').val()
+      type: $('#edit-infection-name').val(),
+      date: $('#edit-infection-date').val()
     }
     var infectionId = $('#edit-infection-id').val();
 
@@ -152,16 +158,6 @@ function onDeviceReady() {
 
 
   // POPUPS FOR SAVE BUTTON ON NEW, EDIT AND DELETE INFECTIONS SCREEN
-
-  // Save Info popup
-
-  $('#save-info').click(function(){
-  $('#addInfection').removeClass("display-none");
-  });
-
-  $("#addInfection").click(function(){
-    $("#addInfection").addClass("display-none");
-  });
 
   // Edit Info Popup
   $('#edit-info').click(function(){

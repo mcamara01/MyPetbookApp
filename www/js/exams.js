@@ -160,16 +160,6 @@ function onDeviceReady() {
 
   // POPUPS FOR SAVE BUTTON ON NEW, EDIT AND DELETE EXAMS SCREEN
 
-  // Save Info popup
-
-  $('#save-info').click(function(){
-  $('#addExam').removeClass("display-none");
-  });
-
-  $("#addExam").click(function(){
-    $("#addExam").addClass("display-none");
-  });
-
   // Edit Info Popup
   $('#edit-info').click(function(){
   $('#editExam').removeClass("display-none");

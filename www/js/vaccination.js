@@ -165,16 +165,6 @@ function onDeviceReady() {
 
   // POPUPS FOR SAVE BUTTON ON NEW, EDIT AND DELETE VACCINATION SCREEN
 
-  // Save Info popup
-
-  $('#save-info').click(function(){
-  $('#addVaccine').removeClass("display-none");
-  });
-
-  $("#addVaccine").click(function(){
-    $("#addVaccine").addClass("display-none");
-  });
-
   // Edit Info Popup
   $('#edit-info').click(function(){
   $('#editVaccine').removeClass("display-none");
