@@ -17,6 +17,8 @@ function onDeviceReady() {
     initializeNewKey = true;
   }
 
+  firebase.initializeApp(config);
+
     
 
 

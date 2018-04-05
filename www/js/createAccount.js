@@ -16,6 +16,8 @@ function onDeviceReady() {
 	$('#btnSignUp').click(function(){
 
 		console.log("dracarys");
+		// added username
+		var username = $('#username').val();
 		var email = $('#txtEmail').val();
 		var password = $('#pass1').val();
 		var password2 = $('#pass2').val();
@@ -23,7 +25,8 @@ function onDeviceReady() {
 			console.log("Passwords don't match");
 			return
 		}
-
+		// Is not logging username on console, only Firefox
+		console.log(username);
 		console.log(email);
 		console.log(password);
 
