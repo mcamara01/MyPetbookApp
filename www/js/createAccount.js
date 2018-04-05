@@ -15,8 +15,7 @@ function onDeviceReady() {
 
 	$('#btnSignUp').click(function(){
 
-		console.log("dracarys");
-		// added username
+		// added username var
 		var username = $('#username').val();
 		var email = $('#txtEmail').val();
 		var password = $('#pass1').val();

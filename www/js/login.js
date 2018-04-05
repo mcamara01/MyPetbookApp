@@ -25,56 +25,44 @@ function onDeviceReady() {
 		  // Handle Errors here.
 		  var errorCode = error.code;
 		  var errorMessage = error.message;
+		  var friendlyErrorMessage;
+
+		  // friendly error message for user
+
+		  if (errorCode == 'auth/wrong-password') {
+		  	friendlyErrorMessage = "Username or password is incorrect.";
+		  } else if ( errorCode == 'auth/user-not-found') {
+		  	friendlyErrorMessage = "Username or password is incorrect.";
+		  } else {
+		  	friendlyErrorMessage = errorMessage;
+		  }
+
+		  console.log(friendlyErrorMessage);
 
 		  // append popup with error message
 		  $('#errorMessage').removeClass("display-none").append(`<div class="popup-content box-shadow-all-light">
-                    <p> Sorry!  
-                    <br>
-                    <p> ${errorMessage} 
-                    <br>
-                    <p>Please, try it again.
-                    <div class="options-align">
-                      <button id="ok-btn" class="submit">OK</button>
-                    </div>
-                  </div>`);
+		  	<p> Sorry!  
+		  	<br>
+		  	<p> ${friendlyErrorMessage} 
+		  	<br>
+		  	<p>Please, try it again.
+		  	<div class="options-align">
+		  	<button id="ok-btn" class="submit">OK</button>
+		  	</div>
+		  	</div>`);
 		  $('#ok-btn').click(function(){
 		  	$("#errorMessage").addClass("display-none");
-		  		// direct user when successfull loged in to login page
-			    window.location.replace("./login.html");
-		  })
+		  		// direct user when successfull logged in to login page
+		  		window.location.replace("./login.html");
+		  	})
 		  console.log(errorMessage);
 		  console.log(errorCode);
 		  // ...
-		}).then(function(result){
-			console.log(result);
-			
-			// code to get user uid from auth
-			var userKey = result.uid;
-
-			console.log(userKey);
-
-			const userData = {
-
-				name: result.email,
-
-			}
-
-			console.log(userData);
-		    // set userKey to Local Storage
-		    localStorage.setItem('userKey', userKey);
-
-		    // path to set the user key data to Firebase
-		    firebase.database().ref('users/' + userKey).update(userData).then(function(){
-
-			    // direct user when successfull loged in to index page
-			    window.location.replace("./index.html");
-
-		    });
-  
-  
-			
+		}).then(function(user){
+			userSetup(user);
 		});
-				
+
+
 	});
 
 
