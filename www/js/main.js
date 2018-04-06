@@ -76,13 +76,15 @@
 
     firebase.auth().onAuthStateChanged(function(user) {
 
+        var user = firebase.auth().currentUser;
+
         if (user) {
             // User is signed in.
             // -1 means not in that path page
             if (window.location.pathname.search("login.html") != -1) { 
                 
-                userSetup(user);
-                // window.location.replace("./index.html");
+                
+              window.location.replace("./index.html");
             }
         } else {
             // No user is signed in.
@@ -115,46 +117,4 @@
 };
 
 
-function userSetup (user){
 
-      // code to get user uid from auth
-      var userKey = user.uid;
-
-      const userData = {
-
-        email: user.email,
-
-      }
-        // set userKey to Local Storage
-        localStorage.setItem('userKey', userKey);
-
-        // path to set the user key data to Firebase
-        firebase.database().ref('users/' + userKey).update(userData).then(function(){
-
-          // direct user when successfull loged in to index page
-          window.location.replace("./index.html");
-
-        });
-
-
-
-     //    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-     //    .then(function() {
-
-     //     console.log("check if passes here")
-      //     // Existing and future Auth states are now persisted in the current
-      //     // session only. Closing the window would clear any existing state even
-      //     // if a user forgets to sign out.
-      //     // ...
-      //     // New sign-in will be persisted with session persistence.
-      //     return firebase.auth().signInWithEmailAndPassword(email, password);
-      // })
-     //    .catch(function(error) {
-      //     // Handle Errors here.
-      //     var errorCode = error.code;
-      //     var errorMessage = error.message;
-      // });
-
-
-
-    };

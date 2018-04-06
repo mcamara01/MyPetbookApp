@@ -16,8 +16,7 @@ function onDeviceReady() {
 	$('#loginButton').click(function(){
 		var email = $('#userEmail').val();
 		var password = $('#userPassword').val();
-		console.log(email);
-		console.log(password);
+	
 
 		firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
 
@@ -40,7 +39,7 @@ function onDeviceReady() {
 		  console.log(friendlyErrorMessage);
 
 		  // append popup with error message
-		  $('#errorMessage').removeClass("display-none").append(`<div class="popup-content box-shadow-all-light">
+		  $('#errorMessage').removeClass("display-none").prepend(`<div class="popup-content box-shadow-all-light">
 		  	<p> Sorry!  
 		  	<br>
 		  	<p> ${friendlyErrorMessage} 
@@ -50,18 +49,35 @@ function onDeviceReady() {
 		  	<button id="ok-btn" class="submit">OK</button>
 		  	</div>
 		  	</div>`);
+
 		  $('#ok-btn').click(function(){
 		  	$("#errorMessage").addClass("display-none");
 		  		// direct user when successfull logged in to login page
 		  		window.location.replace("./login.html");
-		  	})
+		  	});
+
 		  console.log(errorMessage);
 		  console.log(errorCode);
-		  // ...
-		}).then(function(user){
-			userSetup(user);
-		});
 
+		}).then(function(user){
+			
+			
+			if (user) {
+				// set userKey to Local Storage
+	        	localStorage.setItem('userKey', user.uid);
+	        	
+				window.location.replace("./index.html");
+			}
+
+
+		});
+		//.then(function(user){
+		// 	console.log("why god, why?");
+
+		// 	window.location.replace("./index.html");
+
+		// });
+		
 
 	});
 
