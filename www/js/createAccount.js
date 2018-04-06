@@ -27,7 +27,7 @@ function onDeviceReady() {
 	
 
 	$('#btnSignUp').click(function(){
-
+		if(document.getElementById('checkBox').checked){
 		// added username var
 		var name = $('#username').val();
 		var email = $('#txtEmail').val();
@@ -87,7 +87,9 @@ function onDeviceReady() {
 
 		});
 
-		
+		} else {
+			alert("read terms and conditions")
+		}
 	});
 
 };
