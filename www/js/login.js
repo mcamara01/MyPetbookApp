@@ -60,23 +60,16 @@ function onDeviceReady() {
 		  console.log(errorCode);
 
 		}).then(function(user){
-			
-			
+					
 			if (user) {
 				// set userKey to Local Storage
 	        	localStorage.setItem('userKey', user.uid);
-	        	
+
 				window.location.replace("./index.html");
 			}
 
 
 		});
-		//.then(function(user){
-		// 	console.log("why god, why?");
-
-		// 	window.location.replace("./index.html");
-
-		// });
 		
 
 	});
