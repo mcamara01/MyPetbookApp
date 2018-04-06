@@ -14,7 +14,7 @@ function onDeviceReady() {
 	}
 
 	function popupError(friendlyErrorMessage) {
-		// append popup with error message
+		// display popup with error message
 		
 		$('#errorMessage').removeClass("display-none");
 		$('#displayMessage').text(friendlyErrorMessage); 
@@ -88,7 +88,7 @@ function onDeviceReady() {
 		});
 
 		} else {
-			alert("read terms and conditions")
+			alert("Please, make sure to check our terms and conditions.")
 		}
 	});
 
