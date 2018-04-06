@@ -21,28 +21,29 @@ function onDeviceReady() {
 
 		$('#ok-btn').click(function(){
 			$("#errorMessage").addClass("display-none");
-		  	});
+		});
 
 	};
 	
 
-	$('#btnSignUp').click(function(){
+	$('#btnSignUp').click(function(){	
 
-		// added username var
-		var name = $('#username').val();
-		var email = $('#txtEmail').val();
-		var password = $('#pass1').val();
-		var password2 = $('#pass2').val();
-		if (password != password2) {
-			popupError("Passwords don't match."); 
-			return
-		}
+		if ($('#checkBox').is(':checked')) {
 
+			// added username var
+			var name = $('#username').val();
+			var email = $('#txtEmail').val();
+			var password = $('#pass1').val();
+			var password2 = $('#pass2').val();
+			if (password != password2) {
+				popupError("Passwords don't match."); 
+				return
+			}
 
-		firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-		  // Handle Errors here.
-		  var errorCode = error.code;
-		  var errorMessage = error.message;
+			firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+			  // Handle Errors here.
+			  var errorCode = error.code;
+			  var errorMessage = error.message;
 
 		  // friendly error message for user
 		  var friendlyErrorMessage;
@@ -85,9 +86,11 @@ function onDeviceReady() {
 
 	      });
 
-		});
+	    });
 
-		
-	});
+	}else {
+		alert("Please, be sure to check our terms and conditions before signing up.");
+	}
+});
 
 };
