@@ -1,4 +1,3 @@
-
 document.addEventListener("deviceready", onDeviceReady, false);
 $(document).ready(onDeviceReady);
 
@@ -16,7 +15,7 @@ function onDeviceReady() {
 	$('#loginButton').click(function(){
 		var email = $('#userEmail').val();
 		var password = $('#userPassword').val();
-	
+
 
 		firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
 

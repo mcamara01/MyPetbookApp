@@ -124,6 +124,24 @@ body.settings-user-profile-page main{
     color: $color-black;
   }
 
+  .button-bg {
+    width: 88px;
+    height: 36px;
+    border-radius: 2px;
+    background-color: $color-teal;
+    position: relative;
+    margin: 2% 0% 2% 5%;
+
+  }
+
+  div#delete-button-div {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+
   // ICONS
   .icon {
     font-family: 'icomoon';

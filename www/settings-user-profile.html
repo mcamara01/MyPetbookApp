@@ -48,6 +48,7 @@
     <!-- JS SCRIPT LINKS -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/settings-user-profile.js"></script>
     <script src="cordova.js"></script>
 
     <!-- SCRIPT FIREBASE -->
@@ -94,21 +95,41 @@
 
           <section id="user-main-info">
               <div id="user-name">
-                <h2>Fernanda Teixeira</h2>
+                <h2 id="userName"></h2>
               </div>
           </section>
 
           <section id="user-details-info">
               <div id="email">
                 <span class="icon icon-email"></span>
-                <input type="email" name="email" value="fernandatote@gmail.com" disabled="true">
+                <input id="userEmail" type="email" name="email" value="" disabled="true">
               </div>
               <div id="password">
                 <span class="icon icon-password"></span>
-                <input type="password" name="password" value="123456" disabled="true">
+                <input id="userPassword" type="password" name="password" value="123456" disabled="true">
               </div>
           </section>
         </div>
+
+       <!-- Save Button -->
+            <div id="delete-button-div">
+              <button id="delete-info" class="button-bg">DELETE</button>
+            </div>
+
+             <section>
+              <!-- The popup -->
+              <div id="deleteUser" class="popup display-none">
+                <!-- popup content -->
+                <div class="popup-content box-shadow-all-light">
+                  <h2>Delete</h2>
+                  <p>Are you sure you want to delete your account?</p>
+                  <div class="options-align">
+                    <button id="delete-cancel-entry" class="cancel">CANCEL</button>
+                    <button id="delete-user-btn" class="submit">DELETE</button>
+                  </div>
+                </div>
+              </div>
+            </section>
 
         <!-- END OF CONTENT CHANGE -->
       </div>
@@ -143,12 +164,6 @@
 
 
     <!-- CONTENT ENDS HERE -->
-
-    <!-- <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script> -->
 </body>
 
 </html>

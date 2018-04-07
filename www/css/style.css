@@ -773,6 +773,21 @@ body.settings-user-profile-page main section#user-details-info input {
   border: none;
   color: #313541;
 }
+body.settings-user-profile-page main .button-bg {
+  width: 88px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: #009688;
+  position: relative;
+  margin: 2% 0% 2% 5%;
+}
+body.settings-user-profile-page main div#delete-button-div {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: flex-end;
+}
 body.settings-user-profile-page main .icon {
   font-family: 'icomoon';
   speak: none;

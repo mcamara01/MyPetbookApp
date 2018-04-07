@@ -6,7 +6,7 @@
 
     var initialize = false;
 
-    //Get the user key from LocalStorage if there's one 
+    //Get the user data from LocalStorage if there's one 
     var userKey;
 
     //Get the petId from LocalStorage if there's one 
@@ -47,6 +47,7 @@
 
       //----------------------
       // Initialize Firebase
+
       var config = {
         apiKey: "AIzaSyDyRm3-_rS5aGpattuN-cT3VfxhtYirTfk",
         authDomain: "mypetbookapp-4d393.firebaseapp.com",
@@ -71,8 +72,6 @@
 
       // --------------------------
     
-
-
 
     firebase.auth().onAuthStateChanged(function(user) {
 

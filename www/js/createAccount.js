@@ -38,7 +38,6 @@ function onDeviceReady() {
 			return
 		}
 
-
 		firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
 		  // Handle Errors here.
 		  var errorCode = error.code;
@@ -71,8 +70,10 @@ function onDeviceReady() {
 
 			const userData = {
 				name: name,
-				email: email,
+				email: user.email,
 			} 
+
+			console.log(userData);
 
 	        // set userKey to Local Storage
 	        localStorage.setItem('userKey', userKey);
