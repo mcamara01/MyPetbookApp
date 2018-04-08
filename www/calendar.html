@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <!-- BROWSER ICON LINK -->
+    <link rel="icon" href="icons/icon.png" type="image/png">
+
+    <!-- LINK TO STYLESHEET -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <!-- END LINK TO STYLESHEET -->
+
+    <!-- JS SCRIPT LINKS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="cordova.js"></script>
+
+    <!-- SCRIPT FIREBASE -->
+    <script src="js/firebase.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+
+
+</head>
+
+<body style="background-color: pink">
+<h1>Example for Google Calendar</h1> 
+  <div id="content">
+    <p>Fill these fields to enter a new event in your Google Calendar.</p>
+    <p><label>Select a date: <input type="date" id="date"></label></p>
+    <p><label>Start time <input type="time" id="start"></label>
+       <label>End time: <input type="time" id="end"></label>
+    </p>
+    <p><label>Event description: <input type="text" id="event" size=60></label></p>
+    <p><button id="authorize-button" style="visibility: hidden">Login Authorize</button></p>
+    <p><button id="addToCalendar" style="visibility: hidden">Add to Google Calendar</button></p>
+  </div>
+    <!--Add a button for the user to click to initiate auth sequence -->
+    
+  </body>
+</html>
