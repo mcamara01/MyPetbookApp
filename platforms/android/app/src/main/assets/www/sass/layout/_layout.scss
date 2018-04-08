@@ -1,0 +1,13 @@
+
+// IMPORT ALL LAYOUT FILES INTO THIS ONE
+
+// Pages base structure
+@import "basics";
+@import "menu-footer-base";
+
+// Other pages specific layout
+@import "index";
+@import "settings";
+@import "categories";
+@import "createAccount-login";
+@import "terms";

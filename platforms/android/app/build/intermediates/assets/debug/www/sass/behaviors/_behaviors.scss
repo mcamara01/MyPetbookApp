@@ -1,0 +1,123 @@
+
+// BEHAVIORS STYLE
+
+// only dark bottom shadow - navigation
+.box-shadow-bottom-dark {
+  box-shadow: 2px 4px 5px $color-light-black;
+}
+
+// only light bottom shadow - pet main info
+.box-shadow-bottom-light {
+  box-shadow: 1px 1px 3px $color-light-black;
+}
+
+//dark shadow all sides - cards
+.box-shadow-all-dark {
+  box-shadow: 0 12px 12px 0 $color-light-black, 0 0 12px 0 $color-light-black;
+}
+
+//light shadow all sides - cards
+.box-shadow-all-light {
+  box-shadow: 0 2px 2px 0 $color-light-black, 0 0 2px 0 $color-light-black;
+}
+
+// add to any element you want to remove temporarily
+.display-none {
+  display: none;
+}
+
+// add to any element you want to hide temporarily
+.hidden {
+  visibility: hidden;
+}
+
+
+//FORMS EDITING
+input {
+  border: none;
+  border-bottom: 2px solid $color-light-black;
+  width: 90%;
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-light-black;
+  margin-top: 4px;
+
+  &:focus {
+    border-bottom: 2px solid $color-teal;
+    color: $color-teal;
+  }
+
+  &[id*="weight"] {
+    width: 75%;
+    max-width: 260px !important;
+  }
+}
+
+// male and female radio buttons
+input.radio-input {
+  width: 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// male and female text
+section#gender-section, div#pet-info-add {
+  span {
+    margin-right: 20px;
+  }
+}
+
+textarea {
+  border: 2px solid $color-light-black;
+  width: 90%;
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-light-black;
+  margin-top: 4px;
+  font-family: $font-stack;
+
+  &:focus {
+    border: 2px solid $color-teal;
+    color: $color-teal;
+  }
+}
+
+//FORMS VIEWING
+
+// h4 info label
+.field-info {
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: normal;
+  text-align: left;
+  margin-bottom: 2px;
+  margin-top: 20px;
+}
+
+
+
+#load-card section:nth-child(2) .field-info:first-of-type { //when displaying
+  margin-top: 5px !important;
+}
+
+section:first-of-type .field-info:first-of-type { //when editing
+  margin-top: 5px !important;
+}
+
+
+// pet info
+.field-response, .field-name {
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
+  height: 16px;
+  margin-top: 3px;
+  color: $color-medium-black;
+}
+
+.field-name {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}

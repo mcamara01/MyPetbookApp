@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-packageName="io.cordova.hellocordova" id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>MyPetbook</name>
+    <description>
+        All your pets information in one place.
+    </description>
+    <author email="mypetbookapp@gmail.com" href="http://mypetbook.com">
+        Cristiane Silva, Fernanda Teixeira, Mana Koike, Michele Camara, Samaneh Hoseini.
+    </author>
+    <content src="login.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-navigation href="*" />
+    <icon density="ldpi" src="www/res/icon/android/icon.png" />
+    <icon density="mdpi" src="www/res/icon/android/icon.png" />
+    <icon density="hdpi" src="www/res/icon/android/icon.png" />
+    <icon density="xhdpi" src="www/res/icon/android/icon.png" />
+    <icon density="xxhdpi" src="www/res/icon/android/icon.png" />
+    <icon density="xxxhdpi" src="www/res/icon/android/icon.png" />
+    <splash qualifier="land-ldpi" src="www/res/screen/android/splash-land-ldpi.png" />
+    <splash qualifier="land-mdpi" src="www/res/screen/android/splash-land-mdpi.png" />
+    <splash qualifier="land-hdpi" src="www/res/screen/android/splash-land-hdpi.png" />
+    <splash qualifier="land-xhdpi" src="www/res/screen/android/splash-land-xhdpi.png" />
+    <splash qualifier="land-xxhdpi" src="www/res/screen/android/splash-land-xhdpi.png" />
+    <splash qualifier="land-xxxhdpi" src="www/res/screen/android/splash-land-xhdpi.png" />
+    <splash qualifier="port-ldpi" src="www/res/screen/android/splash-port-ldpi.png" />
+    <splash qualifier="port-mdpi" src="www/res/screen/android/splash-port-mdpi.png" />
+    <splash qualifier="port-hdpi" src="www/res/screen/android/splash-port-hdpi.png" />
+    <splash qualifier="port-xhdpi" src="www/res/screen/android/splash-port-xhdpi.png" />
+    <splash qualifier="port-xxhdpi" src="www/res/screen/android/splash-port-xxhdpi.png" />
+    <splash qualifier="port-xxxhdpi" src="www/res/screen/android/splash-port-xxxhdpi.png" />
+    <splash src="www/splash.png" />
+    <allow-intent href="market:*" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="SplashScreen" value="splash.png" />
+</widget>

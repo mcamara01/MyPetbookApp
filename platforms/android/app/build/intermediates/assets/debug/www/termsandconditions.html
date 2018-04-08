@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <!-- BROWSER ICON LINK -->
+    <link rel="icon" href="icons/icon.png" type="image/png">
+
+    <!-- LINK TO STYLESHEET -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <!-- END LINK TO STYLESHEET -->
+
+    <!-- JS SCRIPT LINKS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
+    <script src="cordova.js"></script>
+
+    <!-- SCRIPT FIREBASE -->
+    <script src="js/firebase.js"></script>
+
+     <!-- END JS SCRIPT LINKS -->
+
+    <title>Login | MyPetbook</title>
+</head>
+
+<body class="terms-page">
+    <!-- CONTENT STARTS HERE -->
+
+    <main>
+      <div id="wrapper">
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+
+        <img id= "logo" src="icons/logo_font_big.png">
+
+
+        <div id="card" class="box-shadow-all-light">
+          <h2>MyPetbook Application Terms of Service</h2>
+
+          <section>
+            <ol>
+              <li>
+                <h3>Terms</h3>
+                By accessing the MyPetbook application at app store, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.
+              </li>
+              <li>
+                <h3>Use License</h3>
+                  Permission is granted to temporarily download one copy of the materials on MyPetbook application for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+                  modify or copy the materials;
+                  use the materials for any commercial purpose, or for any public display (commercial or non-commercial);
+                  attempt to decompile or reverse engineer any content contained on MyPetbook application;
+                  remove any copyright or other proprietary notations from the materials; or
+                  transfer the materials to another person or "mirror" the materials on any other server.
+                  This license shall automatically terminate if you violate any of these restrictions and may be terminated by MyPetbook at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.
+              </li>
+              <li>
+                <h3>Disclaimer</h3>
+                  The materials on MyPetbook  application are provided on an 'as is' basis. MyPetbook makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+                  Further, MyPetbook does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its application or otherwise relating to such materials or on any sites linked to this app.
+              </li>
+              <li>
+                <h3>Limitations</h3>
+                  In no event shall MyPetbook or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on MyPetbook application, even if MyPetbook or a MyPetbook authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
+              </li>
+              <li>
+                <h3>Governing Law</h3>
+                These terms and conditions are governed by and construed in accordance with the laws of Vancouver, BC - Canada and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.
+              </li>
+            </ol>
+          </section>
+
+        </div>
+
+        <!-- END OF CONTENT CHANGE -->
+      </div>
+    </main>
+
+
+</body>
+
+</html>
