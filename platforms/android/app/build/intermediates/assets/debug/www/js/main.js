@@ -22,9 +22,9 @@
     function onDeviceReady() {
       if (initialize) {
         return 
-    } else {
+      } else {
         initialize = true;
-    }
+      }
 
 
       //Get the petId from LocalStorage if there's one 
@@ -55,25 +55,25 @@
         projectId: "mypetbookapp-4d393",
         storageBucket: "mypetbookapp-4d393.appspot.com",
         messagingSenderId: "353025423183"
-    };
-    firebase.initializeApp(config);
+      };
+      firebase.initializeApp(config);
 
 
       // top options nav open window
       $('#menu-hamb').click(function() {
         $('#top-options-nav').slideToggle("slow");
-    });
+      });
 
       // ELIPSE MENU OPTIONS
 
       $('#menu-elipse').click(function() {
         $('#elipse-options-nav').slideToggle("slow");
-    });
+      });
 
       // --------------------------
-    
 
-    firebase.auth().onAuthStateChanged(function(user) {
+
+      firebase.auth().onAuthStateChanged(function(user) {
 
         var user = firebase.auth().currentUser;
 
@@ -81,39 +81,49 @@
             // User is signed in.
             // -1 means not in that path page
             if (window.location.pathname.search("login.html") != -1) { 
-                
-                
+
+
               window.location.replace("./index.html");
             }
-        } else {
+          } else {
             // No user is signed in.
             if (window.location.pathname.search("createAccount.html") != -1) {    
 
-                return
+              return
 
             } else if (window.location.pathname.search("login.html") == -1) {    
 
-                window.location.replace("./login.html");  
+              window.location.replace("./login.html");  
             }
-        }
-    });
+          }
+        });
 
 
-    $('#signout').click(function(){
+      $('#signout').click(function(){
         firebase.auth().signOut().then(function() {
           // Sign-out successful.
-      }).catch(function(error) {
+        }).catch(function(error) {
           // An error happened.
-      }).then(function(){
+        }).then(function(){
           // direct user to login page
           window.location.replace("./login.html");
+        });
+
+
+      });
+
+      $('#calendar').click(function(){
+
+        // Prepare some variables used below
+        var cal = window.plugins.calendar;
+
+        // opening the calendar 
+        // to open the calendar app at 'today'
+        cal.openCalendar();
       });
 
 
-  });
-
-
-};
+  };
 
 
 
