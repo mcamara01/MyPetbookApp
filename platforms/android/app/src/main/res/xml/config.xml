@@ -4,6 +4,10 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <name>MyPetbook</name>
     <description>
         All your pets information in one place.
@@ -41,5 +45,5 @@
     <splash src="www/splash.png" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
-    <preference name="SplashScreen" value="splash.png" />
+    <preference name="SplashScreen" value="screen" />
 </widget>
