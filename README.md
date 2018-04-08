@@ -6,7 +6,7 @@ MyPetbook is an Android based application built to help pet parents to organize 
 
 ### Developers
 
-MyPetbook Team: Cristiane Silva, Fernanda Teixeira, Mana Koike, Michele Camara, Samaneh Hoseini.
+**MyPetbook Team:** Cristiane Silva, Fernanda Teixeira, Mana Koike, Michele Camara, Samaneh Hoseini.
 
 ### Technical Architecture
 
