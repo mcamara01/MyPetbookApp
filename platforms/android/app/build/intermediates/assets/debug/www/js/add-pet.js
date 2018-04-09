@@ -86,7 +86,7 @@ let noPets = 0;
         </section>
 
         <section id="pet-content" class="box-shadow-bottom-light">
-          <div id="main-pet-photo"></div>
+          <a href="pet-profile.html"><div id="main-pet-photo"></div></a>
           <nav>
             <ul>
               <li id="delete-pet"><img src="icons/icon_trash.png" alt="delete pet" /></li>
@@ -204,16 +204,16 @@ let noPets = 0;
       if ( age.days > 1 ) dayString = " days";
       else dayString = " day";
 
-      // console.log("pet name" + savePetDataObj.general.name);
-      // console.log("age.years" + age.years);
-      // console.log("age.months" +age.months);
-      // console.log("age.days" +age.days);
+      console.log("pet name " + savePetDataObj.general.name);
+      console.log("age.years " + age.years);
+      console.log("age.months " +age.months);
+      console.log("age.days " +age.days);
 
       if ( (age.years > 0) && (age.months > 0) )
         ageString = age.years + yearString + " and " + age.months + monthString;
       else if ( (age.years == 0) && (age.months == 0))
         ageString = age.days + dayString;
-      else if ( (age.years > 0) && (age.months == 0) )
+      else if ( (age.years > 0) && (age.months == 0) && (age.days == 0) )
         ageString = age.years + yearString +`. Happy Birthday ${savePetDataObj.general.name}!`;
       else if ( (age.years > 0) && (age.months > 0) )
         ageString = age.years + yearString + " and " + age.months + monthString + " old.";
