@@ -1,3 +1,4 @@
+
 // VACCINATION PAGE JS
 //----------------------------------------------------------------------
 
@@ -57,7 +58,6 @@ function onDeviceReady() {
             </ul>
           </nav>
         </section>
-
         <section>
           <h4 id="vaccine-name" class="field-info field-name">${saveVaccineDataObj.name}</h4>
           <h4 class="field-info">Date Taken</h4>
