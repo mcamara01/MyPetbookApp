@@ -112,6 +112,21 @@ function onDeviceReady() {
       $(`#${medicationId}`).remove();
     });
 
+
+    // Calendar for Medication Events
+    $(`#${medicationId} #medication-calendar`).click(function(){
+
+      console.log("am I here?")
+
+      var cal = window.plugins.calendar;
+      var title = saveMedicationDataObj.name;
+      var start = new Date (saveMedicationDataObj.expiration + 'T00:00:00-07:00');
+      var end = new Date (saveMedicationDataObj.expiration);
+
+      cal.createEventInteractively(title,'', '', start, end);
+
+    });
+
   }); //End of function "on child_added"
 
 

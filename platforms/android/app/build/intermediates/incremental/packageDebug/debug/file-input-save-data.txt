@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Apr 09 16:47:23 PDT 2018
+#Mon Apr 09 16:48:58 PDT 2018
 175.set=ASSET
 122.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/debug/www/pet-profile.html
 60.set=ASSET

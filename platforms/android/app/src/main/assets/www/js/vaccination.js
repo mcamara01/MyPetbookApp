@@ -116,7 +116,7 @@ function onDeviceReady() {
 
       var cal = window.plugins.calendar;
       var title = saveVaccineDataObj.name;
-      var start = new Date (saveVaccineDataObj.expiration);
+      var start = new Date (saveVaccineDataObj.expiration + 'T00:00:00-07:00');
       var end = new Date (saveVaccineDataObj.expiration);
 
       cal.createEventInteractively(title,'', '', start, end);
