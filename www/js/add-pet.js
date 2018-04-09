@@ -86,7 +86,7 @@ let noPets = 0;
         </section>
 
         <section id="pet-content" class="box-shadow-bottom-light">
-          <div id="main-pet-photo"></div>
+          <a href="pet-profile.html"><div id="main-pet-photo"></div></a>
           <nav>
             <ul>
               <li id="delete-pet"><img src="icons/icon_trash.png" alt="delete pet" /></li>
