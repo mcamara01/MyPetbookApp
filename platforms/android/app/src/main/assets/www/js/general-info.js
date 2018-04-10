@@ -108,6 +108,8 @@ function onDeviceReady() {
 
 	//function to calculate new pet age
 	function getAge(dateString) {
+
+		console.log('this is the' + dateString);
 		var now = new Date();
 
 		var yearNow = now.getFullYear();
@@ -151,11 +153,15 @@ function onDeviceReady() {
 			}
 		}
 
+
+
 		age = {
 				years: yearAge,
 				months: monthAge,
 				days: dateAge
 				};
+
+		console.log(age)
 
 		if ( age.years > 1 ) yearString = " years";
 		else yearString = " year";
@@ -173,7 +179,7 @@ function onDeviceReady() {
 			ageString = age.years + yearString + " and " + age.months + monthString;
 		else if ( (age.years == 0) && (age.months == 0))
 			ageString = age.days + dayString;
-		else if ( (age.years > 0) && (age.months == 0) )
+		else if ( (age.years > 0) && (age.months == 0) && (age.days == 0) )
 			ageString = age.years + yearString +". Happy Birthday " + $('#edit-pet-name').val() + "!";
 		else if ( (age.years > 0) && (age.months > 0) )
 			ageString = age.years + yearString + " and " + age.months + monthString + " old.";

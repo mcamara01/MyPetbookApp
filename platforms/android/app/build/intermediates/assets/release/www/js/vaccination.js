@@ -1,3 +1,4 @@
+
 // VACCINATION PAGE JS
 //----------------------------------------------------------------------
 
@@ -44,29 +45,28 @@ function onDeviceReady() {
 
     $('#load-card').prepend(`<div id="${vaccineId}"><div id="card" class="box-shadow-all-light">
       <section id="vaccine-card">
-        <section>
-          <span id="menu-elipse"><a href="#">...</a></span>
-          <!-- options elipse nav -->
-          <nav id="elipse-options-nav" class="box-shadow-bottom-dark display-none">
-            <ul>
-              <li><a href="#" id="edit-vaccine">Edit</a></li>
-              <li><a href="#" id="vaccine-calendar">Add Alert</a></li>
-              <br>
-              <br>
-              <li><a href="#" id="delete-vaccine" class="delete-option">Delete</a></li>
-            </ul>
-          </nav>
-        </section>
-
-        <section>
-          <h4 id="vaccine-name" class="field-info field-name">${saveVaccineDataObj.name}</h4>
-          <h4 class="field-info">Date Taken</h4>
-          <p id="vaccine-date" class="field-response">${saveVaccineDataObj.date}</p>
-          <h4 class="field-info">Expiration Date</h4>
-          <p id="vaccine-expiration" class="field-response">${saveVaccineDataObj.expiration}</p>
-        </section>
+      <section>
+      <span id="menu-elipse"><a href="#">...</a></span>
+      <!-- options elipse nav -->
+      <nav id="elipse-options-nav" class="box-shadow-bottom-dark display-none">
+      <ul>
+      <li><a href="#" id="edit-vaccine">Edit</a></li>
+      <li><a href="#" id="vaccine-calendar">Add Alert</a></li>
+      <br>
+      <br>
+      <li><a href="#" id="delete-vaccine" class="delete-option">Delete</a></li>
+      </ul>
+      </nav>
       </section>
-    </div></div>`)
+      <section>
+      <h4 id="vaccine-name" class="field-info field-name">${saveVaccineDataObj.name}</h4>
+      <h4 class="field-info">Date Taken</h4>
+      <p id="vaccine-date" class="field-response">${saveVaccineDataObj.date}</p>
+      <h4 class="field-info">Expiration Date</h4>
+      <p id="vaccine-expiration" class="field-response">${saveVaccineDataObj.expiration}</p>
+      </section>
+      </section>
+      </div></div>`)
 
     // Display the menu elipse for each card/vaccineId
 
@@ -108,6 +108,19 @@ function onDeviceReady() {
       $(`#${vaccineId}`).remove();
     });
 
+
+    // Calendar for Vaccination Events
+    $(`#${vaccineId} #vaccine-calendar`).click(function(){
+
+      var cal = window.plugins.calendar;
+      var title = saveVaccineDataObj.name;
+      var start = new Date (saveVaccineDataObj.expiration + 'T00:00:00-07:00');
+      var end = new Date (saveVaccineDataObj.expiration);
+
+      cal.createEventInteractively(title,'', '', start, end);
+
+    });
+
   }); //End of function "on child_added"
 
 
@@ -136,7 +149,7 @@ function onDeviceReady() {
 
   $(`#delete-cancel-entry`).click(function(){
     window.location.replace("./vaccination.html");
-    });
+  });
 
   // Add Vaccine from Add Button on Bottom Screen
 
@@ -167,7 +180,7 @@ function onDeviceReady() {
 
   // Edit Info Popup
   $('#edit-info').click(function(){
-  $('#editVaccine').removeClass("display-none");
+    $('#editVaccine').removeClass("display-none");
   });
 
   $("#editVaccine").click(function(){
@@ -176,13 +189,13 @@ function onDeviceReady() {
 
 
    // Delete Info Popup
-  $('#delete-info').click(function(){
-  $('#deleteVaccine').removeClass("display-none");
+   $('#delete-info').click(function(){
+    $('#deleteVaccine').removeClass("display-none");
   });
 
-  $("#deleteVaccine").click(function(){
+   $("#deleteVaccine").click(function(){
     $("#deleteVaccine").addClass("display-none");
   });
 
 
-};
+ };

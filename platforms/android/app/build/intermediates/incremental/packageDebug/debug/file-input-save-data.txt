@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Apr 09 17:22:25 PDT 2018
+#Mon Apr 09 20:18:32 PDT 2018
 175.set=ASSET
 122.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/debug/www/sass/layout/_basics.scss
 60.set=ASSET
