@@ -14,27 +14,27 @@ function onDeviceReady() {
     initializeVeterinary = true;
   }
 
-	// Save Veterinary Data Button from New Veterinary Screen
+  // Save Veterinary Data Button from New Veterinary Screen
 
-	$('#save-veterinary-btn').click(function(){
-		var saveVeterinaryData = {
-			name: $('#new-veterinary-name').val(),
+  $('#save-veterinary-btn').click(function(){
+    var saveVeterinaryData = {
+      name: $('#new-veterinary-name').val(),
       // phone: $('#new-veterinary-phone').val(),
-      // address: $('#new-veterinary-address').val(),
+      address: $('#new-veterinary-address').val(),
       date: $('#new-veterinary-date').val()
     }
 
-	// code to create an veterinary id on database
-	var veterinaryId = firebase.database().ref().child('users/pet/veterinary').push().key;
+  // code to create an veterinary id on database
+  var veterinaryId = firebase.database().ref().child('users/pet/veterinary').push().key;
 
   // path to set the user key data to Firebase
   firebase.database().ref('users/' + userKey + "/pet/" +  petKey + "/veterinary/" + veterinaryId).set(saveVeterinaryData);
 
-	// return to main veterinary page
+  // return to main veterinary page
   window.location.replace("./veterinary.html");
 });
 
-	const users = firebase.database().ref('/users');
+  const users = firebase.database().ref('/users');
 
   // FUNCTION CHILD ADDED - Add veterinary related to a pet into Firebase
 
@@ -45,32 +45,31 @@ function onDeviceReady() {
 
     $('#load-card').prepend(`<div id="${veterinaryId}"><div id="card" class="box-shadow-all-light">
       <section id="veterinary-card" >
-      <section>
-      <span id="menu-elipse"><a href="#">...</a></span>
-      <!-- options elipse nav -->
-      <nav id="elipse-options-nav" class="box-shadow-bottom-dark display-none">
-      <ul>
-      <li><a href="#" id="edit-veterinary">Edit</a></li>
-      <li><a href="#" id="veterinary-calendar">Add Alert</a></li>
-      <br>
-      <br>
-      <li><a href="#" id="delete-veterinary" class="delete-option">Delete</a></li>
-      </ul>
-      </nav>
+        <section>
+          <span id="menu-elipse"><a href="#">...</a></span>
+          <!-- options elipse nav -->
+          <nav id="elipse-options-nav" class="box-shadow-bottom-dark display-none">
+            <ul>
+              <li><a href="#" id="edit-veterinary">Edit</a></li>
+              <li><a href="#" id="veterinary-calendar">Add Alert</a></li>
+              <br>
+              <br>
+              <li><a href="#" id="delete-veterinary" class="delete-option">Delete</a></li>
+            </ul>
+          </nav>
+        </section>
+        <section>
+          <h4 class="field-info">Name</h4>
+          <p id="veterinary-name" class="field-response">${saveVeterinaryDataObj.name}</p>
+          <!--<h4 class="field-info">Phone</h4>
+          <p id="veterinary-phone">${saveVeterinaryDataObj.phone}</p>-->
+          <h4 class="field-info">Address</h4>
+          <p id="veterinary-address">${saveVeterinaryDataObj.address}</p>
+          <h4 class="field-info">Apointment Date</h4>
+          <p id="veterinary-date" class="field-response">${saveVeterinaryDataObj.date}</p>
+        </section>
       </section>
-
-      <section>
-      <h4 class="field-info">Name</h4>
-      <p id="veterinary-name" class="field-response">${saveVeterinaryDataObj.name}</p>
-      <!--<h4 class="field-info">Phone</h4>
-      <p id="veterinary-phone">${saveVeterinaryDataObj.phone}</p>
-      <h4 class="field-info">Address</h4>
-      <p id="veterinary-address">${saveVeterinaryDataObj.address}</p>-->
-      <h4 class="field-info">Apointment Date</h4>
-      <p id="veterinary-date" class="field-response">${saveVeterinaryDataObj.date}</p>
-      </section>
-      </section>
-      </div></div>`)
+    </div></div>`)
 
     // Display the menu elipse for each card/veterinaryId
 
@@ -87,7 +86,7 @@ function onDeviceReady() {
       $('#edit-veterinary-id').val(veterinaryId);
       $('#edit-veterinary-name').val(saveVeterinaryDataObj.name);
       // $('#edit-veterinary-phone').val(saveVeterinaryDataObj.phone);
-      // $('#edit-veterinary-address').val(saveVeterinaryDataObj.address);
+      $('#edit-veterinary-address').val(saveVeterinaryDataObj.address);
       $('#edit-veterinary-date').val(saveVeterinaryDataObj.date);
 
       $('#imgPop').addClass("display-none");
@@ -104,7 +103,7 @@ function onDeviceReady() {
       $('#delete-veterinary-id').val(veterinaryId);
       $('#delete-veterinary-name').val(saveVeterinaryDataObj.name);
       // $('#delete-veterinary-phone').val(saveVeterinaryDataObj.phone);
-      // $('#delete-veterinary-address').val(saveVeterinaryDataObj.address);
+      $('#delete-veterinary-address').val(saveVeterinaryDataObj.address);
       $('#delete-veterinary-date').val(saveVeterinaryDataObj.date);
 
       $('#imgPop').addClass("display-none");
@@ -121,26 +120,27 @@ function onDeviceReady() {
     // Calendar for Veterinary Apointment Events
     $(`#${veterinaryId} #veterinary-calendar`).click(function(){
 
-      console.log("am I here?")
+        console.log("am I here?")
 
-      var cal = window.plugins.calendar;
-      var title = saveVeterinaryDataObj.name;
-      // var eventLocation = saveVeterinaryDataObj.address;
-      var start = new Date (saveVeterinaryDataObj.date + 'T00:00:00-07:00');
-      var end = new Date (saveVeterinaryDataObj.date);
+        var cal = window.plugins.calendar;
+        var title = saveVeterinaryDataObj.name;
+        var eventLocation = saveVeterinaryDataObj.address;
+        var start = new Date (saveVeterinaryDataObj.date + 'T00:00:00-07:00');
+        var end = new Date (saveVeterinaryDataObj.date);
 
-      cal.createEventInteractively(title, '', '', start, end);
+        cal.createEventInteractively(title, eventLocation, '', start, end);
 
     });
+
   }); //End of function "on child_added"
 
 
-	// Edit Veterinary Button Submition Action from Edit Veterinary Screen
+  // Edit Veterinary Button Submition Action from Edit Veterinary Screen
   $('#edit-veterinary-btn').click(function(){
     var editVeterinaryData = {
       name: $('#edit-veterinary-name').val(),
       // phone: $('#edit-veterinary-phone').val(),
-      // address: $('#edit-veterinary-address').val(),
+      address: $('#edit-veterinary-address').val(),
       date: $('#edit-veterinary-date').val()
     }
     var veterinaryId = $('#edit-veterinary-id').val();
@@ -159,7 +159,7 @@ function onDeviceReady() {
     window.location.replace("./veterinary.html");
   });
 
-  $(`#delete-cancel-entry`).click(function(){
+   $(`#delete-cancel-entry`).click(function(){
     window.location.replace("./veterinary.html");
   });
 
@@ -192,7 +192,7 @@ function onDeviceReady() {
 
   // Edit Info Popup
   $('#edit-info').click(function(){
-    $('#editVeterinary').removeClass("display-none");
+  $('#editVeterinary').removeClass("display-none");
   });
 
   $("#editVeterinary").click(function(){
@@ -201,13 +201,13 @@ function onDeviceReady() {
 
 
    // Delete Info Popup
-   $('#delete-info').click(function(){
-    $('#deleteVeterinary').removeClass("display-none");
+  $('#delete-info').click(function(){
+  $('#deleteVeterinary').removeClass("display-none");
   });
 
-   $("#deleteVeterinary").click(function(){
+  $("#deleteVeterinary").click(function(){
     $("#deleteVeterinary").addClass("display-none");
   });
 
 
- };
+};

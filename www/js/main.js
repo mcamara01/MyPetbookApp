@@ -64,10 +64,17 @@
         $('#top-options-nav').slideToggle("slow");
       });
 
-      // ELIPSE MENU OPTIONS
+       // ELIPSE MENU OPTIONS
 
       $('#menu-elipse').click(function() {
-        $('#elipse-options-nav').slideToggle("slow");
+        $('#card #elipse-options-nav').stop(true).slideToggle("slow");
+     
+      });
+      // hide element when click anywhere in the body screen
+      $(document).click(function (e) {
+        if (!$(e.target).closest('#menu-elipse, #elipse-options-nav').length > 0) {
+            $('#card #elipse-options-nav').stop(true).slideUp();
+        }
       });
 
       // --------------------------
