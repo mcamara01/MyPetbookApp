@@ -112,8 +112,6 @@ function onDeviceReady() {
     // Calendar for Vaccination Events
     $(`#${vaccineId} #vaccine-calendar`).click(function(){
 
-      console.log("am I here?")
-
       var cal = window.plugins.calendar;
       var title = saveVaccineDataObj.name;
       var start = new Date (saveVaccineDataObj.expiration + 'T00:00:00-07:00');
