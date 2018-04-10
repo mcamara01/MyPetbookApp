@@ -61,7 +61,14 @@
 
       // top options nav open window
       $('#menu-hamb').click(function() {
-        $('#top-options-nav').slideToggle("slow");
+        $('#top-options-nav').stop(true).slideToggle("slow");
+      });
+
+      // hide element when click anywhere in the body screen
+      $(document).click(function (e) {
+        if (!$(e.target).closest('#menu-hamb, #top-options-nav').length > 0) {
+            $('#top-options-nav').stop(true).slideUp();
+        }
       });
 
        // ELIPSE MENU OPTIONS

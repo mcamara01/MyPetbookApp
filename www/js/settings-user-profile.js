@@ -58,7 +58,6 @@ function onDeviceReady() {
 	var user = firebase.auth().currentUser;
 
 	user.updateEmail(email).then(function() {
-		console.log('am I here?')
 		  // Update successful.
 		}).catch(function(error) {
 			console.log(error);

@@ -120,8 +120,6 @@ function onDeviceReady() {
     // Calendar for Veterinary Apointment Events
     $(`#${veterinaryId} #veterinary-calendar`).click(function(){
 
-        console.log("am I here?")
-
         var cal = window.plugins.calendar;
         var title = saveVeterinaryDataObj.name;
         var eventLocation = saveVeterinaryDataObj.address;
