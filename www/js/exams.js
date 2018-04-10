@@ -22,6 +22,9 @@ function onDeviceReady() {
       date: $('#new-exam-date').val()
     }
 
+    if($('#new-exam-name').val() == '' || $('#new-exam-date').val() == ''){
+     alert('There is an empty field')
+        } else {
 	// code to create an exam id on database
 	var examId = firebase.database().ref().child('users/pet/exams').push().key;
 
@@ -30,6 +33,7 @@ function onDeviceReady() {
 
 	// return to main exam page
   window.location.replace("./exams.html");
+  }
 });
 
 	const users = firebase.database().ref('/users');

@@ -22,6 +22,10 @@ function onDeviceReady() {
       date: $('#new-infection-date').val()
     }
 
+    if($('#new-infection-name').val() == '' || $('#new-infection-date').val() == ''){
+      alert('There is an empty field')
+      } else {
+
 	// code to create an infection id on database
 	var infectionId = firebase.database().ref().child('users/pet/infections').push().key;
 
@@ -30,6 +34,7 @@ function onDeviceReady() {
 
 	// return to main infection page
   window.location.replace("./infections.html");
+  }
 });
 
 	const users = firebase.database().ref('/users');

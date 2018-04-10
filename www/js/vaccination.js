@@ -17,12 +17,16 @@ function onDeviceReady() {
 
   // Save Vaccine Data Button from New Vaccine Screen
 
-  $('#save-vaccine-btn').click(function(){
+  $('#save-vaccine-btn').click(function(e){
+  
     var saveVaccineData = {
       name: $('#new-vaccine-name').val(),
       date: $('#new-vaccine-date').val(),
       expiration: $('#new-vaccine-expiration').val()
     }
+    if($('#new-vaccine-name').val() == '' || $('#new-vaccine-date').val() == '' || $('#new-vaccine-expiration').val() == ''){ 
+          alert('There is an empty field')
+        } else {
 
     // code to create a vaccine id on database
     var vaccineId = firebase.database().ref().child('users/pet/vaccination').push().key;
@@ -32,6 +36,7 @@ function onDeviceReady() {
 
     // return to main vaccination page
     window.location.replace("./vaccination.html");
+    }
   });
 
   const users = firebase.database().ref('/users');

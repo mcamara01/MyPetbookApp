@@ -22,6 +22,10 @@ function onDeviceReady() {
       date: $('#new-medication-date').val(),
       expiration: $('#new-medication-expiration').val(),
     }
+    if($('#new-medication-name').val() == '' || $('#new-medication-date').val() == '' || $('#new-medication-expiration').val() == ''){
+      alert('There is an empty field')
+        } else {
+
 
     // code to create a medication id on database
     var medicationId = firebase.database().ref().child('users/pet/medications').push().key;
@@ -32,6 +36,7 @@ function onDeviceReady() {
 
     // return to main medication page
     window.location.replace("./medication.html");
+      }
   });
 
   const users = firebase.database().ref('/users');

@@ -24,6 +24,11 @@ function onDeviceReady() {
       date: $('#new-veterinary-date').val()
     }
 
+    if($('#new-veterinary-name').val() =='' || $('#new-veterinary-address').val() =='' || $('#new-veterinary-date').val() ==''){
+      alert('There is an empty field')
+        } else {
+
+
   // code to create an veterinary id on database
   var veterinaryId = firebase.database().ref().child('users/pet/veterinary').push().key;
 
@@ -32,6 +37,7 @@ function onDeviceReady() {
 
   // return to main veterinary page
   window.location.replace("./veterinary.html");
+    }
 });
 
   const users = firebase.database().ref('/users');

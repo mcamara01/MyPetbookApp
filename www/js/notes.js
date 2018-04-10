@@ -23,6 +23,11 @@ function onDeviceReady() {
             text: $('#new-note-text').val(),
     }
 
+    if($('#new-note-title').val() == '' || $('#new-note-date').val() =='' || $('#new-note-text').val() == ''){
+      alert('There is an empty field')
+        } else {
+
+
     // code to create an note id on database
     var noteId = firebase.database().ref().child('users/pet/notes').push().key;
 
@@ -31,6 +36,7 @@ function onDeviceReady() {
 
     // return to main notes page
   window.location.replace("./notes.html");
+  }
 });
 
     const users = firebase.database().ref('/users');
