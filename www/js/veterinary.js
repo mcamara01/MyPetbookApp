@@ -25,7 +25,7 @@ function onDeviceReady() {
     }
 
     if($('#new-veterinary-name').val() =='' || $('#new-veterinary-address').val() =='' || $('#new-veterinary-date').val() ==''){
-      alert('There is an empty field')
+      alert('Sorry! Seems like there is an empty field.')
         } else {
 
 

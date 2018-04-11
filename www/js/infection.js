@@ -23,7 +23,7 @@ function onDeviceReady() {
     }
 
     if($('#new-infection-name').val() == '' || $('#new-infection-date').val() == ''){
-      alert('There is an empty field')
+      alert('Sorry! Seems like there is an empty field.')
       } else {
 
 	// code to create an infection id on database

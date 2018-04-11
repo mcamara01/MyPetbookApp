@@ -25,7 +25,7 @@ function onDeviceReady() {
       expiration: $('#new-vaccine-expiration').val()
     }
     if($('#new-vaccine-name').val() == '' || $('#new-vaccine-date').val() == '' || $('#new-vaccine-expiration').val() == ''){ 
-          alert('There is an empty field')
+          alert('Sorry! Seems like there is an empty field.')
         } else {
 
     // code to create a vaccine id on database

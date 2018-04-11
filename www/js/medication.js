@@ -23,7 +23,7 @@ function onDeviceReady() {
       expiration: $('#new-medication-expiration').val(),
     }
     if($('#new-medication-name').val() == '' || $('#new-medication-date').val() == '' || $('#new-medication-expiration').val() == ''){
-      alert('There is an empty field')
+      alert('Sorry! Seems like there is an empty field.')
         } else {
 
 

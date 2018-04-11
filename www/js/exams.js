@@ -23,7 +23,7 @@ function onDeviceReady() {
     }
 
     if($('#new-exam-name').val() == '' || $('#new-exam-date').val() == ''){
-     alert('There is an empty field')
+     alert('Sorry! Seems like there is an empty field.')
         } else {
 	// code to create an exam id on database
 	var examId = firebase.database().ref().child('users/pet/exams').push().key;
