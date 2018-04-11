@@ -86,11 +86,11 @@ let noPets = 0;
         </section>
 
         <section id="pet-content" class="box-shadow-bottom-light">
-          <a href="pet-profile.html"><div id="main-pet-photo"></div></a>
+          <a href="pet-profile.html"><div id="main-pet-photo" class="pet-info"></div></a>
           <nav>
             <ul>
               <li id="delete-pet"><img src="icons/icon_trash.png" alt="delete pet" /></li>
-              <li id="icon-info"><a href="pet-profile.html"><img src="icons/icon_view.png" alt="view pet info"></a></li>
+              <li class="pet-info"><a href="pet-profile.html"><img src="icons/icon_view.png" alt="view pet info"></a></li>
             </ul>
           </nav>
         </section>
@@ -136,7 +136,7 @@ let noPets = 0;
     // console.log(dobAdded);
 
     // set petId into local Storage
-    $(`#${petKey} #icon-info`).click(function(){
+    $(`#${petKey} .pet-info`).click(function(){
       localStorage.setItem("petKey", petKey);
       localStorage.setItem("petAge", petAge);
       localStorage.setItem("petName", savePetDataObj.general.name);
