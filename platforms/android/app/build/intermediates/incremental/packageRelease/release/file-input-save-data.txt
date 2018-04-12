@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Apr 09 17:42:16 PDT 2018
+#Wed Apr 11 18:36:34 PDT 2018
 175.set=ASSET
 122.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/icons/fonts/icomoon.svg
 60.set=ANDROID_RESOURCE
@@ -16,7 +16,7 @@
 1.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/android/splash-land-xxhdpi.png
 13.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 45.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/sass/typography/_typography.scss
-183.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/blackberry10/splash-720x720.png
+183.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/sass/behaviors/_behaviors.scss
 60.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/res/release/resources-release.ap_
 92.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/login.html
 8.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/icons/Facebook.png
@@ -50,7 +50,7 @@
 152.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/ios/screen-ipad-landscape-2x.png
 27.set=ASSET
 159.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/res/release/resources-release.ap_/res/mipmap-xhdpi-v4/icon.png
-68.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/plugins/cordova-plugin-calendar/www/Calendar.js
+68.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/icon/ios/icon-57.png
 19.set=ASSET
 36.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 97.set=ASSET
@@ -76,7 +76,7 @@
 129.set=ASSET
 45.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 183.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
-181.set=ANDROID_RESOURCE
+181.set=ASSET
 82.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/res/release/resources-release.ap_/res/mipmap-ldpi-v4/icon.png
 92.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 8.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
@@ -100,10 +100,9 @@
 0.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/splash/browser/splash-land-ldpi.png
 44.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/android/splash-port-ldpi.png
 12.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
-182.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/exams.html
+182.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/blackberry10/splash-720x720.png
 7.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/icons/icon.png
 91.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/bada-wac/screen-type5.png
-189.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/res/release/resources-release.ap_/AndroidManifest.xml
 98.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/sass/layout/_createAccount-login.scss
 160.set=ASSET
 105.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
@@ -118,7 +117,7 @@
 136.set=ASSET
 68.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 128.set=ASSET
-180.set=ASSET
+180.set=ANDROID_RESOURCE
 172.set=ASSET
 112.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 11.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/splash/android/splash-land-ldpi.png
@@ -136,7 +135,7 @@
 95.set=ASSET
 158.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/splash/android/splash-port-hdpi.png
 35.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
-67.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/icon/ios/icon-57.png
+67.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/plugins/cordova-plugin-calendar/www/Calendar.js
 87.set=ASSET
 82.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/res/release/resources-release.ap_
 79.set=ASSET
@@ -165,7 +164,6 @@
 81.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/android/splash-land-ldpi.png
 91.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 7.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
-189.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/res/release/resources-release.ap_
 88.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/sass/variables/_variables.scss
 98.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 120.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/general-info.html
@@ -184,10 +182,10 @@
 134.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/icons/ic_settings.png
 11.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 43.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/browser/splash-land-mdpi.png
-181.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/res/release/resources-release.ap_/res/xml/config.xml
+181.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/exams.html
 90.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/icons/icon_settings.png
 6.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/icon/ios/icon-57-2x.png
-188.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/settings-terms.html
+188.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/res/release/resources-release.ap_/AndroidManifest.xml
 97.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/icons/fonts/icomoon/fonts/icomoon.woff
 150.set=ASSET
 104.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
@@ -242,11 +240,11 @@
 33.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/res/release/resources-release.ap_/res/mipmap-xxhdpi-v4/icon.png
 109.set=ASSET
 43.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
-181.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/res/release/resources-release.ap_
+181.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 80.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/splash/android/splash-land-xhdpi.png
 90.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 6.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
-188.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
+188.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/res/release/resources-release.ap_
 87.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/browser/splash-port-ldpi.png
 97.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 30.set=ASSET
@@ -264,10 +262,10 @@
 133.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/js/exams.js
 10.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 42.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/icons/logo_font_big.png
-180.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/settings-preferences.html
+180.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/res/release/resources-release.ap_/res/xml/config.xml
 5.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/js/index.js
 49.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/transforms/dex/release/0/classes.dex
-187.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/ios/screen-ipad-portrait.png
+187.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/settings-terms.html
 96.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/icons/fonts/icomoon.eot
 140.set=ASSET
 103.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
@@ -319,7 +317,7 @@
 133.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 32.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/sass/layout/_settings.scss
 42.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
-180.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
+180.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/res/release/resources-release.ap_
 39.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/icon/windows-phone/icon-62-tile.png
 5.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 169.set=ASSET
@@ -333,7 +331,6 @@
 172.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/README.md
 140.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 90.set=ASSET
-189.set=ANDROID_RESOURCE
 82.set=ANDROID_RESOURCE
 179.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/css/style.css.map
 56.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
@@ -347,7 +344,7 @@
 149.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 48.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/sass/variables/_layout.scss
 16.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
-186.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/js/medication.js
+186.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/ios/screen-ipad-portrait.png
 95.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/js/notes.js
 1.set=ASSET
 130.set=ASSET
@@ -361,7 +358,7 @@
 55.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/sass/layout/_index.scss
 106.set=ASSET
 65.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
-count=190
+count=189
 168.set=ASSET
 148.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/bada-wac/screen-type4.png
 116.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
@@ -371,7 +368,7 @@ count=190
 72.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 11.set=ASSET
 79.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
-188.set=ASSET
+188.set=ANDROID_RESOURCE
 101.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/splash/browser/splash-land-mdpi.png
 81.set=ASSET
 73.set=ASSET
@@ -430,7 +427,7 @@ count=190
 148.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 15.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 47.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/ios/screen-iphone-portrait-2x.png
-185.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/vaccination.html
+185.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/js/medication.js
 94.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/tizen/README.md
 120.set=ASSET
 101.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
@@ -509,7 +506,7 @@ count=190
 147.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 14.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 46.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/android/splash-port-xxhdpi.png
-184.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/sass/behaviors/_behaviors.scss
+184.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/vaccination.html
 61.base=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release
 93.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/icon/bada/icon-128.png
 9.file=/Users/thiago/Desktop/myPetbookApp/platforms/android/app/build/intermediates/assets/release/www/res/screen/browser/splash-land-hdpi.png
