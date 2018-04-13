@@ -16,6 +16,13 @@ Application developed using:
 - Firebase Authentication
 - Apache Cordova
 
+### Build Instructions
+
+- To build the application is necessary to create a Firebase project and add the Firebase Initialize snippet to main.js file.
+
+- Is necessary to run the application using apachave cordova cordova@7.1.0
+
+
 ### Find Us
 
 mypetbookapp@gmail.com
