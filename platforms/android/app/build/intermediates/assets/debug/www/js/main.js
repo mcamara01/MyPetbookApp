@@ -49,12 +49,14 @@
       // Initialize Firebase
 
       var config = {
+        // Add your own firebase initialize snippet code here
         apiKey: "AIzaSyDyRm3-_rS5aGpattuN-cT3VfxhtYirTfk",
         authDomain: "mypetbookapp-4d393.firebaseapp.com",
         databaseURL: "https://mypetbookapp-4d393.firebaseio.com",
         projectId: "mypetbookapp-4d393",
         storageBucket: "mypetbookapp-4d393.appspot.com",
         messagingSenderId: "353025423183"
+
       };
       firebase.initializeApp(config);
 
@@ -67,20 +69,20 @@
       // hide element when click anywhere in the body screen
       $(document).click(function (e) {
         if (!$(e.target).closest('#menu-hamb, #top-options-nav').length > 0) {
-            $('#top-options-nav').stop(true).slideUp();
+          $('#top-options-nav').stop(true).slideUp();
         }
       });
 
        // ELIPSE MENU OPTIONS
 
-      $('#menu-elipse').click(function() {
+       $('#menu-elipse').click(function() {
         $('#card #elipse-options-nav').stop(true).slideToggle("slow");
-     
+        
       });
       // hide element when click anywhere in the body screen
       $(document).click(function (e) {
         if (!$(e.target).closest('#menu-elipse, #elipse-options-nav').length > 0) {
-            $('#card #elipse-options-nav').stop(true).slideUp();
+          $('#card #elipse-options-nav').stop(true).slideUp();
         }
       });
 
@@ -137,7 +139,7 @@
       });
 
 
-  };
+    };
 
 
 
